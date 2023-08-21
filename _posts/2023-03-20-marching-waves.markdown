@@ -22,7 +22,7 @@ I started making attempts in late 2019, once I felt proficient enough at coding 
 
 $$ \|\nabla u(x,y)\| = f(x,y) $$
 
-If each drawing is a topographical map, $u(x,y)$ defines the terrain that's being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it's more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:
+If each drawing is a topographical map, \(u(x,y)\) defines the terrain that's being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it's more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:
 
 "The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point"
 
