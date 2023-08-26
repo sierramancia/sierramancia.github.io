@@ -24,7 +24,12 @@
 <link rel="stylesheet" href="/assets/main.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alberto Mancia">
 </head>
-<body>
+<!-- CSS for Tocbot -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+
+  <body>
 <header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -120,7 +125,9 @@
   </div>
 
 </footer>
-</body>
+<!-- JavaScript for Tocbot -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js"></script>
+  </body>
 
 </html><html>
 <script type="text/x-mathjax-config">
@@ -130,6 +137,22 @@
       processEscapes: true
     }
   });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#sticky-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: 'main',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For more options, visit the official documentation.
+      orderedList: false,
+    });
+  });
+</script>
 </html>

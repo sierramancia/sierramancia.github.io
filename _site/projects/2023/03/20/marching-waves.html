@@ -10,8 +10,8 @@
 <meta name="generator" content="Jekyll v4.3.2">
 <meta property="og:title" content="Marching Waves">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:">
-<meta property="og:description" content="In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:">
+<meta name="description" content="My signature art style and how it’s made.">
+<meta property="og:description" content="My signature art style and how it’s made.">
 <link rel="canonical" href="http://localhost:4000/projects/2023/03/20/marching-waves.html">
 <meta property="og:url" content="http://localhost:4000/projects/2023/03/20/marching-waves.html">
 <meta property="og:site_name" content="Alberto Mancia">
@@ -20,13 +20,18 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Marching Waves">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-20T15:29:27-07:00","datePublished":"2023-03-20T15:29:27-07:00","description":"In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:","headline":"Marching Waves","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/2023/03/20/marching-waves.html"},"url":"http://localhost:4000/projects/2023/03/20/marching-waves.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-20T15:29:27-07:00","datePublished":"2023-03-20T15:29:27-07:00","description":"My signature art style and how it’s made.","headline":"Marching Waves","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/2023/03/20/marching-waves.html"},"url":"http://localhost:4000/projects/2023/03/20/marching-waves.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alberto Mancia">
 <script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
+<!-- CSS for Tocbot -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+
+  <body>
 <header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -47,16 +52,21 @@
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
+  
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Marching Waves</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2023-03-20T15:29:27-07:00" itemprop="datePublished">Mar 20, 2023
       </time></p>
-  </header>
+    </header>
+    
+    <div class="content-wrapper">
+      <div class="post-content e-content" itemprop="articleBody">
+        <p>My signature art style and how it’s made.</p>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:</p>
+<h2 id="the-style">The Style</h2>
+
+<p>In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:</p>
 
 <p align="center">
   <img src="/assets/Marching%20Waves/portrait.png" width="full">
@@ -65,19 +75,27 @@
 
 <p>I still look back on these pieces all the time, but they were painful to make. Each took several hours to draw, hunched over a desk drawing one line at a time. Needless to say, I would not be making anything larger than a standard sheet of paper using this method.</p>
 
+<h2 id="abstraction">Abstraction</h2>
+
 <p>Later that year I started working with <a href="https://processing.org">Processing</a>. My work quickly focused on the art of image rendering, of filters and halftoning, ways of reconstructing an image from an assortment of shapes, patterns, and constraints.</p>
 
 <p>Of course, I immediately wanted to replicate my drawing style in Processing. If I did that, I could use a pen plotter to make pieces as big and intricate as I wanted without having to draw them by hand. I also immediately got the feeling that it was impossible.</p>
 
-<p>I started making attempts in late 2019, once I felt proficient enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function. Anyone fresh out of multivariable calc could look at these drawings and write something like this:</p>
+<p>I started making attempts in late 2019, once I felt proficient enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function.</p>
+
+<h2 id="the-math">The Math</h2>
+
+<p>Anyone fresh out of multivariable calc could look at these drawings and write something like this:</p>
 
 <p>$$ |\nabla u(x,y)| = f(x,y) $$</p>
 
-<p>If each drawing is a topographical map, (u(x,y)) defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:</p>
+<p>If each drawing is a topographical map, $u(x,y)$ defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:</p>
 
 <p>“The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point”</p>
 
 <p>Looking back at the drawings, this makes sense. The equation fits! The only problem was solving it, and I had no idea where to even begin.</p>
+
+<h2 id="the-algorithm">The Algorithm</h2>
 
 <p>I got unstuck six months later by pure chance: I finally found the name of the equation I was trying to solve. I’ll admit that given how long it took me to discover this name, and how crucial it was, it feels strange even now to just give it away. Anyway, it’s the <a href="https://en.wikipedia.org/wiki/Eikonal_equation">Eikonal Equation</a>.</p>
 
@@ -103,7 +121,11 @@
 
 <p>This algorithm is basically Dijkstra’s Algorithm, using the expression from before as its method of measuring path-distance. And once we’ve implemented it, we can solve the equation! After that we just have to render the drawing. I thought that would be the easy part. It was not.</p>
 
+<h2 id="the-tool">The Tool</h2>
+
 <p>I used <a href="https://en.wikipedia.org/wiki/Marching_squares">Marching Squares</a> to draw the contours of the solved equation, and a custom sorting algorithm to join all the tiny line segments into continous paths. This part alone took as long as getting the thing working in the first place. But once it was completed, all I had to do was send it to a pen plotter and sit back as it drew these as big and detailed as I wanted. Finally, I thought, now here’s the easy part. Dear reader, it was not.</p>
+
+<h2 id="manufacturing">Manufacturing</h2>
 
 <p align="center">
   <img src="/assets/Marching%20Waves/plotting.gif" width="full">
@@ -123,10 +145,11 @@
   <img src="/assets/Marching%20Waves/nipsey3.png" width="full">
 </p>
 
-  </div>
+      </div>
+      <div id="sticky-toc"></div>
+    </div>
 <a class="u-url" href="/projects/2023/03/20/marching-waves.html" hidden></a>
-
-</article>
+  </article>
 
 <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
 
@@ -139,7 +162,7 @@
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+  <script src="/assets/js/tocbot.js"></script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
@@ -168,7 +191,9 @@
   </div>
 
 </footer>
-</body>
+<!-- JavaScript for Tocbot -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js"></script>
+  </body>
 
 </html><html>
 <script type="text/x-mathjax-config">
@@ -178,6 +203,22 @@
       processEscapes: true
     }
   });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#sticky-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: 'main',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For more options, visit the official documentation.
+      orderedList: false,
+    });
+  });
+</script>
 </html>

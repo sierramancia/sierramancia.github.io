@@ -25,7 +25,12 @@
 <link rel="stylesheet" href="/assets/main.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alberto Mancia">
 </head>
-<body>
+<!-- CSS for Tocbot -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+
+  <body>
 <header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -46,16 +51,17 @@
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
+  
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Resume</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2023-03-20T15:29:27-07:00" itemprop="datePublished">Mar 20, 2023
       </time></p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <h2 style="text-align: center;"> Alberto Mancia </h2>
+    </header>
+    
+    <div class="content-wrapper">
+      <div class="post-content e-content" itemprop="articleBody">
+        <h2 style="text-align: center;"> Alberto Mancia </h2>
 
 <table>
   <tbody>
@@ -164,10 +170,11 @@ installations</p>
   </li>
 </ul>
 
-  </div>
+      </div>
+      <div id="sticky-toc"></div>
+    </div>
 <a class="u-url" href="/jekyll/update/2023/03/20/resume.html" hidden></a>
-
-</article>
+  </article>
 
 <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
 
@@ -180,7 +187,7 @@ installations</p>
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+  <script src="/assets/js/tocbot.js"></script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
@@ -209,7 +216,9 @@ installations</p>
   </div>
 
 </footer>
-</body>
+<!-- JavaScript for Tocbot -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js"></script>
+  </body>
 
 </html><html>
 <script type="text/x-mathjax-config">
@@ -219,6 +228,22 @@ installations</p>
       processEscapes: true
     }
   });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#sticky-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: 'main',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For more options, visit the official documentation.
+      orderedList: false,
+    });
+  });
+</script>
 </html>

@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-21T16:05:35-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Hi! This is my personal website. Enjoy.</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/projects/2023/03/20/marching-waves.html" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/marching-waves</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/marching-waves.html"><![CDATA[<p>In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-25T17:20:54-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Hi! This is my personal website. Enjoy.</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/projects/2023/03/20/marching-waves.html" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/marching-waves</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/marching-waves.html"><![CDATA[<p>My signature art style and how it’s made.</p>
+
+<h2 id="the-style">The Style</h2>
+
+<p>In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:</p>
 
 <p align="center">
   <img src="/assets/Marching Waves/portrait.png" width="full" />
@@ -7,19 +11,27 @@
 
 <p>I still look back on these pieces all the time, but they were painful to make. Each took several hours to draw, hunched over a desk drawing one line at a time. Needless to say, I would not be making anything larger than a standard sheet of paper using this method.</p>
 
+<h2 id="abstraction">Abstraction</h2>
+
 <p>Later that year I started working with <a href="https://processing.org">Processing</a>. My work quickly focused on the art of image rendering, of filters and halftoning, ways of reconstructing an image from an assortment of shapes, patterns, and constraints.</p>
 
 <p>Of course, I immediately wanted to replicate my drawing style in Processing. If I did that, I could use a pen plotter to make pieces as big and intricate as I wanted without having to draw them by hand. I also immediately got the feeling that it was impossible.</p>
 
-<p>I started making attempts in late 2019, once I felt proficient enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function. Anyone fresh out of multivariable calc could look at these drawings and write something like this:</p>
+<p>I started making attempts in late 2019, once I felt proficient enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function.</p>
+
+<h2 id="the-math">The Math</h2>
+
+<p>Anyone fresh out of multivariable calc could look at these drawings and write something like this:</p>
 
 <p>$$ |\nabla u(x,y)| = f(x,y) $$</p>
 
-<p>If each drawing is a topographical map, (u(x,y)) defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:</p>
+<p>If each drawing is a topographical map, $u(x,y)$ defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:</p>
 
 <p>“The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point”</p>
 
 <p>Looking back at the drawings, this makes sense. The equation fits! The only problem was solving it, and I had no idea where to even begin.</p>
+
+<h2 id="the-algorithm">The Algorithm</h2>
 
 <p>I got unstuck six months later by pure chance: I finally found the name of the equation I was trying to solve. I’ll admit that given how long it took me to discover this name, and how crucial it was, it feels strange even now to just give it away. Anyway, it’s the <a href="https://en.wikipedia.org/wiki/Eikonal_equation">Eikonal Equation</a>.</p>
 
@@ -45,7 +57,11 @@
 
 <p>This algorithm is basically Dijkstra’s Algorithm, using the expression from before as its method of measuring path-distance. And once we’ve implemented it, we can solve the equation! After that we just have to render the drawing. I thought that would be the easy part. It was not.</p>
 
+<h2 id="the-tool">The Tool</h2>
+
 <p>I used <a href="https://en.wikipedia.org/wiki/Marching_squares">Marching Squares</a> to draw the contours of the solved equation, and a custom sorting algorithm to join all the tiny line segments into continous paths. This part alone took as long as getting the thing working in the first place. But once it was completed, all I had to do was send it to a pen plotter and sit back as it drew these as big and detailed as I wanted. Finally, I thought, now here’s the easy part. Dear reader, it was not.</p>
+
+<h2 id="manufacturing">Manufacturing</h2>
 
 <p align="center">
   <img src="/assets/Marching Waves/plotting.gif" width="full" />
@@ -63,7 +79,7 @@
   <img src="/assets/Marching Waves/nipsey1.png" width="full" />
   <img src="/assets/Marching Waves/nipsey2.png" width="full" />
   <img src="/assets/Marching Waves/nipsey3.png" width="full" />
-</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:]]></summary></entry><entry><title type="html">Resume</title><link href="http://localhost:4000/jekyll/update/2023/03/20/resume.html" rel="alternate" type="text/html" title="Resume" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/jekyll/update/2023/03/20/resume</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/03/20/resume.html"><![CDATA[<h2 style="text-align: center;"> Alberto Mancia </h2>
+</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[My signature art style and how it’s made.]]></summary></entry><entry><title type="html">Resume</title><link href="http://localhost:4000/jekyll/update/2023/03/20/resume.html" rel="alternate" type="text/html" title="Resume" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/jekyll/update/2023/03/20/resume</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/03/20/resume.html"><![CDATA[<h2 style="text-align: center;"> Alberto Mancia </h2>
 
 <table>
   <tbody>
@@ -169,4 +185,4 @@ installations</p>
   <li>
     <p>Public speaking (Captain of SMC Speech &amp; Debate Team 2018)</p>
   </li>
-</ul>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Alberto Mancia]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/projects/2023/03/20/light-mirror.html" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/light-mirror</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/light-mirror.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</ul>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Alberto Mancia]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/projects/2023/03/20/light-mirror.html" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/light-mirror</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/light-mirror.html"><![CDATA[<p>Back in 2019, I was in community college and just learning to code for the first time. When I started using Processing, I made a bunch of camera filters and exhibited one as an interactive piece at a small art show. We had one more show coming up that semester, and I became fixated on the idea of</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Back in 2019, I was in community college and just learning to code for the first time. When I started using Processing, I made a bunch of camera filters and exhibited one as an interactive piece at a small art show. We had one more show coming up that semester, and I became fixated on the idea of]]></summary></entry></feed>
