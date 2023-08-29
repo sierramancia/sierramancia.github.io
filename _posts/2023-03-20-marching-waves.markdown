@@ -73,6 +73,10 @@ Making the interface I use to try out ideas and export designs has been a contin
 
 
 
+https://github.com/albertomancia/albertomancia.github.io/assets/68625636/3fc0f2ff-b3e7-4976-95e2-1bb1f8f42649
+
+
+
 I used [Marching Squares](https://en.wikipedia.org/wiki/Marching_squares) to draw the contours of the solved equation, and a custom sorting algorithm to join all the tiny line segments into continous paths. This part alone took as long as getting the thing working in the first place. All of the work I've done past this point has been on the interface, which allows me to quickly try out ideas and 
 
 
