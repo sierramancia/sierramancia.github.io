@@ -16,15 +16,15 @@ In January of 2018, I started working on a new art style using cheap gel pens, p
   <img src="/assets/Marching Waves/ellie.png" width="full/2">
 </p>
 
-I still look back on these pieces all the time, but they were painful to make. Each took several hours to draw, hunched over a desk drawing one line at a time. Needless to say, I would not be making anything larger than a standard sheet of paper using this method.
+I still look back on these pieces for inspiration all the time, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. Needless to say, I would not be making anything larger than a standard sheet of paper using this method.
 
 ## Abstraction
 
-Later that year I started working with [Processing](https://processing.org). My work quickly focused on the art of image rendering, of filters and halftoning, ways of reconstructing an image from an assortment of shapes, patterns, and constraints.
+Later that year I started learning to code with [Processing](https://processing.org). My work quickly focused on the art of image rendering, of filters and halftoning, ways of reconstructing an image from a given set of shapes, patterns, and constraints.
 
-Of course, I immediately wanted to replicate my drawing style in Processing. If I did that, I could use a pen plotter to make pieces as big and intricate as I wanted without having to draw them by hand. I also immediately got the feeling that it was impossible.
+Soon after, I was already thinking about replicating my drawing style in Processing. If I could figure out how to do that, I could use a pen plotter to make pieces as big and intricate as I wanted without having to draw them by hand. The prospect was thrilling, but I also immediately got the feeling that it was impossible.
 
-I started making attempts in late 2019, once I felt proficient enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function.
+I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function.
 
 ## The Math
 
@@ -32,7 +32,7 @@ Anyone fresh out of multivariable calc could look at these drawings and write so
 
 $$ \|\nabla u(x,y)\| = f(x,y) $$
 
-If each drawing is a topographical map, $u(x,y)$ defines the terrain that's being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it's more shallow. Their density is what creates the halftone effect, so that density must be controlled by the brightness of the original image. We define the function $f(x,y)$ as that measured brightness (or darkness, technically), so in plain English our equation is:
+If each drawing is a topographical map, $u(x,y)$ defines the terrain that's being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it's more shallow. Their density is what creates the halftone effect, so that density must be controlled by the darkness of the original image. We define the function $f(x,y)$ as that measured darkness, so in plain English our equation is:
 
 "The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point"
 
@@ -40,33 +40,44 @@ Looking back at the drawings, this makes sense. The equation fits! The only prob
 
 ## The Algorithm
 
-I got unstuck six months later by pure chance: I finally found the name of the equation I was trying to solve. I'll admit that given how long it took me to discover this name, and how crucial it was, it feels strange even now to just give it away. Anyway, it's the [Eikonal Equation](https://en.wikipedia.org/wiki/Eikonal_equation).
+I got unstuck six months later by pure chance: I finally found the name of the equation I was trying to solve. I'll admit that given how long it took me to stumble upon this name, and how crucial it was, it feels strange to just give it away. Anyway, it's the [Eikonal Equation](https://en.wikipedia.org/wiki/Eikonal_equation).
 
-Of course, this was only the starting point. I was working quite at the edge of my capabilities at the time, as a mathematician and a programmer. Even writing out what I had to do, before any coding could begin, took the better part of a week. I'll try to summarize it in a paragraph, but don't get your hopes up.
+This was only the starting point, of course. I was working right at the edge of my abilities as a mathematician and a programmer. Even writing out what I had to do, before any coding could begin, took the better part of a week. I'll try to summarize it in a paragraph or two, but don't get your hopes up.
 
 Computers need to interpret smooth, continuous functions as measured points on a discrete grid (in this case, the pixel grid of the canvas).  Rather than taking derivatives as we would on paper, they just directly measure the slope near a given point (which is just as well, because the Eikonal Equation has no closed-form solution anyway). We can sample the image at every pixel $(x,y)$ to get our $f(x,y)$ at each grid point, and assuming we know the (lowest) values $U_X ,U_Y$ of $u$ at the neighboring points in each direction, our equation can be written as:
 
 $$ \sqrt{\left(U_{ij} - U_X\right)^2 + \left(U_{ij} - U_Y\right)^2} = f_{ij} $$
 
-Where $U_{ij}$  is the value of $u$ at pixel $(i,j)$. Now you can spend an afternoon solving this, or just trust me when I say that the solution is:
+Where $U_{ij}$  is the value of $u$ at pixel $(i,j)$. Feel free to grab a beer and spend an afternoon solving this, or just trust me when I say that the solution is:
 
 $$ U_{ij} = \frac{U_X + U_Y}{2} + \frac{1}{2}\sqrt{\left(U_X+U_Y\right)^2 - 2 \left(U_X^2 + U_Y^2 - f_{ij}^2 \right)} $$
 
-Great! We have the closest thing to a closed-form solution. Problem is, it relies on already knowing the value of u for at least one neighboring point. This makes sense in a way — another way to interpret the style is as waves rippling across the canvas from one point or direction. Changes in their shape early on will affect the shape they take later. Since one part of the domain can have such an effect on the other, it becomes more clear why there is no closed-form solution. There is no way to solve this equation everywhere all at once.
+Great! We have the closest thing to a closed-form solution. The problem is, it relies on already knowing the value of u for at least one neighboring point. This makes sense in a way — another way to interpret the style is as waves rippling across the canvas from one point or direction. Changes in their shape early on will affect the shape they take later. Since one part of the domain can have such an effect on the other, it becomes more clear why there is no closed-form solution. There is no way to solve this equation everywhere all at once.
 
 This is where James Sethian’s [Fast Marching Method](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) comes in. It's an algorithm that takes a set of points with known values, which I call the origin, and builds the solution out from them one point at a time. If you're familiar with Dijkstra's Algorithm, you'll be able to see the third interpretation of this equation's solution: the path-distance of each point from the origin, where $f$ is affecting the speed of travel. You can see it in this old map:
 
 <p align="center">
-  <img src="/assets/Marching Waves/map.png" width="full">
-
-  Here New York is the origin, and each line represents all the points with a given path-distance, accounting for terrain and modes of travel.
+  <figure>
+    <img src="/assets/Marching Waves/map.png" width="full">
+  </figure>
+  <figcaption>
+    Here New York is the origin, and each line represents all the points with a given path-distance, accounting for terrain and modes of travel.
+  </figcaption>
 </p>
 
 This algorithm is basically Dijkstra's Algorithm, using the expression from before as its method of measuring path-distance. And once we've implemented it, we can solve the equation! After that we just have to render the drawing. I thought that would be the easy part. It was not.
 
-## The Tool
+## The Interface
 
-I used [Marching Squares](https://en.wikipedia.org/wiki/Marching_squares) to draw the contours of the solved equation, and a custom sorting algorithm to join all the tiny line segments into continous paths. This part alone took as long as getting the thing working in the first place. But once it was completed, all I had to do was send it to a pen plotter and sit back as it drew these as big and detailed as I wanted. Finally, I thought, now here's the easy part. Dear reader, it was not.
+Making the interface I use to try out ideas and export designs has been a continous process. I add features whenever I need to do something I haven't done before, or when I'm not happy with the results. It's changed a lot over the past three years, but here's the current workflow:
+
+
+
+I used [Marching Squares](https://en.wikipedia.org/wiki/Marching_squares) to draw the contours of the solved equation, and a custom sorting algorithm to join all the tiny line segments into continous paths. This part alone took as long as getting the thing working in the first place. All of the work I've done past this point has been on the interface, which allows me to quickly try out ideas and 
+
+
+
+But once it was completed, all I had to do was send it to a pen plotter and sit back as it drew these as big and detailed as I wanted. Finally, I thought, now here's the easy part. Dear reader, it was not.
 
 ## Manufacturing
 

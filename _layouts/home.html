@@ -14,13 +14,16 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
+        <!-- {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} -->
+        <!-- <span class="post-meta">{{ post.date | date: date_format }}</span> -->
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <figure>
+            <img src="/assets/{{post.title}}/thumbnail.png">
+          </figure>
+          <center>
             {{ post.title | escape }}
-          </a>
-        </h3>
+          </center>
+        </a>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
