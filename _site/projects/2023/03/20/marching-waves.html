@@ -56,8 +56,8 @@
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Marching Waves</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-03-20T15:29:27-07:00" itemprop="datePublished">Mar 20, 2023
-      </time></p>
+      <!-- <time class="dt-published" datetime="2023-03-20T15:29:27-07:00" itemprop="datePublished">Mar 20, 2023
+      </time> --></p>
     </header>
     
     <div class="content-wrapper">
@@ -66,79 +66,119 @@
 
 <h2 id="the-style">The Style</h2>
 
-<p>In January of 2018, I started working on a new art style using cheap gel pens, printer paper, and a lightbox for tracing. I would print out images in black and white, tape another piece of paper on top, shine the light through from underneath, and get to tracing. I drew these:</p>
+<p>In January of 2018, I developed a new art style using gel pens, printer paper, and a lightbox for tracing. I printed out images in black and white, taped another piece of paper on top, shined a light through from underneath, and got to tracing. I made these:</p>
 
 <p align="center">
   <img src="/assets/Marching%20Waves/portrait.png" width="full">
   <img src="/assets/Marching%20Waves/ellie.png" width="full/2">
 </p>
 
-<p>I still look back on these pieces for inspiration all the time, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. Needless to say, I would not be making anything larger than a standard sheet of paper using this method.</p>
+<p>I still look to these pieces for inspiration all the time, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.</p>
 
-<h2 id="abstraction">Abstraction</h2>
+<h2 id="going-digital">Going Digital</h2>
 
-<p>Later that year I started learning to code with <a href="https://processing.org">Processing</a>. My work quickly focused on the art of image rendering, of filters and halftoning, ways of reconstructing an image from a given set of shapes, patterns, and constraints.</p>
+<p>Later that year I started learning to code with <a href="https://processing.org">Processing</a>, a programming language made by and for artists. My work quickly focused on the art of image rendering, of filters and halftoning patterns, ways of reconstructing an image from a given set of geometric and chromatic constraints.</p>
 
-<p>Soon after, I was already thinking about replicating my drawing style in Processing. If I could figure out how to do that, I could use a pen plotter to make pieces as big and intricate as I wanted without having to draw them by hand. The prospect was thrilling, but I also immediately got the feeling that it was impossible.</p>
+<p>It wasn’t long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it was impossible.</p>
 
-<p>I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I ignored what was obvious to myself and many other people I showed it to — this is a mathematical function.</p>
+<p>I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I’d been ignoring what was obvious to myself and many other people I had talked to — this style is a mathematical function.</p>
 
 <h2 id="the-math">The Math</h2>
 
-<p>Anyone fresh out of multivariable calc could look at these drawings and write something like this:</p>
+<p>Someone fresh out of multivariable calculus might look at these drawings and write something like this:</p>
 
 <p>$$ |\nabla u(x,y)| = f(x,y) $$</p>
 
-<p>If each drawing is a topographical map, $u(x,y)$ defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. Their density is what creates the halftone effect, so that density must be controlled by the darkness of the original image. We define the function $f(x,y)$ as that measured darkness, so in plain English our equation is:</p>
+<p>If each drawing is a topographical map, $u(x,y)$ defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. This density is what creates the halftone effect, so the steepness of $u$’s surface must be controlled by the darkness of the desired image. We define the function $f(x,y)$ as that measured darkness, so in plain English our equation is:</p>
 
 <p>“The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point”</p>
 
-<p>Looking back at the drawings, this makes sense. The equation fits! The only problem was solving it, and I had no idea where to even begin.</p>
+<p>If you look back at the drawings, this equation can clearly be seen as the rule I was unknowingly following. The problem was solving it, and I had no ideas on how to even begin.</p>
+
+<p>I got unstuck by pure chance in the Summer of 2020: I finally found the name of the equation I was trying to solve. I’ll admit that given how long it took me to stumble upon this name, and how crucial it was, it feels weird to just give it away. Anyway, it’s the <a href="https://en.wikipedia.org/wiki/Eikonal_equation">Eikonal Equation</a>.</p>
 
 <h2 id="the-algorithm">The Algorithm</h2>
 
-<p>I got unstuck six months later by pure chance: I finally found the name of the equation I was trying to solve. I’ll admit that given how long it took me to stumble upon this name, and how crucial it was, it feels strange to just give it away. Anyway, it’s the <a href="https://en.wikipedia.org/wiki/Eikonal_equation">Eikonal Equation</a>.</p>
-
-<p>This was only the starting point, of course. I was working right at the edge of my abilities as a mathematician and a programmer. Even writing out what I had to do, before any coding could begin, took the better part of a week. I’ll try to summarize it in a paragraph or two, but don’t get your hopes up.</p>
+<p>That Wikipedia article was the initial gateway to making my program, but there was a long road ahead — I was working right at the edge of my abilities as a mathematician and a programmer. Even writing out what the algorithm had to do, before any coding could begin, took the better part of a week. I’ll try to summarize it in a paragraph or two, but don’t get your hopes up.</p>
 
 <p>Computers need to interpret smooth, continuous functions as measured points on a discrete grid (in this case, the pixel grid of the canvas).  Rather than taking derivatives as we would on paper, they just directly measure the slope near a given point (which is just as well, because the Eikonal Equation has no closed-form solution anyway). We can sample the image at every pixel $(x,y)$ to get our $f(x,y)$ at each grid point, and assuming we know the (lowest) values $U_X ,U_Y$ of $u$ at the neighboring points in each direction, our equation can be written as:</p>
 
 <p>$$ \sqrt{\left(U_{ij} - U_X\right)^2 + \left(U_{ij} - U_Y\right)^2} = f_{ij} $$</p>
 
-<p>Where $U_{ij}$  is the value of $u$ at pixel $(i,j)$. Feel free to grab a beer and spend an afternoon solving this, or just trust me when I say that the solution is:</p>
+<p>Where $U_{ij}$  is the value of $u$ at pixel $(i,j)$. We measure slope by subtracting the values of neighboring points, and then take the Euclidean norm to get $|\nabla u(x,y)|$. Feel free to grab a beer and spend an afternoon solving this; otherwise you’ll just have to trust me when I say that the solution is:</p>
 
 <p>$$ U_{ij} = \frac{U_X + U_Y}{2} + \frac{1}{2}\sqrt{\left(U_X+U_Y\right)^2 - 2 \left(U_X^2 + U_Y^2 - f_{ij}^2 \right)} $$</p>
 
-<p>Great! We have the closest thing to a closed-form solution. The problem is, it relies on already knowing the value of u for at least one neighboring point. This makes sense in a way — another way to interpret the style is as waves rippling across the canvas from one point or direction. Changes in their shape early on will affect the shape they take later. Since one part of the domain can have such an effect on the other, it becomes more clear why there is no closed-form solution. There is no way to solve this equation everywhere all at once.</p>
+<p>Great! We have the closest thing to a closed-form solution. And it’s so pretty. Problem is, it relies on already knowing the value of $u$ for at least one neighboring point. This makes sense in a way — you can imagine the contour lines as waves rippling out across the canvas from one point or direction. Changes in their shape early on will affect the shape they take later. Since one part of the domain can have such an effect on the other, it becomes more clear why there is no closed-form solution. This long chain of cause-and effect is why there is no way to solve this equation everywhere all at once.</p>
 
 <p>This is where James Sethian’s <a href="https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html">Fast Marching Method</a> comes in. It’s an algorithm that takes a set of points with known values, which I call the origin, and builds the solution out from them one point at a time. If you’re familiar with Dijkstra’s Algorithm, you’ll be able to see the third interpretation of this equation’s solution: the path-distance of each point from the origin, where $f$ is affecting the speed of travel. You can see it in this old map:</p>
 
 <p align="center">
   <figure>
-    <img src="/assets/Marching%20Waves/map.png" width="full">
+    <img src="/assets/Marching%20Waves/map.png">
   </figure>
+  </p>
+<p></p>
   <figcaption>
     Here New York is the origin, and each line represents all the points with a given path-distance, accounting for terrain and modes of travel.
   </figcaption>
-</p>
+  <p></p>
 
-<p>This algorithm is basically Dijkstra’s Algorithm, using the expression from before as its method of measuring path-distance. And once we’ve implemented it, we can solve the equation! After that we just have to render the drawing. I thought that would be the easy part. It was not.</p>
+
+<p>Fast Marching is basically Dijkstra’s Algorithm, using the expression from before as its method of measuring path-distance. And once we’ve implemented it, we can solve the equation! This is the very heart of the program (I only operate on it when something has gone horribly wrong). To make it usable, we need an interface with which to make and export designs.</p>
 
 <h2 id="the-interface">The Interface</h2>
 
-<p>Making the interface I use to try out ideas and export designs has been a continous process. I add features whenever I need to do something I haven’t done before, or when I’m not happy with the results. It’s changed a lot over the past three years, but here’s the current workflow:</p>
+<p>Making the interface I use to try out ideas and export designs has been a continous process. I tinker with it and add features whenever I need it to do something new, or when I’m not happy with the results. It’s changed a lot over the years, but here’s what it currently looks like:</p>
 
-<p>I used <a href="https://en.wikipedia.org/wiki/Marching_squares">Marching Squares</a> to draw the contours of the solved equation, and a custom sorting algorithm to join all the tiny line segments into continous paths. This part alone took as long as getting the thing working in the first place. All of the work I’ve done past this point has been on the interface, which allows me to quickly try out ideas and</p>
+<div class="video-mask" style="aspect-ratio: 0.96">
+  <video src="/assets/Marching%20Waves/demo.mp4" autoplay="" loop=""></video>
+</div>
+<figcaption>
+  It took a lot of time to make the contour lines render in real-time as the solution expands. 
+</figcaption>
+<p></p>
 
-<p>But once it was completed, all I had to do was send it to a pen plotter and sit back as it drew these as big and detailed as I wanted. Finally, I thought, now here’s the easy part. Dear reader, it was not.</p>
+<p>Pre-processing happens in Photoshop. The background is masked out in blue, which tells the program what regions to ignore. The subject is in grayscale, and red gives the origin set — the pixels with a known solution (zero) from which the solution for the rest of the domain can be grown. The red can be drawn in the program to try out ideas quickly, or added during pre-processing for more precision.</p>
+
+<p>Once the solution is complete, the contour lines can be exported as a vector file, ready for any cutting or drawing machine. I used <a href="https://en.wikipedia.org/wiki/Marching_squares">Marching Squares</a> to draw the contours, and a custom sorting algorithm to join all the tiny line segments into continous paths.</p>
+
+<p>That part alone took as long as getting the thing working in the first place. But once it was completed, all I had to do was send finished designs to a pen plotter and watch it draw designs as big and detailed as I wanted. Finally, I thought, now comes the easy part.</p>
 
 <h2 id="manufacturing">Manufacturing</h2>
+
+<p>Everything described thus far took about 5% as long as it took to actually develop the manufacturing process.</p>
 
 <p align="center">
   <img src="/assets/Marching%20Waves/plotting.gif" width="full">
 </p>
 
-<p>Everything described thus far took about 5% as long as it took to actually develop the manufacturing process. Many, many late nights were spent hunched over this machine, trying all kinds of different pens and papers, chasing a million dead ends, until I finally got the technique down. I use a Roland GR-420 vinyl cutter as my plotter; its motion is incredibly precise and repeatable, with no drifting or misalignment even on large, intricate drawings. Here are a few I’ve made on this machine:</p>
+<p>Once I had the program working, I tried and failed to get good results from my cheap desktop plotter. With no other resources at my disposal, I gave up on this project for the time being. When UCLA resumed in-person classes a year later, I started my favorite job again: working at the residential makerspace. Somewhere in the middle of Fall quarter, I realized that our huge vinyl cutter was the perfect machine to make the art pieces I had been dreaming of. And so, from October 2021 to May 2022, I spent every weekend and most weekdays hunched over our Roland GR-420 vinyl cutter.</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/Marching%20Waves/cutter.png">
+    <!-- <img src="/assets/Marching Waves/cutter.png" style="max-width: 90%; padding-left: 5%"> -->
+  </figure>
+  </p>
+<p></p>
+  <figcaption>
+    Here you can see one of the first problems I ran into: the middle roller was smearing ink up and down the piece. I spent several weeks trying to mitigate this problem physically before finding out you can just turn off the roller in settings.
+  </figcaption>
+  <p></p>
+
+
+<p>Normally this machine takes rolls of vinyl up to 42 inches wide and cuts them with a drag knife. Replace vinyl with paper and knife with pen, and you have a giant plotter. It was not only much larger, but much more precise than the one I had at home. On more detailed pieces, a line being off by even a tenth of a millimeter can cause visible banding. This machine would draw all across the paper for hours, laying down literal miles of lines, and never drift by even that much. For its intended purpose it had no reason to be capable of doing this, but it was.</p>
+
+<p>When I started working with the Roland, I would’ve been appalled at the idea of writing this article — I had long been afraid of other people stealing my source code and replicating my pieces. Seven months of work later, I was no longer worried. The additional knowledge required to get the results I want on paper exists nowhere but in my head, and I acquired it by going far past the point where any sane person would’ve given up.</p>
+
+<p>With no existing reference available, I had to push through bewildering, very specific problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing… the list goes on. As long as I keep my mouth shut, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.</p>
+
+<p>The technique has progressed only in small ways since then. In March 2023 I discovered a fundamental math error while writing the first draft of this article. I did some heart surgery on the program and saw a significant difference in the resulting patterns. I’m not sure if I like it more. We’ll have to see.</p>
+
+<h2 id="gallery">Gallery</h2>
+
+<p>Here are some of the pieces I made in 2021 and 2022:</p>
 
 <p align="center">
   <img src="/assets/Marching%20Waves/shades1.png" width="full">

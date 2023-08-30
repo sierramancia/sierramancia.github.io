@@ -47,29 +47,39 @@ main {
  * Images
  */
 img {
-  max-width: 100%;
   vertical-align: middle;
-  margin: 5px;
+  // max-width: 94%;
+  // padding-left: 3%;
+  // padding-right: 3%;
 }
 
 /**
- * Figures
- */
+* Figures
+*/
+figure {
+  max-width: 100%;
+  // padding-left: 3%;
+  // padding-right: 3%;
+  // padding-bottom: 1%;
+  margin-bottom: 0px;
+}
+
 figure > img {
+  max-width: 100%;
   display: block;
-  margin: 0px;
+  padding: 0px;
 }
 
 figcaption {
+  max-width: 80%;
   padding-left: 10%;
-  padding-right: 10%;
   font-size: 14px;
   text-align: center;
 }
 
 /**
- * Lists
- */
+* Lists
+*/
 ul, ol {
   margin-left: 30px;
 }
@@ -208,14 +218,20 @@ pre > code {
   /* white-space: nowrap; */
 }
 
+@keyframes shiftright {
+  from {padding-left: 0px;}
+  to {padding-left: 5px}
+}
+
 body .toc-list-item {
+  color: #ccc;
   font-size: 24px;
   font-weight: 700;
-  color: #ccc;
 }
 
 body .toc-link.is-active-link {
   color: #5c6c96;
+  animation: shiftright 0.3s both;
 }
 
 /* body .toc-link {
@@ -459,9 +475,9 @@ table td {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap: 1rem;
 }
+
 .post-list > li > a > center {
   padding: 0px;
-  // border: 1px solid #E2E2E2;
   // // margin-bottom: 30px;
   // border-radius: .5rem;
 }
@@ -476,12 +492,18 @@ table td {
   position: relative;
 }
 
+.post-list > li > a > figure > img{
+  margin: 0px;
+  padding: 0px;
+}
+
 .post-meta {
   font-size: 14px;
   color: #828282;
 }
 
 .post-link {
+  // border: 1px solid #E2E2E2;
   color: #333;
   display: block;
   font-size: 24px;
@@ -509,6 +531,36 @@ table td {
 .post-content {
   margin-bottom: 30px;
 }
+
+.post-content img {
+  max-width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.post-content .video-mask {
+  max-width: 80%;
+  // aspect-ratio: 1.005;
+  margin-left: 10%;
+  // vertical-align: middle;
+  // padding-left: 10%;
+  // padding-right: 10%;
+  // padding-bottom: 20px;
+  // border: 1px solid #000;
+  border-radius: 2%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.post-content .video-mask video{
+  max-width: 100%;
+  // vertical-align: middle;
+  // padding-left: 10%;
+  // padding-right: 10%;
+  // padding-bottom: 20px;
+  // border-radius: 1%;
+  // overflow: hidden;
+}
+
 .post-content h2 {
   font-size: 32px;
 }
