@@ -3,6 +3,7 @@ layout: post
 title:  "Marching Waves"
 date:   2023-03-20 15:29:27 -0700
 categories: projects
+permalink: /marching-waves/
 ---
 
 My signature art style and how it's made.
@@ -16,13 +17,13 @@ In January of 2018, I developed a new art style using gel pens, printer paper, a
   <img src="/assets/Marching Waves/ellie.png" width="full/2">
 </p>
 
-I still look to these pieces for inspiration all the time, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.
+I still look to these pieces all the time for inspiration, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.
 
 ## Going Digital
 
 Later that year I started learning to code with [Processing](https://processing.org), a programming language made by and for artists. My work quickly focused on the art of image rendering, of filters and halftoning patterns, ways of reconstructing an image from a given set of geometric and chromatic constraints.
 
-It wasn't long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it was impossible.
+It wasn't long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it would be impossible.
 
 I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I'd been ignoring what was obvious to myself and many other people I had talked to — this style is a mathematical function.
 

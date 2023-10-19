@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-29T16:42:28-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Hi! This is my personal website. Enjoy.</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/projects/2023/03/20/marching-waves.html" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/marching-waves</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/marching-waves.html"><![CDATA[<p>My signature art style and how it’s made.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-10T17:29:51-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Hi! This is my personal website. Enjoy.</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
 
 <h2 id="the-style">The Style</h2>
 
@@ -9,13 +9,13 @@
   <img src="/assets/Marching Waves/ellie.png" width="full/2" />
 </p>
 
-<p>I still look to these pieces for inspiration all the time, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.</p>
+<p>I still look to these pieces all the time for inspiration, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.</p>
 
 <h2 id="going-digital">Going Digital</h2>
 
 <p>Later that year I started learning to code with <a href="https://processing.org">Processing</a>, a programming language made by and for artists. My work quickly focused on the art of image rendering, of filters and halftoning patterns, ways of reconstructing an image from a given set of geometric and chromatic constraints.</p>
 
-<p>It wasn’t long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it was impossible.</p>
+<p>It wasn’t long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it would be impossible.</p>
 
 <p>I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I’d been ignoring what was obvious to myself and many other people I had talked to — this style is a mathematical function.</p>
 
@@ -124,110 +124,311 @@
   <img src="/assets/Marching Waves/nipsey1.png" width="full" />
   <img src="/assets/Marching Waves/nipsey2.png" width="full" />
   <img src="/assets/Marching Waves/nipsey3.png" width="full" />
-</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[My signature art style and how it’s made.]]></summary></entry><entry><title type="html">Resume</title><link href="http://localhost:4000/jekyll/update/2023/03/20/resume.html" rel="alternate" type="text/html" title="Resume" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/jekyll/update/2023/03/20/resume</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/03/20/resume.html"><![CDATA[<h2 style="text-align: center;"> Alberto Mancia </h2>
-
-<table>
-  <tbody>
-    <tr>
-      <td>&lt;p style="text-align: center;"&gt; Los Angeles, CA</td>
-      <td>(310) 709-0518</td>
-      <td>albertomancia@g.ucla.edu &lt;/p&gt;</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="education">Education</h1>
-
-<hr />
-
-<p><strong>University of California, Los Angeles</strong></p>
-
-<p><em>Mathematics B.S. | Sep 2022 | Major GPA: 3.5</em></p>
-
-<p>Electives: Machine Learning, Algorithms, Optimization, Applied Numerical Methods, Mathematical Imaging, Differential Equations</p>
-
-<h1 id="work-experience">Work Experience</h1>
-
-<hr />
-
-<p><strong>UCLA Makerspace</strong></p>
-
-<p><em>Lead Technician | Feb 2020 - Sep 2022 | Los Angeles, CA</em></p>
-
+</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[My signature art style and how it’s made.]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Reflection</title><link href="http://localhost:4000/reflection/" rel="alternate" type="text/html" title="Reflection" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/reflection/"><![CDATA[<p>Outline:</p>
 <ul>
-  <li>
-    <p>Maintained full operation of the Makerspace by troubleshooting and
-repairing equipment</p>
+  <li>Inspiration</li>
+  <li>First installation w/ projector
+    <ul>
+      <li>Sensors</li>
+      <li>Math</li>
+      <li>Installation</li>
+    </ul>
   </li>
-  <li>
-    <p>Assisted students with personal projects and trained students on
-equipment</p>
+  <li>Building a display
+    <ul>
+      <li>Idea</li>
+      <li>Makerspace collab</li>
+      <li>Wiring + assembly</li>
+    </ul>
   </li>
-  <li>
-    <p>Trained new staff, helped to develop policies and guidelines, helped
-to lead weekly staff meetings</p>
-  </li>
-  <li>
-    <p>Created and executed long-term development goals for the Makerspace,
-such as bringing new equipment and work areas online</p>
-  </li>
-  <li>
-    <p>Ensured that all supplies remained in stock, created purchase orders
-for consumables and equipment</p>
-  </li>
-  <li>
-    <p>Created, installed, and maintained showcase projects to promote the
-Makerspace around campus</p>
-  </li>
+  <li>Software</li>
 </ul>
 
-<p><strong>Freelance Art</strong></p>
+<p>My first software projects were webcam filters — interactive sketches that invite the viewer to participate. It was already a well-traveled path, with artists like Danny Rozin and Breakfast Studio using depth-sensing cameras to extract a simple silhouette of the user.</p>
 
-<p><em>Programmer, designer, manufacturer, consultant | Jan 2018 - Present</em></p>
+<p>These kinds of pieces are quite a crowd favorite, but I saw the potential for a piece that brings the audience even closer by creating a <em>perfect</em> mirror silhouette — as in, you can hold your hand right up to the piece and see its silhouette right on the other side of the imaginary glass as if it were a shadow cast by the setting sun.</p>
+
+<p>I achieved this by orthographically projecting a point cloud onto the display, so that each point in 3D space was rendered right at its closest position on the display.</p>
+
+<p>I wanted to make a real display, of course. The projector was a poor substitute, but building a display large enough to stand in front of was out of my budget. The project was shelved, as projects often are, until I transfered to UCLA and started hanging out at the Makerspace. I noticed that they had a lot of NeoPixel strips — about 100 meters, worth a few thousand dollars. I asked some version of “can I use basically all of these to make this project?”, and was asked some version of “what else do you need?”.</p>
+
+<p>The ideal version of this piece would be a display where each pixel has a depth sensor looking straight out, so that each pixel can see and respond to objects within its “column”. Of course, a suitable time-of-flight sensor on each</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Outline: Inspiration First installation w/ projector Sensors Math Installation Building a display Idea Makerspace collab Wiring + assembly Software]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<h2 id="abelian-group-classifier">Abelian Group Classifier</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Group_(mathematics)">Groups</a> are a fascinating branch of mathematics. Put simply, they consist of a set $G$ paired with some operator $*$, such that the set is closed under that operation. In other words,</p>
+
+<div>
+\begin{array}{c}\\ 
+\text{If $a,b$ are in $G$, then $a*b$ is in $G$ as well.}
+\\ \\\end{array}
+</div>
+
+<p>There are other requirements as well but this one, called <em>closure</em>, is perhaps the most defining. It gives groups their intricate internal structure — the unique way in which the elements relate to each other through $*$.</p>
+
+<p>Let’s cover a little more notation and terminology, and then we can talk about what this classifier does.</p>
+<h1 id="some-definitions">Some definitions</h1>
 
 <ul>
-  <li>
-    <p>Generative line art coded in Java using a PDE solving algorithm,
-manufactured via CNC plotter</p>
-  </li>
-  <li>
-    <p>Interactive LED wall using depth cameras &amp; computational linear
-algebra, creating a live mirror effect</p>
-  </li>
-  <li>
-    <p>Image processing algorithms designed to render images into patterns
-for machine embroidery</p>
-  </li>
-  <li>
-    <p>Consulting, invoicing, shipping to clients across the U.S.</p>
-  </li>
-  <li>
-    <p>Transporting, installing, and live-calibrating interactive
-installations</p>
-  </li>
+  <li>The cyclic group $\mathbb{Z}_n$ or integers modulo $n$ is simply the set of numbers $\{0,1,2,\dots,n-1\}$ with the operation of addition. When two numbers add to a number larger than $n-1$, we simply “roll over” and start counting from 0. For example, in the group $\mathbb{Z}_5=\{0,1,2,3,4\}$ we have that $3+4=2$.</li>
+  <li>The <strong>direct product</strong> of two groups $G,H$ is written $G\times H$ and is the group of ordered pairs $(g,h)$ where $g$ is in $G$ and $h$ is in $H$. For example,</li>
 </ul>
 
-<h1 id="skills--knowledge">Skills &amp; Knowledge</h1>
-
-<hr />
+<div>
+\begin{array}{c}\\ \mathbb{Z}_2\times\mathbb{Z}_3 = \{(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)\}\\ \\\end{array} 
+</div>
 
 <ul>
-  <li>
-    <p>Programming languages: C++, Java, MATLAB, Python (NumPy, TensorFlow, SciKit-Learn)</p>
-  </li>
-  <li>
-    <p>CAD/3D Modeling: Blender, Autodesk Fusion 360, OpenSCAD</p>
-  </li>
-  <li>
-    <p>CAM: Tormach PathPilot, ShopBot VCarve</p>
-  </li>
-  <li>
-    <p>Operating, troubleshooting and repairing: industrial CNC routers and mills, laser cutters, industrial and consumer 3D printers, table saws, band saws, drill presses, sanders, planers, routers, etc.</p>
-  </li>
-  <li>
-    <p>Teaching (3 years experience tutoring philosophy and math, trained hundreds of users at the UCLA Makerspace)</p>
-  </li>
-  <li>
-    <p>Public speaking (Captain of SMC Speech &amp; Debate Team 2018)</p>
-  </li>
-</ul>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Alberto Mancia]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/projects/2023/03/20/light-mirror.html" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/light-mirror</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/light-mirror.html"><![CDATA[<p>Back in 2019, I was in community college and just learning to code for the first time. When I started using Processing, I made a bunch of camera filters and exhibited one as an interactive piece at a small art show. We had one more show coming up that semester, and I became fixated on the idea of</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Back in 2019, I was in community college and just learning to code for the first time. When I started using Processing, I made a bunch of camera filters and exhibited one as an interactive piece at a small art show. We had one more show coming up that semester, and I became fixated on the idea of]]></summary></entry></feed>
+  <li>Note that we can have a direct product of more than two groups, e.g. $\mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_5\times\mathbb{Z}_5\times\mathbb{Z}_7$. Also note that the <em>order</em> or size of a direct product is simply the product of the orders of its constituent groups, so $\mathbb{Z}_2\times\mathbb{Z}_3$ would have order 6.</li>
+  <li>An <strong>abelian</strong> group is one in which the operation is commutative, i.e. $a \ast b = b \ast a$.</li>
+  <li>An <strong>isomorphism</strong> is a one-to-one function $f:G\to H$ between two groups that preserves the group structure, which is to say that $f(a \ast b)=f(a) \ast f(b)$ in $H$ for $a,b$ in $G$. Two groups that can be linked by an isomorphism are <strong>isomorphic</strong> to each other, which is to say that they share the same internal structure.</li>
+</ul>
+
+<h1 id="not-all-groups-are-unlike">Not all groups are unlike</h1>
+
+<p>This last concept is especially important because groups can contain many different types of elements. The elements can be numbers, functions, movements, or <a href="https://en.wikipedia.org/wiki/Rubik%27s_Cube_group">positions of a Rubik’s Cube</a>. But many of them will be isomorphic to each other, and thus share the same structure even if their elements look different from each other.</p>
+
+<p>For example, if we define the function $f:\mathbb{Z}_2\times\mathbb{Z}_3\to\mathbb{Z}_6$ as</p>
+
+<div>
+\begin{align}
+    (0&amp;,0) &amp; (0&amp;,1) &amp; (0&amp;,2) &amp; (1&amp;,0) &amp; (1&amp;,1) &amp; (1&amp;,2)\\
+    &amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow\\
+    &amp;\ 0 &amp;&amp;\ 4 &amp;&amp;\ 2 &amp;&amp;\ 3 &amp;&amp;\ 1 &amp;&amp;\ 5
+\end{align}
+</div>
+
+<p>we see that this forms an isomorphism — for example, $f((1,0)+(1,2))=f((0,2))=2=3+5=f((1,0))+f((1,2))$.</p>
+
+<p>This gives us a sense in which $\mathbb{Z}_2\times\mathbb{Z}_3$ and $\mathbb{Z}_6$ <em>are the same group</em>, because despite looking different, they share the same underlying structure. This structure can be considered the “fingerprint” of that group, and we consider groups to be meaningfully different only if they have different “fingerprints”, i.e. they cannot be linked by an isomorphism.</p>
+
+<h1 id="the-fundamental-theorem-of-finite-abelian-groups">The Fundamental Theorem of Finite Abelian Groups</h1>
+<p>Given the premise that some groups can be represented as other groups through isomorphism, we can explore a theorem worthy of its title:</p>
+
+<p><strong><em>Every</em></strong> <strong>finite abelian group can be uniquely represented as the direct product of cyclic groups $\mathbb{Z}_{p^i}$ , where each $p^i$ is a power of some prime number $p$.</strong></p>
+
+<p>With this result, we’ve been handed the power to know <em>every</em> abelian group of a given order (size), using the prime factorization of that order. For example, we can factorize 36 as $2^2\cdot 3^2$, giving us four unique ways to write 36:</p>
+<center>$36 = 2\cdot 2\cdot 3\cdot 3 = 2\cdot 2\cdot 3^2 = 2^2\cdot 3\cdot 3 = 2^2\cdot 3^2$ </center>
+<p>These correspond to the four unique abelian groups of order 36:</p>
+<center>$\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_9
+\qquad \mathbb{Z}_4\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_4\times\mathbb{Z}_9$</center>
+
+<p>And that’s it! That’s all of them. Any abelian group of order 36, whether it be made of numbers, functions, configurations of a puzzle, or colors, will be isomorphic to one of these four. We’ve successfully classified every abelian group of this order. This is precisely what this project sets out to do: list all abelian groups of a given order.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="mi">4860</span>
+</code></pre></div></div>
+
+<p>So let’s go ahead and pick an order! I’ve set it to one that gives a nice result, but you can set $n$ to be any whole number between 1 and infinity. You’d be surprised by how many orders only have one unique abelian group associated with them.</p>
+
+<p>Finding the prime factors of $n$ is easy enough to do with a simple iterative algorithm:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># Just in case you cheated
+</span>
+<span class="k">def</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">divisor</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">divisor</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">factors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span>
+            <span class="n">number</span> <span class="o">//=</span> <span class="n">divisor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">divisor</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">factors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">factors</span>
+
+<span class="n">factorization</span> <span class="o">=</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">factorization</span><span class="p">)</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">[2, 2, 3, 3, 3, 3, 3, 5]</code></p>
+
+<p>For $n=36$ this would return the list <code class="language-plaintext highlighter-rouge">[2, 2, 3, 3]</code>. But we want to know the powers of each unique factor, both to reflect the compact notation $2^2\cdot 3^2$ and to help us find all four ways of writing 36.</p>
+
+<p>We can do this using <code class="language-plaintext highlighter-rouge">numpy.unique</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">primes</span><span class="p">,</span> <span class="n">powers</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">unique</span><span class="p">(</span><span class="n">factorization</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">powers</span><span class="p">.</span><span class="nf">max</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">primes</span><span class="p">,</span> <span class="n">powers</span><span class="p">)</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">[2 3 5] [2 5 1]</code></p>
+
+<p>For $n=36$ this would return the array of unique primes <code class="language-plaintext highlighter-rouge">[2 3]</code> with their associated powers <code class="language-plaintext highlighter-rouge">[2 2]</code></p>
+
+<p>Now we need the partitions of each power: the unique ways of writing it as a sum of other numbers. For example, the five unique partitions of 4 are</p>
+<center>$1+1+1+1 = 1+1+2 = 2+2 = 1+3 = 4$</center>
+<p>These correspond to the five unique ways of writing 81, or $3^4$:</p>
+<center>$3\cdot 3\cdot 3\cdot 3 = 3\cdot 3\cdot 3^2 = 3^2\cdot 3^2 = 3\cdot 3^3 = 3^4$</center>
+<p>After taking a number’s prime factorization, the unique ways of writing it are given by combinations of the partitions of the primes’ powers.</p>
+
+<p>We find these partitions using a recursive algorithm which picks the rightmost number, subtracts it from the total, then uses itself to partition the remaining difference. It also helpfully formats the partition as a sorted array of desired length:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">partitions_oflength</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)]</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Create the trivial partition (all ones)
+</span>    <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">ones</span><span class="p">[:</span><span class="o">-</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Create the partitions that end with j by
+</span>        <span class="c1"># appending to the partitions of n - j
+</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nf">partitions_oflength</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">:</span>    <span class="c1"># Keep it sorted to avoid duplicates
+</span>                <span class="n">entry</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+                <span class="n">entry</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>        <span class="c1"># j at the end
+</span>                <span class="n">entry</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>   <span class="c1"># p before it
+</span>                <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="o">*</span><span class="nf">partitions_oflength</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>  <span class="c1"># Example
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0 0 0 1 1 1 1]
+[0 0 0 0 1 1 2]
+[0 0 0 0 0 2 2]
+[0 0 0 0 0 1 3]
+[0 0 0 0 0 0 4]
+</code></pre></div></div>
+
+<p>Now we just have to make those combinations. We use another recursive algorithm to do this, that makes its way through the list of powers and returns all possible combinations of their respective partitions:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">combos_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="nf">partitions_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">length</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">P</span><span class="p">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">header</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+        <span class="c1"># For each partition of the first
+</span>        <span class="c1"># given power, add it to the combinations
+</span>        <span class="c1"># of all the following powers
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nf">combos_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">length</span><span class="p">):</span>
+            <span class="n">new_combo</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">vstack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+            <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">new_combo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">combos</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+    <span class="c1"># Pass the largest power to set
+</span>    <span class="c1"># the width of each row
+</span>    <span class="n">length</span> <span class="o">=</span> <span class="n">P</span><span class="p">.</span><span class="nf">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nf">combos_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+    
+<span class="n">partition_combos</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="nf">combos</span><span class="p">(</span><span class="n">powers</span><span class="p">))</span>
+
+<span class="c1"># Display some of the combinations
+</span><span class="n">n_displayed</span> <span class="o">=</span> <span class="mi">28</span><span class="o">//</span><span class="n">partition_combos</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'Some of the power combinations:</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rows</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">rollaxis</span><span class="p">(</span><span class="n">partition_combos</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="o">*</span><span class="n">rows</span><span class="p">[:</span><span class="n">n_displayed</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s">'   '</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Some of the power combinations:
+
+[0 0 0 1 1]   [0 0 0 1 1]   [0 0 0 1 1]   [0 0 0 1 1]   [0 0 0 1 1]
+[1 1 1 1 1]   [0 1 1 1 2]   [0 0 1 2 2]   [0 0 1 1 3]   [0 0 0 2 3]
+[0 0 0 0 1]   [0 0 0 0 1]   [0 0 0 0 1]   [0 0 0 0 1]   [0 0 0 0 1]
+</code></pre></div></div>
+<p>For $n=36$ this would return the four possible combinations of the partitions of 2 and 2:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1 1]    [1 1]    [0 2]    [0 2]
+[1 1]    [0 2]    [1 1]    [0 2]
+</code></pre></div></div>
+<p>As a reminder, these correspond to the four representations</p>
+
+<p>\begin{array}{cccc}
+    2\cdot 2\cdot 3\cdot 3\qquad &amp; 2\cdot 2\cdot 3^2\qquad &amp; 2^2\cdot 3\cdot 3\qquad &amp; 2^2\cdot 3^2
+\end{array}</p>
+
+<p>This should be all we need to classify our groups. However, there’s one more thing we need to consider.</p>
+
+<h1 id="surprise-another-theorem">Surprise! Another theorem</h1>
+<p>More of a lemma, really. This one’s pretty simple:</p>
+
+<p><strong>If two numbers $m,k$ are coprime, meaning that no number greater than 1 divides them both, then $\mathbb{Z}_m\times\mathbb{Z}_k$ is isomorphic to (meaning, functionally the same group as) $\mathbb{Z}_{mk}$.</strong></p>
+
+<p>This really complicates our task. It means that the groups <center>$\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_9
+\qquad \mathbb{Z}_4\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_4\times\mathbb{Z}_9$</center>
+which are quite easy to come up with, are actually</p>
+<center>$\mathbb{Z}_6\times\mathbb{Z}_6
+\qquad \mathbb{Z}_2\times\mathbb{Z}_{18}
+\qquad \mathbb{Z}_3\times\mathbb{Z}_{12}
+\qquad \mathbb{Z}_{36}$</center>
+
+<p>It means that after we’ve found our groups, we have to <em>condense</em> them until their constituents all share a common divisor. We do this by turning their <em>elementary divisors</em>, e.g. $2^2,3,3$ into <em>invariant factors</em> e.g. $3,12$.</p>
+
+<p>The invariant factors have the property that when sorted from least to greatest, each number divides the number after it. They also provide a unique representation of the group: each set of elementary divisors is associated with one and only one set of invariant factors.</p>
+
+<h1 id="one-more-algorithm">One more algorithm</h1>
+
+<p>To find the invariant factors, we have an interesting algorithm which exploits the fact that for <em>distinct</em> primes $p_1,p_2,…,p_i$ which make the product $n=p_1^{n_1}p_2^{n_2}\cdots p_i^{n_i}$, the group $\mathbb{Z}_{p_1^{n_1}}\times\cdots\times\mathbb{Z}_{p_i^{n_i}}$ is isomorphic to $\mathbb{Z}_n$ (this result follows from the theorem we just introduced).</p>
+
+<p>Consider the group</p>
+<center>$\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_4\times\mathbb{Z}_8\times\mathbb{Z}_3\times\mathbb{Z}_3\times\mathbb{Z}_3\times\mathbb{Z}_5\times\mathbb{Z}_{25}$</center>
+
+<p>we can condense this group by making a table with a row for each prime, thus separating any duplicates:</p>
+
+<div>
+\begin{array}{llll}
+   2\ \ &amp; 2\ \ &amp; 2^2 &amp; 2^3\\
+     &amp; 3 &amp; 3 &amp; 3\\
+     &amp;   &amp; 5 &amp; 5^2
+\end{array}
+</div>
+
+<p>Then we can take the product of each column, which will have the combination of distinct prime powers we’re looking for. By arranging them left-to-right by size, we also guarantee that each product will divide the next. In this example, we get the invariant factors 2, 6, 60, and 600, so our group is</p>
+
+<center>$\mathbb{Z}_2\times\mathbb{Z}_6\times\mathbb{Z}_{60}\times\mathbb{Z}_{600}$</center>
+<p>Once we have a combination of powers we’d like to condense, we can create the table and multiply the columns in just two lines using NumPy. Or more accurately, we can do this for every combination at once:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="n">primes</span><span class="p">[:,</span><span class="n">np</span><span class="p">.</span><span class="n">newaxis</span><span class="p">],</span><span class="n">size</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">divisor_tables</span> <span class="o">=</span> <span class="n">X</span><span class="o">**</span><span class="n">partition_combos</span>  <span class="c1"># Broadcasting!
+</span>
+<span class="c1"># Flatten all the tables at once by picking the right axis
+</span><span class="n">factor_lists</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">divisor_tables</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now we just need to display all our hard work. We could do this by creating a DataFrame in Pandas, but LaTeX always looks best:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span>
+
+<span class="c1"># Set up the table in LaTeX
+</span><span class="n">output</span> <span class="o">=</span> <span class="sa">r</span><span class="s">'$\text{'</span> <span class="o">+</span> <span class="sa">f</span><span class="s">'Groups of order '</span> <span class="o">+</span> <span class="sa">r</span><span class="s">'}'</span> <span class="o">+</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s">$:</span><span class="se">\n</span><span class="s">'</span>
+<span class="n">output</span> <span class="o">+=</span> <span class="sa">r</span><span class="s">'''
+\begin{array}{l|l|l}
+    \text{Elementary Divisors} &amp; \text{Invariant Factors} &amp; \text{Isomorphic Group}\\
+    \hline'''</span>
+
+<span class="c1"># Create the entries by piecing together some strings
+</span><span class="k">for</span> <span class="n">combo</span><span class="p">,</span> <span class="n">factor_list</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">partition_combos</span><span class="p">,</span> <span class="n">factor_lists</span><span class="p">):</span>
+    <span class="n">divisors</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">for</span> <span class="n">divisor</span><span class="p">,</span> <span class="n">power</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="nf">flatten</span><span class="p">(),</span> <span class="n">combo</span><span class="p">.</span><span class="nf">flatten</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">divisors</span> <span class="o">+=</span> <span class="s">','</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">divisor</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">divisors</span> <span class="o">+=</span> <span class="s">'^'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">power</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span>
+    <span class="n">output</span> <span class="o">+=</span> <span class="s">'</span><span class="se">\n</span><span class="s">    '</span> <span class="o">+</span> <span class="n">divisors</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    
+    <span class="n">factors</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">factor_list</span><span class="p">[</span><span class="n">factor_list</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="n">factors</span> <span class="o">+=</span> <span class="nf">str</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span> <span class="o">+</span> <span class="s">','</span>
+        <span class="n">group</span> <span class="o">+=</span> <span class="sa">r</span><span class="s">'\mathbb{Z}_{'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span> <span class="o">+</span> <span class="sa">r</span><span class="s">'}\times'</span>
+    
+    <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">' &amp; </span><span class="si">{</span><span class="n">factors</span><span class="p">[</span><span class="si">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s"> &amp; </span><span class="si">{</span><span class="n">group</span><span class="p">[</span><span class="si">:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span><span class="si">}</span><span class="s">'</span> <span class="o">+</span> <span class="sa">r</span><span class="s">'\\'</span>
+
+<span class="n">output</span> <span class="o">+=</span> <span class="sa">r</span><span class="s">'''
+\end{array}'''</span>
+
+<span class="nc">Latex</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+\$\text{Groups of order }4860\$:\n\n\begin{array}{l|l|l}\n    \text{Elementary Divisors} &amp; \text{Invariant Factors} &amp; \text{Isomorphic Group}\\\n    \hline\n    2,2,3,3,3,3,3,5 &amp; 3,3,3,6,30 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{30}\\\n    2,2,3,3,3,3^2,5 &amp; 3,3,6,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{90}\\\n    2,2,3,3^2,3^2,5 &amp; 3,18,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{18}\times\mathbb{Z}\_{90}\\\n    2,2,3,3,3^3,5 &amp; 3,6,270 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{270}\\\n    2,2,3^2,3^3,5 &amp; 18,270 &amp; \mathbb{Z}\_{18}\times\mathbb{Z}\_{270}\\\n    2,2,3,3^4,5 &amp; 6,810 &amp; \mathbb{Z}\_{6}\times\mathbb{Z}\_{810}\\\n    2,2,3^5,5 &amp; 2,2430 &amp; \mathbb{Z}\_{2}\times\mathbb{Z}\_{2430}\\\n    2^2,3,3,3,3,3,5 &amp; 3,3,3,3,60 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{60}\\\n    2^2,3,3,3,3^2,5 &amp; 3,3,3,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{180}\\\n    2^2,3,3^2,3^2,5 &amp; 3,9,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{9}\times\mathbb{Z}\_{180}\\\n    2^2,3,3,3^3,5 &amp; 3,3,540 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{540}\\\n    2^2,3^2,3^3,5 &amp; 9,540 &amp; \mathbb{Z}\_{9}\times\mathbb{Z}\_{540}\\\n    2^2,3,3^4,5 &amp; 3,1620 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{1620}\\\n    2^2,3^5,5 &amp; 4860 &amp; \mathbb{Z}\_{4860}\\\n\end{array}
+</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Abelian Group Classifier]]></summary></entry></feed>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Group Classifier | Alberto Mancia</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="Group Classifier">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Abelian Group Classifier">
+<meta property="og:description" content="Abelian Group Classifier">
+<link rel="canonical" href="http://localhost:4000/group-classifier/">
+<meta property="og:url" content="http://localhost:4000/group-classifier/">
+<meta property="og:site_name" content="Alberto Mancia">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-03-20T15:29:27-07:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Group Classifier">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-20T15:29:27-07:00","datePublished":"2023-03-20T15:29:27-07:00","description":"Abelian Group Classifier","headline":"Group Classifier","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/group-classifier/"},"url":"http://localhost:4000/group-classifier/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alberto Mancia">
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<!-- CSS for Tocbot -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+
+  <body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">Alberto Mancia</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Group Classifier</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="abelian-group-classifier">Abelian Group Classifier</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Group_(mathematics)">Groups</a> are a fascinating branch of mathematics. Put simply, they consist of a set $G$ paired with some operator $*$, such that the set is closed under that operation. In other words,</p>
+
+<div>
+\begin{array}{c}\\ 
+\text{If $a,b$ are in $G$, then $a*b$ is in $G$ as well.}
+\\ \\\end{array}
+</div>
+
+<p>There are other requirements as well but this one, called <em>closure</em>, is perhaps the most defining. It gives groups their intricate internal structure — the unique way in which the elements relate to each other through $*$.</p>
+
+<p>Let’s cover a little more notation and terminology, and then we can talk about what this classifier does.</p>
+<h1 id="some-definitions">Some definitions</h1>
+
+<ul>
+  <li>The cyclic group $\mathbb{Z}_n$ or integers modulo $n$ is simply the set of numbers $\{0,1,2,\dots,n-1\}$ with the operation of addition. When two numbers add to a number larger than $n-1$, we simply “roll over” and start counting from 0. For example, in the group $\mathbb{Z}_5=\{0,1,2,3,4\}$ we have that $3+4=2$.</li>
+  <li>The <strong>direct product</strong> of two groups $G,H$ is written $G\times H$ and is the group of ordered pairs $(g,h)$ where $g$ is in $G$ and $h$ is in $H$. For example,</li>
+</ul>
+
+<div>
+\begin{array}{c}\\ \mathbb{Z}_2\times\mathbb{Z}_3 = \{(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)\}\\ \\\end{array} 
+</div>
+
+<ul>
+  <li>Note that we can have a direct product of more than two groups, e.g. $\mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_5\times\mathbb{Z}_5\times\mathbb{Z}_7$. Also note that the <em>order</em> or size of a direct product is simply the product of the orders of its constituent groups, so $\mathbb{Z}_2\times\mathbb{Z}_3$ would have order 6.</li>
+  <li>An <strong>abelian</strong> group is one in which the operation is commutative, i.e. $a \ast b = b \ast a$.</li>
+  <li>An <strong>isomorphism</strong> is a one-to-one function $f:G\to H$ between two groups that preserves the group structure, which is to say that $f(a \ast b)=f(a) \ast f(b)$ in $H$ for $a,b$ in $G$. Two groups that can be linked by an isomorphism are <strong>isomorphic</strong> to each other, which is to say that they share the same internal structure.</li>
+</ul>
+
+<h1 id="not-all-groups-are-unlike">Not all groups are unlike</h1>
+
+<p>This last concept is especially important because groups can contain many different types of elements. The elements can be numbers, functions, movements, or <a href="https://en.wikipedia.org/wiki/Rubik%27s_Cube_group">positions of a Rubik’s Cube</a>. But many of them will be isomorphic to each other, and thus share the same structure even if their elements look different from each other.</p>
+
+<p>For example, if we define the function $f:\mathbb{Z}_2\times\mathbb{Z}_3\to\mathbb{Z}_6$ as</p>
+
+<div>
+\begin{align}
+    (0&amp;,0) &amp; (0&amp;,1) &amp; (0&amp;,2) &amp; (1&amp;,0) &amp; (1&amp;,1) &amp; (1&amp;,2)\\
+    &amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow\\
+    &amp;\ 0 &amp;&amp;\ 4 &amp;&amp;\ 2 &amp;&amp;\ 3 &amp;&amp;\ 1 &amp;&amp;\ 5
+\end{align}
+</div>
+
+<p>we see that this forms an isomorphism — for example, $f((1,0)+(1,2))=f((0,2))=2=3+5=f((1,0))+f((1,2))$.</p>
+
+<p>This gives us a sense in which $\mathbb{Z}_2\times\mathbb{Z}_3$ and $\mathbb{Z}_6$ <em>are the same group</em>, because despite looking different, they share the same underlying structure. This structure can be considered the “fingerprint” of that group, and we consider groups to be meaningfully different only if they have different “fingerprints”, i.e. they cannot be linked by an isomorphism.</p>
+
+<h1 id="the-fundamental-theorem-of-finite-abelian-groups">The Fundamental Theorem of Finite Abelian Groups</h1>
+<p>Given the premise that some groups can be represented as other groups through isomorphism, we can explore a theorem worthy of its title:</p>
+
+<p><strong><em>Every</em></strong> <strong>finite abelian group can be uniquely represented as the direct product of cyclic groups $\mathbb{Z}_{p^i}$ , where each $p^i$ is a power of some prime number $p$.</strong></p>
+
+<p>With this result, we’ve been handed the power to know <em>every</em> abelian group of a given order (size), using the prime factorization of that order. For example, we can factorize 36 as $2^2\cdot 3^2$, giving us four unique ways to write 36:</p>
+<center>$36 = 2\cdot 2\cdot 3\cdot 3 = 2\cdot 2\cdot 3^2 = 2^2\cdot 3\cdot 3 = 2^2\cdot 3^2$ </center>
+<p>These correspond to the four unique abelian groups of order 36:</p>
+<center>$\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_9
+\qquad \mathbb{Z}_4\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_4\times\mathbb{Z}_9$</center>
+
+<p>And that’s it! That’s all of them. Any abelian group of order 36, whether it be made of numbers, functions, configurations of a puzzle, or colors, will be isomorphic to one of these four. We’ve successfully classified every abelian group of this order. This is precisely what this project sets out to do: list all abelian groups of a given order.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="mi">4860</span>
+</code></pre></div></div>
+
+<p>So let’s go ahead and pick an order! I’ve set it to one that gives a nice result, but you can set $n$ to be any whole number between 1 and infinity. You’d be surprised by how many orders only have one unique abelian group associated with them.</p>
+
+<p>Finding the prime factors of $n$ is easy enough to do with a simple iterative algorithm:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># Just in case you cheated
+</span>
+<span class="k">def</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">divisor</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">divisor</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">factors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span>
+            <span class="n">number</span> <span class="o">//=</span> <span class="n">divisor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">divisor</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">factors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">factors</span>
+
+<span class="n">factorization</span> <span class="o">=</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">factorization</span><span class="p">)</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">[2, 2, 3, 3, 3, 3, 3, 5]</code></p>
+
+<p>For $n=36$ this would return the list <code class="language-plaintext highlighter-rouge">[2, 2, 3, 3]</code>. But we want to know the powers of each unique factor, both to reflect the compact notation $2^2\cdot 3^2$ and to help us find all four ways of writing 36.</p>
+
+<p>We can do this using <code class="language-plaintext highlighter-rouge">numpy.unique</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">primes</span><span class="p">,</span> <span class="n">powers</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">unique</span><span class="p">(</span><span class="n">factorization</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">powers</span><span class="p">.</span><span class="nf">max</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">primes</span><span class="p">,</span> <span class="n">powers</span><span class="p">)</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">[2 3 5] [2 5 1]</code></p>
+
+<p>For $n=36$ this would return the array of unique primes <code class="language-plaintext highlighter-rouge">[2 3]</code> with their associated powers <code class="language-plaintext highlighter-rouge">[2 2]</code></p>
+
+<p>Now we need the partitions of each power: the unique ways of writing it as a sum of other numbers. For example, the five unique partitions of 4 are</p>
+<center>$1+1+1+1 = 1+1+2 = 2+2 = 1+3 = 4$</center>
+<p>These correspond to the five unique ways of writing 81, or $3^4$:</p>
+<center>$3\cdot 3\cdot 3\cdot 3 = 3\cdot 3\cdot 3^2 = 3^2\cdot 3^2 = 3\cdot 3^3 = 3^4$</center>
+<p>After taking a number’s prime factorization, the unique ways of writing it are given by combinations of the partitions of the primes’ powers.</p>
+
+<p>We find these partitions using a recursive algorithm which picks the rightmost number, subtracts it from the total, then uses itself to partition the remaining difference. It also helpfully formats the partition as a sorted array of desired length:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">partitions_oflength</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)]</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Create the trivial partition (all ones)
+</span>    <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">ones</span><span class="p">[:</span><span class="o">-</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Create the partitions that end with j by
+</span>        <span class="c1"># appending to the partitions of n - j
+</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nf">partitions_oflength</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">:</span>    <span class="c1"># Keep it sorted to avoid duplicates
+</span>                <span class="n">entry</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+                <span class="n">entry</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>        <span class="c1"># j at the end
+</span>                <span class="n">entry</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>   <span class="c1"># p before it
+</span>                <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="o">*</span><span class="nf">partitions_oflength</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>  <span class="c1"># Example
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0 0 0 1 1 1 1]
+[0 0 0 0 1 1 2]
+[0 0 0 0 0 2 2]
+[0 0 0 0 0 1 3]
+[0 0 0 0 0 0 4]
+</code></pre></div></div>
+
+<p>Now we just have to make those combinations. We use another recursive algorithm to do this, that makes its way through the list of powers and returns all possible combinations of their respective partitions:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">combos_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="nf">partitions_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">length</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">P</span><span class="p">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">header</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+        <span class="c1"># For each partition of the first
+</span>        <span class="c1"># given power, add it to the combinations
+</span>        <span class="c1"># of all the following powers
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nf">combos_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">length</span><span class="p">):</span>
+            <span class="n">new_combo</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">vstack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+            <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">new_combo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">combos</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+    <span class="c1"># Pass the largest power to set
+</span>    <span class="c1"># the width of each row
+</span>    <span class="n">length</span> <span class="o">=</span> <span class="n">P</span><span class="p">.</span><span class="nf">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nf">combos_oflength</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+    
+<span class="n">partition_combos</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="nf">combos</span><span class="p">(</span><span class="n">powers</span><span class="p">))</span>
+
+<span class="c1"># Display some of the combinations
+</span><span class="n">n_displayed</span> <span class="o">=</span> <span class="mi">28</span><span class="o">//</span><span class="n">partition_combos</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'Some of the power combinations:</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rows</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="nf">rollaxis</span><span class="p">(</span><span class="n">partition_combos</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="o">*</span><span class="n">rows</span><span class="p">[:</span><span class="n">n_displayed</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s">'   '</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Some of the power combinations:
+
+[0 0 0 1 1]   [0 0 0 1 1]   [0 0 0 1 1]   [0 0 0 1 1]   [0 0 0 1 1]
+[1 1 1 1 1]   [0 1 1 1 2]   [0 0 1 2 2]   [0 0 1 1 3]   [0 0 0 2 3]
+[0 0 0 0 1]   [0 0 0 0 1]   [0 0 0 0 1]   [0 0 0 0 1]   [0 0 0 0 1]
+</code></pre></div></div>
+<p>For $n=36$ this would return the four possible combinations of the partitions of 2 and 2:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1 1]    [1 1]    [0 2]    [0 2]
+[1 1]    [0 2]    [1 1]    [0 2]
+</code></pre></div></div>
+<p>As a reminder, these correspond to the four representations</p>
+
+<p>\begin{array}{cccc}
+    2\cdot 2\cdot 3\cdot 3\qquad &amp; 2\cdot 2\cdot 3^2\qquad &amp; 2^2\cdot 3\cdot 3\qquad &amp; 2^2\cdot 3^2
+\end{array}</p>
+
+<p>This should be all we need to classify our groups. However, there’s one more thing we need to consider.</p>
+
+<h1 id="surprise-another-theorem">Surprise! Another theorem</h1>
+<p>More of a lemma, really. This one’s pretty simple:</p>
+
+<p><strong>If two numbers $m,k$ are coprime, meaning that no number greater than 1 divides them both, then $\mathbb{Z}_m\times\mathbb{Z}_k$ is isomorphic to (meaning, functionally the same group as) $\mathbb{Z}_{mk}$.</strong></p>
+
+<p>This really complicates our task. It means that the groups </p>
+<center>$\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_9
+\qquad \mathbb{Z}_4\times\mathbb{Z}_3\times\mathbb{Z}_3
+\qquad \mathbb{Z}_4\times\mathbb{Z}_9$</center>
+which are quite easy to come up with, are actually
+<center>$\mathbb{Z}_6\times\mathbb{Z}_6
+\qquad \mathbb{Z}_2\times\mathbb{Z}_{18}
+\qquad \mathbb{Z}_3\times\mathbb{Z}_{12}
+\qquad \mathbb{Z}_{36}$</center>
+
+<p>It means that after we’ve found our groups, we have to <em>condense</em> them until their constituents all share a common divisor. We do this by turning their <em>elementary divisors</em>, e.g. $2^2,3,3$ into <em>invariant factors</em> e.g. $3,12$.</p>
+
+<p>The invariant factors have the property that when sorted from least to greatest, each number divides the number after it. They also provide a unique representation of the group: each set of elementary divisors is associated with one and only one set of invariant factors.</p>
+
+<h1 id="one-more-algorithm">One more algorithm</h1>
+
+<p>To find the invariant factors, we have an interesting algorithm which exploits the fact that for <em>distinct</em> primes $p_1,p_2,…,p_i$ which make the product $n=p_1^{n_1}p_2^{n_2}\cdots p_i^{n_i}$, the group $\mathbb{Z}_{p_1^{n_1}}\times\cdots\times\mathbb{Z}_{p_i^{n_i}}$ is isomorphic to $\mathbb{Z}_n$ (this result follows from the theorem we just introduced).</p>
+
+<p>Consider the group</p>
+<center>$\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_4\times\mathbb{Z}_8\times\mathbb{Z}_3\times\mathbb{Z}_3\times\mathbb{Z}_3\times\mathbb{Z}_5\times\mathbb{Z}_{25}$</center>
+
+<p>we can condense this group by making a table with a row for each prime, thus separating any duplicates:</p>
+
+<div>
+\begin{array}{llll}
+   2\ \ &amp; 2\ \ &amp; 2^2 &amp; 2^3\\
+     &amp; 3 &amp; 3 &amp; 3\\
+     &amp;   &amp; 5 &amp; 5^2
+\end{array}
+</div>
+
+<p>Then we can take the product of each column, which will have the combination of distinct prime powers we’re looking for. By arranging them left-to-right by size, we also guarantee that each product will divide the next. In this example, we get the invariant factors 2, 6, 60, and 600, so our group is</p>
+
+<center>$\mathbb{Z}_2\times\mathbb{Z}_6\times\mathbb{Z}_{60}\times\mathbb{Z}_{600}$</center>
+<p>Once we have a combination of powers we’d like to condense, we can create the table and multiply the columns in just two lines using NumPy. Or more accurately, we can do this for every combination at once:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">repeat</span><span class="p">(</span><span class="n">primes</span><span class="p">[:,</span><span class="n">np</span><span class="p">.</span><span class="n">newaxis</span><span class="p">],</span><span class="n">size</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">divisor_tables</span> <span class="o">=</span> <span class="n">X</span><span class="o">**</span><span class="n">partition_combos</span>  <span class="c1"># Broadcasting!
+</span>
+<span class="c1"># Flatten all the tables at once by picking the right axis
+</span><span class="n">factor_lists</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">divisor_tables</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now we just need to display all our hard work. We could do this by creating a DataFrame in Pandas, but LaTeX always looks best:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span>
+
+<span class="c1"># Set up the table in LaTeX
+</span><span class="n">output</span> <span class="o">=</span> <span class="sa">r</span><span class="s">'$\text{'</span> <span class="o">+</span> <span class="sa">f</span><span class="s">'Groups of order '</span> <span class="o">+</span> <span class="sa">r</span><span class="s">'}'</span> <span class="o">+</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s">$:</span><span class="se">\n</span><span class="s">'</span>
+<span class="n">output</span> <span class="o">+=</span> <span class="sa">r</span><span class="s">'''
+\begin{array}{l|l|l}
+    \text{Elementary Divisors} &amp; \text{Invariant Factors} &amp; \text{Isomorphic Group}\\
+    \hline'''</span>
+
+<span class="c1"># Create the entries by piecing together some strings
+</span><span class="k">for</span> <span class="n">combo</span><span class="p">,</span> <span class="n">factor_list</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">partition_combos</span><span class="p">,</span> <span class="n">factor_lists</span><span class="p">):</span>
+    <span class="n">divisors</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">for</span> <span class="n">divisor</span><span class="p">,</span> <span class="n">power</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="nf">flatten</span><span class="p">(),</span> <span class="n">combo</span><span class="p">.</span><span class="nf">flatten</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">divisors</span> <span class="o">+=</span> <span class="s">','</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">divisor</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">divisors</span> <span class="o">+=</span> <span class="s">'^'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">power</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span>
+    <span class="n">output</span> <span class="o">+=</span> <span class="s">'</span><span class="se">\n</span><span class="s">    '</span> <span class="o">+</span> <span class="n">divisors</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    
+    <span class="n">factors</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">factor_list</span><span class="p">[</span><span class="n">factor_list</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="n">factors</span> <span class="o">+=</span> <span class="nf">str</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span> <span class="o">+</span> <span class="s">','</span>
+        <span class="n">group</span> <span class="o">+=</span> <span class="sa">r</span><span class="s">'\mathbb{Z}_{'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">item</span><span class="p">())</span> <span class="o">+</span> <span class="sa">r</span><span class="s">'}\times'</span>
+    
+    <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">' &amp; </span><span class="si">{</span><span class="n">factors</span><span class="p">[</span><span class="si">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s"> &amp; </span><span class="si">{</span><span class="n">group</span><span class="p">[</span><span class="si">:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span><span class="si">}</span><span class="s">'</span> <span class="o">+</span> <span class="sa">r</span><span class="s">'\\'</span>
+
+<span class="n">output</span> <span class="o">+=</span> <span class="sa">r</span><span class="s">'''
+\end{array}'''</span>
+
+<span class="nc">Latex</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+\$\text{Groups of order }4860\$:\n\n\begin{array}{l|l|l}\n    \text{Elementary Divisors} &amp; \text{Invariant Factors} &amp; \text{Isomorphic Group}\\\n    \hline\n    2,2,3,3,3,3,3,5 &amp; 3,3,3,6,30 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{30}\\\n    2,2,3,3,3,3^2,5 &amp; 3,3,6,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{90}\\\n    2,2,3,3^2,3^2,5 &amp; 3,18,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{18}\times\mathbb{Z}\_{90}\\\n    2,2,3,3,3^3,5 &amp; 3,6,270 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{270}\\\n    2,2,3^2,3^3,5 &amp; 18,270 &amp; \mathbb{Z}\_{18}\times\mathbb{Z}\_{270}\\\n    2,2,3,3^4,5 &amp; 6,810 &amp; \mathbb{Z}\_{6}\times\mathbb{Z}\_{810}\\\n    2,2,3^5,5 &amp; 2,2430 &amp; \mathbb{Z}\_{2}\times\mathbb{Z}\_{2430}\\\n    2^2,3,3,3,3,3,5 &amp; 3,3,3,3,60 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{60}\\\n    2^2,3,3,3,3^2,5 &amp; 3,3,3,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{180}\\\n    2^2,3,3^2,3^2,5 &amp; 3,9,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{9}\times\mathbb{Z}\_{180}\\\n    2^2,3,3,3^3,5 &amp; 3,3,540 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{540}\\\n    2^2,3^2,3^3,5 &amp; 9,540 &amp; \mathbb{Z}\_{9}\times\mathbb{Z}\_{540}\\\n    2^2,3,3^4,5 &amp; 3,1620 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{1620}\\\n    2^2,3^5,5 &amp; 4860 &amp; \mathbb{Z}\_{4860}\\\n\end{array}
+</div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Alberto Mancia</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Alberto Mancia</li>
+<li><a class="u-email" href="mailto:albertomancia@g.ucla.edu">albertomancia@g.ucla.edu</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li><a href="https://github.com/albertomancia"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">albertomancia</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Hi! This is my personal website. Enjoy.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<!-- JavaScript for Tocbot -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js"></script>
+  </body>
+
+</html><html>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#sticky-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: 'main',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For more options, visit the official documentation.
+      orderedList: false,
+    });
+  });
+</script>
+</html>
