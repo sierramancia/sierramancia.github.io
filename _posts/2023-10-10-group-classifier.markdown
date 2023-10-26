@@ -6,6 +6,8 @@ categories: projects
 permalink: /group-classifier/
 ---
 
+You can view an interactive version of this iPython notebook on [Kaggle]()
+
 ## Abelian Group Classifier
 
 [Groups](https://en.wikipedia.org/wiki/Group_(mathematics)) are a fascinating branch of mathematics. Put simply, they consist of a set $G$ paired with some operator $*$, such that the set is closed under that operation. In other words,
