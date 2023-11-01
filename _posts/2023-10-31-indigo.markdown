@@ -1,1 +1,11 @@
 ---
+layout: post
+title:  "Indigo"
+date:   2023-10-31 15:29:27 -0700
+categories: projects
+permalink: /indigo/
+---
+
+This past spring, I had the opportunity to attend a class on dyeing with indigo. For two weeks, I
+
+## The Style
