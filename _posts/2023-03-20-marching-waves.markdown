@@ -13,8 +13,8 @@ My signature art style and how it's made.
 In January of 2018, I developed a new art style using gel pens, printer paper, and a lightbox for tracing. I printed out images in black and white, taped another piece of paper on top, shined a light through from underneath, and got to tracing. I made these:
 
 <p align="center">
-  <img src="/assets/Marching Waves/portrait.png" width="full">
-  <img src="/assets/Marching Waves/ellie.png" width="full/2">
+  <img src="/assets/marching-waves/portrait.png" width="full">
+  <img src="/assets/marching-waves/ellie.png" width="full/2">
 </p>
 
 I still look to these pieces all the time for inspiration, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.
@@ -59,7 +59,7 @@ This is where James Sethian’s [Fast Marching Method](https://math.berkeley.edu
 
 <p align="center">
   <figure>
-    <img src="/assets/Marching Waves/map.png">
+    <img src="/assets/marching-waves/map.png">
   </figure>
   <p></p>
   <figcaption>
@@ -75,7 +75,7 @@ Fast Marching is basically Dijkstra's Algorithm, using the expression from befor
 Making the interface I use to try out ideas and export designs has been a continous process. I tinker with it and add features whenever I need it to do something new, or when I'm not happy with the results. It's changed a lot over the years, but here's what it currently looks like:
 
 <div class="video-mask" style="aspect-ratio: 0.96">
-  <video src="/assets/Marching Waves/demo.mp4" autoplay loop></video>
+  <video src="/assets/marching-waves/demo.mp4" autoplay loop></video>
 </div>
 <figcaption>
   It took a lot of time to make the contour lines render in real-time as the solution expands. 
@@ -93,15 +93,15 @@ That part alone took as long as getting the thing working in the first place. Bu
 Everything described thus far took about 5% as long as it took to actually develop the manufacturing process.
 
 <p align="center">
-  <img src="/assets/Marching Waves/plotting.gif" width="full">
+  <img src="/assets/marching-waves/plotting.gif" width="full">
 </p>
 
 Once I had the program working, I tried and failed to get good results from my cheap desktop plotter. With no other resources at my disposal, I gave up on this project for the time being. When UCLA resumed in-person classes a year later, I started my favorite job again: working at the residential makerspace. Somewhere in the middle of Fall quarter, I realized that our huge vinyl cutter was the perfect machine to make the art pieces I had been dreaming of. And so, from October 2021 to May 2022, I spent every weekend and most weekdays hunched over our Roland GR-420 vinyl cutter.
 
 <p align="center">
   <figure>
-    <img src="/assets/Marching Waves/cutter.png">
-    <!-- <img src="/assets/Marching Waves/cutter.png" style="max-width: 90%; padding-left: 5%"> -->
+    <img src="/assets/marching-waves/cutter.png">
+    <!-- <img src="/assets/marching-waves/cutter.png" style="max-width: 90%; padding-left: 5%"> -->
   </figure>
   <p></p>
   <figcaption>
@@ -123,13 +123,13 @@ The technique has progressed only in small ways since then. In March 2023 I disc
 Here are some of the pieces I made in 2021 and 2022:
 
 <p align="center">
-  <img src="/assets/Marching Waves/shades1.png" width="full">
-  <img src="/assets/Marching Waves/shades2.png" width="full">
-  <img src="/assets/Marching Waves/shades3.png" width="full">
+  <img src="/assets/marching-waves/shades1.png" width="full">
+  <img src="/assets/marching-waves/shades2.png" width="full">
+  <img src="/assets/marching-waves/shades3.png" width="full">
 
-  <img src="/assets/Marching Waves/hand1.png" width="full">
-  <img src="/assets/Marching Waves/hand2.png" width="full">
-  <img src="/assets/Marching Waves/nipsey1.png" width="full">
-  <img src="/assets/Marching Waves/nipsey2.png" width="full">
-  <img src="/assets/Marching Waves/nipsey3.png" width="full">
+  <img src="/assets/marching-waves/hand1.png" width="full">
+  <img src="/assets/marching-waves/hand2.png" width="full">
+  <img src="/assets/marching-waves/nipsey1.png" width="full">
+  <img src="/assets/marching-waves/nipsey2.png" width="full">
+  <img src="/assets/marching-waves/nipsey3.png" width="full">
 </p>
