@@ -1,158 +1,161 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-26T10:00:13-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Hi! This is my personal website. Enjoy.</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-14T10:09:37-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Embroidery</title><link href="http://localhost:4000/articles/2023/12/13/embroidery.html" rel="alternate" type="text/html" title="Embroidery" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/articles/2023/12/13/embroidery</id><content type="html" xml:base="http://localhost:4000/articles/2023/12/13/embroidery.html"><![CDATA[<p>Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.</p>
 
-<h2 id="the-style">The Style</h2>
+<p>These constraints are soft; if you’re willing to dedicate the time, you can make colorful and discontinuous designs. But the challenge of working within them interested me — what’s the best way to render an image using a single continuous thread?</p>
 
-<p>In January of 2018, I developed a new art style using gel pens, printer paper, and a lightbox for tracing. I printed out images in black and white, taped another piece of paper on top, shined a light through from underneath, and got to tracing. I made these:</p>
+<p>The first approach was pretty simple — a classic scan-line halftone pattern, which creates vertical peaks of varying height and separation. In practice it’s cool to see them squish up against each other:</p>
 
-<p align="center">
-  <img src="/assets/Marching Waves/portrait.png" width="full" />
-  <img src="/assets/Marching Waves/ellie.png" width="full/2" />
+<p>This was one of my first Processing sketches ever, and it’s a perfect beginner project. I encourage you to try it out, especially if you have access to a digital embroidery machine.</p>
+
+<p>The next thing to try was color; a basic CMYK printing technique wouldn’t take too much time. I did this quite manually, extracting the four layers in Photoshop and rotating them before loading them into the sketch.</p>
+
+<p>If I’d been happier with the results, I might have fully automated the CMYK split, but the effect doesn’t come through unless you back up and really squint. The lines could be made smaller, but there’s another limit; you don’t want to be making a bunch of stitches right next to each other with sub-millimeter spacing.</p>
+
+<h2 id="scribbling">Scribbling</h2>
+
+<p>Samer Dabra (<a href="https://www.instagram.com/spongenuity/">@spongenuity</a>) has a procedural, stochastic style originally made for pen plotters. He used it with machine embroidery a few times and it looks fantastic:</p>
+
+<p>[photo]</p>
+
+<p>It’s pretty easy to program; just make a line that wanders in the direction of darker areas on the image. To keep it from getting stuck, draw a corresponding white line on the image so it can avoid areas it’s already drawn over.</p>
+
+<p>In my program the randomness is inserted into the length of each step, which corresponds to a stitch. With a chosen step length, a number of sample points are taken at that distance from the head of the line. The one with the darkest value is where the line goes next.</p>
+
+<p>[photo]</p>
+
+<p>You can see that my design is a lot coarser than Samer’s. I wanted to optimize this program for the machine and require less stitches</p>
+
+<h2 id="choices">Choices</h2>
+
+<p>There are so many other ways to make this line wander, though. You could randomly choose the direction first and then select the optimal distance, which looks like this:</p>
+
+<p>[photo]</p>
+
+<p>Instead of an arc or a line of sample points, you can make a varied fan that biases towards the current direction of travel:</p>
+
+<p>[photo]</p>
+
+<p>The sampling can also be biased, keeping the line along the same curve of</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.]]></summary></entry><entry><title type="html">Digital Impressionism</title><link href="http://localhost:4000/articles/2023/12/13/digital-impressionism.html" rel="alternate" type="text/html" title="Digital Impressionism" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/articles/2023/12/13/digital-impressionism</id><content type="html" xml:base="http://localhost:4000/articles/2023/12/13/digital-impressionism.html"><![CDATA[]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Indigo</title><link href="http://localhost:4000/indigo/" rel="alternate" type="text/html" title="Indigo" /><published>2023-10-31T15:29:27-07:00</published><updated>2023-10-31T15:29:27-07:00</updated><id>http://localhost:4000/indigo</id><content type="html" xml:base="http://localhost:4000/indigo/"><![CDATA[<p align="center">
+  <img src="/assets/indigo/2.png" width="full" />
 </p>
 
-<p>I still look to these pieces all the time for inspiration, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.</p>
-
-<h2 id="going-digital">Going Digital</h2>
-
-<p>Later that year I started learning to code with <a href="https://processing.org">Processing</a>, a programming language made by and for artists. My work quickly focused on the art of image rendering, of filters and halftoning patterns, ways of reconstructing an image from a given set of geometric and chromatic constraints.</p>
-
-<p>It wasn’t long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it would be impossible.</p>
-
-<p>I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I’d been ignoring what was obvious to myself and many other people I had talked to — this style is a mathematical function.</p>
-
-<h2 id="the-math">The Math</h2>
-
-<p>Someone fresh out of multivariable calculus might look at these drawings and write something like this:</p>
-
-<p>$$ |\nabla u(x,y)| = f(x,y) $$</p>
-
-<p>If each drawing is a topographical map, $u(x,y)$ defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. This density is what creates the halftone effect, so the steepness of $u$’s surface must be controlled by the darkness of the desired image. We define the function $f(x,y)$ as that measured darkness, so in plain English our equation is:</p>
-
-<p>“The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point”</p>
-
-<p>If you look back at the drawings, this equation can clearly be seen as the rule I was unknowingly following. The problem was solving it, and I had no ideas on how to even begin.</p>
-
-<p>I got unstuck by pure chance in the Summer of 2020: I finally found the name of the equation I was trying to solve. I’ll admit that given how long it took me to stumble upon this name, and how crucial it was, it feels weird to just give it away. Anyway, it’s the <a href="https://en.wikipedia.org/wiki/Eikonal_equation">Eikonal Equation</a>.</p>
-
-<h2 id="the-algorithm">The Algorithm</h2>
-
-<p>That Wikipedia article was the initial gateway to making my program, but there was a long road ahead — I was working right at the edge of my abilities as a mathematician and a programmer. Even writing out what the algorithm had to do, before any coding could begin, took the better part of a week. I’ll try to summarize it in a paragraph or two, but don’t get your hopes up.</p>
-
-<p>Computers need to interpret smooth, continuous functions as measured points on a discrete grid (in this case, the pixel grid of the canvas).  Rather than taking derivatives as we would on paper, they just directly measure the slope near a given point (which is just as well, because the Eikonal Equation has no closed-form solution anyway). We can sample the image at every pixel $(x,y)$ to get our $f(x,y)$ at each grid point, and assuming we know the (lowest) values $U_X ,U_Y$ of $u$ at the neighboring points in each direction, our equation can be written as:</p>
-
-<p>$$ \sqrt{\left(U_{ij} - U_X\right)^2 + \left(U_{ij} - U_Y\right)^2} = f_{ij} $$</p>
-
-<p>Where $U_{ij}$  is the value of $u$ at pixel $(i,j)$. We measure slope by subtracting the values of neighboring points, and then take the Euclidean norm to get $|\nabla u(x,y)|$. Feel free to grab a beer and spend an afternoon solving this; otherwise you’ll just have to trust me when I say that the solution is:</p>
-
-<p>$$ U_{ij} = \frac{U_X + U_Y}{2} + \frac{1}{2}\sqrt{\left(U_X+U_Y\right)^2 - 2 \left(U_X^2 + U_Y^2 - f_{ij}^2 \right)} $$</p>
-
-<p>Great! We have the closest thing to a closed-form solution. And it’s so pretty. Problem is, it relies on already knowing the value of $u$ for at least one neighboring point. This makes sense in a way — you can imagine the contour lines as waves rippling out across the canvas from one point or direction. Changes in their shape early on will affect the shape they take later. Since one part of the domain can have such an effect on the other, it becomes more clear why there is no closed-form solution. This long chain of cause-and effect is why there is no way to solve this equation everywhere all at once.</p>
-
-<p>This is where James Sethian’s <a href="https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html">Fast Marching Method</a> comes in. It’s an algorithm that takes a set of points with known values, which I call the origin, and builds the solution out from them one point at a time. If you’re familiar with Dijkstra’s Algorithm, you’ll be able to see the third interpretation of this equation’s solution: the path-distance of each point from the origin, where $f$ is affecting the speed of travel. You can see it in this old map:</p>
+<p>This past spring, I had the opportunity to take an intensive class on dyeing with indigo. For two weeks, I lived in the mountains of Japan with 9 other students, staying with our teacher Bryan in a 150-year-old farmhouse. I was quite an outsider in this group — all but one of my classmates were in the fashion industry. I was only there to take my aunt’s place in the class, and came in with zero prior experience in dyeing. Because of this, I’m especially proud of what I was able to accomplish in my two weeks there.</p>
 
 <p align="center">
-  <figure>
-    <img src="/assets/Marching Waves/map.png" />
-  </figure>
-  <p></p>
-  <figcaption>
-    Here New York is the origin, and each line represents all the points with a given path-distance, accounting for terrain and modes of travel.
-  </figcaption>
-  <p></p>
+  <img src="/assets/indigo/3.png" width="full" />
 </p>
 
-<p>Fast Marching is basically Dijkstra’s Algorithm, using the expression from before as its method of measuring path-distance. And once we’ve implemented it, we can solve the equation! This is the very heart of the program (I only operate on it when something has gone horribly wrong). To make it usable, we need an interface with which to make and export designs.</p>
+<p>Indigo is fascinating to work with. It makes a mechanical bond with the fabric instead of a chemical bond like most dyes; this is what allows it to gradually fall off and create the fade patterns seen in denim. The mechanical bond is formed when oxygen joins loose dye molecules together into chains that affix themselves to the fibers.</p>
 
-<h2 id="the-interface">The Interface</h2>
+<p align="center">
+  <img src="/assets/indigo/1.png" width="full" />
+</p>
 
-<p>Making the interface I use to try out ideas and export designs has been a continous process. I tinker with it and add features whenever I need it to do something new, or when I’m not happy with the results. It’s changed a lot over the years, but here’s what it currently looks like:</p>
+<p>In its unoxidized state, indigo is green. We would dip fabric into vats of de-oxidized indigo. They came out green and we hung them out not to dry, but to oxidize. In the breeze they turned to that familiar blue, and we dipped them again.</p>
 
-<div class="video-mask" style="aspect-ratio: 0.96">
-  <video src="/assets/Marching Waves/demo.mp4" autoplay="" loop=""></video>
-</div>
+<p>After five dips or so, we had to remove all the loose dye that had not attached to the fabric. You can wring and rinse a lot of it out, but only impact will get the last of it. Down the road from the farmhouse, a creek ran through the quiet village. We walked down to the creek, descented a set of rungs, and beat the fabric against the rocks until no more streaks of blue joined the gentle flow.</p>
+
+<p align="center">
+  <img src="/assets/indigo/24.png" width="full" />
+</p>
+
+<p>After hanging the pieces out to dry, we went inside to drink plum moonshine and work on our sewing. Nothing is made quickly this way, and that was just fine.</p>
+
+<h2 id="katazome">Katazome</h2>
+
+<p>In addition to better-known dye resist techniques such as <em>shibori</em>, we learned how to apply a rice paste onto the fabric to block the indigo, a method known as <em>katazome</em>. Stencils are made out of a durable paper with a thin mesh backing.</p>
+
+<p align="center">
+  <img src="/assets/indigo/25.png" width="full" />
+</p>
 <figcaption>
-  It took a lot of time to make the contour lines render in real-time as the solution expands. 
+    An antique katazome piece. The stencil was made with a hole punch and a lot of time.
 </figcaption>
 <p></p>
 
-<p>Pre-processing happens in Photoshop. The background is masked out in blue, which tells the program what regions to ignore. The subject is in grayscale, and red gives the origin set — the pixels with a known solution (zero) from which the solution for the rest of the domain can be grown. The red can be drawn in the program to try out ideas quickly, or added during pre-processing for more precision.</p>
+<p>It pained me to think of everything I could do with this method if I had access to a laser cutter or even just a desktop vinyl cutter. But my tools were on the other side of the Pacific, and the nearest public makerspace was hundreds of miles away. Everything I had access to in the farmhouse was analog — even the sewing was done by hand.</p>
 
-<p>Once the solution is complete, the contour lines can be exported as a vector file, ready for any cutting or drawing machine. I used <a href="https://en.wikipedia.org/wiki/Marching_squares">Marching Squares</a> to draw the contours, and a custom sorting algorithm to join all the tiny line segments into continous paths.</p>
-
-<p>That part alone took as long as getting the thing working in the first place. But once it was completed, all I had to do was send finished designs to a pen plotter and watch it draw designs as big and detailed as I wanted. Finally, I thought, now comes the easy part.</p>
-
-<h2 id="manufacturing">Manufacturing</h2>
-
-<p>Everything described thus far took about 5% as long as it took to actually develop the manufacturing process.</p>
+<h2 id="digital-art">Digital Art</h2>
+<p>Can you make digital art with only your hands? I’ve always thought so; to me “digital” doesn’t refer to computers or machines of any kind, but to a discrete space as opposed to a continuous one. This space can be a tapestry with a woven design — the creative choices are made from a finite set of options: which thread passes over the others, which color appears on each square of the woven grid.</p>
 
 <p align="center">
-  <img src="/assets/Marching Waves/plotting.gif" width="full" />
+  <img src="/assets/indigo/26.png" width="full" />
+</p>
+<figcaption>
+    This woven basket is an example of digital art to me.
+</figcaption>
+<p></p>
+
+<p>To me this is relevant because I’ve never excelled at analog art. Painting, illustration, fashion, music, etc. have stayed beyond my reach thus far; Of the many poorly-designed machines with terrible software I’ve had to master, none are more perplexing to me than a physical canvas and the things that mark it. One could attribute this to the direction my art has taken in the past five years, and perhaps I would benefit from picking up a pencil, even just for fun.</p>
+
+<p>But no great strides were going to be made in the two weeks I had here — I was not going to approach the beauty and intricacy of the <em>katazome</em> patterns we were shown as examples. Nor was I being asked to — we were here to learn the technique, not to become master designers. But in this completely unfamiliar environment, among fashion industry professionals and master seamstresses, I saw the opportunity to do something new.</p>
+
+<p>This is something I’ve grown proud of — my skillset does not limit me, but rather enhances the new skills I take on. All around me I see painters, fashion designers, and musicians whose talent feels untouchable. They can do so many things I can’t. The past five years for me have been a process of finding out what I can do that others can’t. That realm is not just defined by my skills, but</p>
+
+<h2 id="the-system">The system</h2>
+
+<p>Against the advice of our teacher, I wanted to make a design with 6 different shades of indigo. This would require the stenciling process to be repeated five times. And I wanted the design to be large, of course. Using up five large sheets of <em>katazome</em> paper was out of the question, so I made a system that used one modular stencil to transfer a digital design.</p>
+
+<p align="center">
+  <img src="/assets/indigo/6.png" width="full" />
 </p>
 
-<p>Once I had the program working, I tried and failed to get good results from my cheap desktop plotter. With no other resources at my disposal, I gave up on this project for the time being. When UCLA resumed in-person classes a year later, I started my favorite job again: working at the residential makerspace. Somewhere in the middle of Fall quarter, I realized that our huge vinyl cutter was the perfect machine to make the art pieces I had been dreaming of. And so, from October 2021 to May 2022, I spent every weekend and most weekdays hunched over our Roland GR-420 vinyl cutter.</p>
+<p>With a ruler and a craft knife, I cut ten stripes and an alignment window into my piece of <em>katazome</em> paper. Then I found a grease pencil and used it to complete the 5mm grid.</p>
+
+<p>I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the custom stencil I would use to transfer the design.</p>
+
+<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
+  <video src="/assets/indigo/5.mp4" autoplay="" loop=""></video>
+</div>
+
+<h2 id="the-work">The Work</h2>
 
 <p align="center">
-  <figure>
-    <img src="/assets/Marching Waves/cutter.png" />
-    <!-- <img src="/assets/Marching Waves/cutter.png" style="max-width: 90%; padding-left: 5%"> -->
-  </figure>
-  <p></p>
-  <figcaption>
-    Here you can see one of the first problems I ran into: the middle roller was smearing ink up and down the piece. I spent several weeks trying to mitigate this problem physically before finding out you can just turn off the roller in settings.
-  </figcaption>
-  <p></p>
+  <img src="/assets/indigo/17.png" width="full" />
 </p>
 
-<p>Normally this machine takes rolls of vinyl up to 42 inches wide and cuts them with a drag knife. Replace vinyl with paper and knife with pen, and you have a giant plotter. It was not only much larger, but much more precise than the one I had at home. On more detailed pieces, a line being off by even a tenth of a millimeter can cause visible banding. This machine would draw all across the paper for hours, laying down literal miles of lines, and never drift by even that much. For its intended purpose it had no reason to be capable of doing this, but it was.</p>
+<p>Here’s what one layer looks like:</p>
 
-<p>When I started working with the Roland, I would’ve been appalled at the idea of writing this article — I had long been afraid of other people stealing my source code and replicating my pieces. Seven months of work later, I was no longer worried. The additional knowledge required to get the results I want on paper exists only in my head, and I acquired it by going far past the point where any sane person would’ve given up.</p>
+<ol>
+  <li>
+    <p>Iron the fabric</p>
+  </li>
+  <li>
+    <p>Align the stencil with a pair of locating stitches on the fabric</p>
+  </li>
+  <li>
+    <p>Apply paste to the squares shown by the program</p>
+  </li>
+  <li>
+    <p>Do this 11 more times</p>
+  </li>
+  <li>
+    <p>Hang up the fabric to let the paste dry</p>
+  </li>
+  <li>
+    <p>Dip the fabric in the indigo vat and let it oxidize for 5 minutes</p>
+  </li>
+  <li>
+    <p>Rinse off the excess indigo. Watch the paste you spent hours applying flake off and disintegrate</p>
+  </li>
+  <li>
+    <p>Walk down to the river and beat the rest of the indigo out onto the rocks</p>
+  </li>
+  <li>
+    <p>Hang up the fabric to dry. Try to eat something while you’re waiting</p>
+  </li>
+</ol>
 
-<p>With no existing reference available, I had to push through very specific and unprecedented. problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing… the list goes on. At the moment, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.</p>
+<p>For three days, I started working when I woke up and stopped only to go to bed. If I worked diligently, I could repeat this cycle twice in such a 16-hour workday. I’m glad I didn’t know what I was in for when I started. The first results were exciting enough to keep me going.</p>
 
-<p>The technique has progressed only in small ways since then. In March 2023 I discovered a fundamental math error while writing the first draft of this article. I did some heart surgery on the program and saw a significant difference in the resulting patterns. I’m not sure if I like it more. We’ll have to see.</p>
+<p>Rather than finding a way to skip some hard work through automation, I had the computer give me more work than I could have imagined. And it was worth it.</p>
 
-<h2 id="gallery">Gallery</h2>
-
-<p>Here are some of the pieces I made in 2021 and 2022:</p>
+<h2 id="result">Result</h2>
 
 <p align="center">
-  <img src="/assets/Marching Waves/shades1.png" width="full" />
-  <img src="/assets/Marching Waves/shades2.png" width="full" />
-  <img src="/assets/Marching Waves/shades3.png" width="full" />
+  <img src="/assets/indigo/28.png" width="full" />
+</p>
 
-  <img src="/assets/Marching Waves/hand1.png" width="full" />
-  <img src="/assets/Marching Waves/hand2.png" width="full" />
-  <img src="/assets/Marching Waves/nipsey1.png" width="full" />
-  <img src="/assets/Marching Waves/nipsey2.png" width="full" />
-  <img src="/assets/Marching Waves/nipsey3.png" width="full" />
-</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[My signature art style and how it’s made.]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Reflection</title><link href="http://localhost:4000/reflection/" rel="alternate" type="text/html" title="Reflection" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/reflection/"><![CDATA[<p>Outline:</p>
-<ul>
-  <li>Inspiration</li>
-  <li>First installation w/ projector
-    <ul>
-      <li>Sensors</li>
-      <li>Math</li>
-      <li>Installation</li>
-    </ul>
-  </li>
-  <li>Building a display
-    <ul>
-      <li>Idea</li>
-      <li>Makerspace collab</li>
-      <li>Wiring + assembly</li>
-    </ul>
-  </li>
-  <li>Software</li>
-</ul>
-
-<p>My first software projects were webcam filters — interactive sketches that invite the viewer to participate. It was already a well-traveled path, with artists like Danny Rozin and Breakfast Studio using depth-sensing cameras to extract a simple silhouette of the user.</p>
-
-<p>These kinds of pieces are quite a crowd favorite, but I saw the potential for a piece that brings the audience even closer by creating a <em>perfect</em> mirror silhouette — as in, you can hold your hand right up to the piece and see its silhouette right on the other side of the imaginary glass as if it were a shadow cast by the setting sun.</p>
-
-<p>I achieved this by orthographically projecting a point cloud onto the display, so that each point in 3D space was rendered right at its closest position on the display.</p>
-
-<p>I wanted to make a real display, of course. The projector was a poor substitute, but building a display large enough to stand in front of was out of my budget. The project was shelved, as projects often are, until I transfered to UCLA and started hanging out at the Makerspace. I noticed that they had a lot of NeoPixel strips — about 100 meters, worth a few thousand dollars. I asked some version of “can I use basically all of these to make this project?”, and was asked some version of “what else do you need?”.</p>
-
-<p>The ideal version of this piece would be a display where each pixel has a depth sensor looking straight out, so that each pixel can see and respond to objects within its “column”. Of course, a suitable time-of-flight sensor on each</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Outline: Inspiration First installation w/ projector Sensors Math Installation Building a display Idea Makerspace collab Wiring + assembly Software]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<p>You can view an interactive version of this iPython notebook on <a href="">Kaggle</a></p>
+<p>I am happy to say that all I did to make this happen was worth it. I have one of the most unique pieces of art I’ve ever made: a piece that is plainly two things at once. You can immediately identify it as a digital design, and as a completely handmade piece. It is perhaps the most representative piece I’ve made; it shows how I wield my technical skills not as a replacement for labor, but as a challenge to do more with it.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<p>You can view an interactive version of this iPython notebook on <a href="">Kaggle</a></p>
 
 <h2 id="abelian-group-classifier">Abelian Group Classifier</h2>
 
@@ -433,7 +436,7 @@ which are quite easy to come up with, are actually</p>
 
 <div>
 \$\text{Groups of order }4860\$:\n\n\begin{array}{l|l|l}\n    \text{Elementary Divisors} &amp; \text{Invariant Factors} &amp; \text{Isomorphic Group}\\\n    \hline\n    2,2,3,3,3,3,3,5 &amp; 3,3,3,6,30 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{30}\\\n    2,2,3,3,3,3^2,5 &amp; 3,3,6,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{90}\\\n    2,2,3,3^2,3^2,5 &amp; 3,18,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{18}\times\mathbb{Z}\_{90}\\\n    2,2,3,3,3^3,5 &amp; 3,6,270 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{270}\\\n    2,2,3^2,3^3,5 &amp; 18,270 &amp; \mathbb{Z}\_{18}\times\mathbb{Z}\_{270}\\\n    2,2,3,3^4,5 &amp; 6,810 &amp; \mathbb{Z}\_{6}\times\mathbb{Z}\_{810}\\\n    2,2,3^5,5 &amp; 2,2430 &amp; \mathbb{Z}\_{2}\times\mathbb{Z}\_{2430}\\\n    2^2,3,3,3,3,3,5 &amp; 3,3,3,3,60 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{60}\\\n    2^2,3,3,3,3^2,5 &amp; 3,3,3,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{180}\\\n    2^2,3,3^2,3^2,5 &amp; 3,9,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{9}\times\mathbb{Z}\_{180}\\\n    2^2,3,3,3^3,5 &amp; 3,3,540 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{540}\\\n    2^2,3^2,3^3,5 &amp; 9,540 &amp; \mathbb{Z}\_{9}\times\mathbb{Z}\_{540}\\\n    2^2,3,3^4,5 &amp; 3,1620 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{1620}\\\n    2^2,3^5,5 &amp; 4860 &amp; \mathbb{Z}\_{4860}\\\n\end{array}
-</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Cells</title><link href="http://localhost:4000/cells/" rel="alternate" type="text/html" title="Cells" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/cells</id><content type="html" xml:base="http://localhost:4000/cells/"><![CDATA[<p>I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.</p>
+</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Halftoning</title><link href="http://localhost:4000/halftoning/" rel="alternate" type="text/html" title="Halftoning" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/halftoning</id><content type="html" xml:base="http://localhost:4000/halftoning/"><![CDATA[<p>I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.</p>
 
 <h2 id="halftoning">Halftoning</h2>
 
@@ -526,4 +529,235 @@ which are quite easy to come up with, are actually</p>
   <p></p>
 </p>
 
-<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry></feed>
+<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
+
+<p>You can tell a roll of tape has been within my reach if you see these scattered around:</p>
+
+<p>[picture of accordioned tape]</p>
+
+<p>I thought an pleated pattern like this could make for a cool lampshade, and I wanted to do some experimentation with laser-creased origami. I made a pendant lamp for my apartment using this method a while ago:</p>
+
+<p>[lamp]</p>
+
+<p>It’s made from 30 individual segments, each one pre-cut and creased by a laser. These 20-point stars are hard enough to assemble, so I was glad that I also didn’t have to do as much work on the folding. Vector engraving the creases also let me use heavy art paper, which is normally very unsuitable for origami and can’t be creased very well by hand.</p>
+
+<h2 id="design">Design</h2>
+
+<p>I wanted my lampshades to have a series of cascading terraces like this:</p>
+
+<p>[spoiler]</p>
+
+<p>This design only has a few parameters: The number of terraces, the angle at which they separate from each other, and the distance between folds. Manually defining these values, however, would tell you very little about what the final profile will look like. So I made an editor that prioritizes this profile and lets the user tune it using bezier curves:</p>
+
+<p>[video]</p>
+
+<p>The number of terraces can be changed, and you can slide folds along the curve and the underside of each terrace to achieve the final profile:</p>
+
+<p>[video]</p>
+
+<p>On the right you can see a readout that gives the height of this final profile as a percentage of the paper height. Since the design will be made on a laser cutter with a limited working area, its final size is constrained by that working area. More terraces with longer underside segments means more paper, and since there’s a limit to how much paper you can fit, this really just means the final piece will be smaller.</p>
+
+<h2 id="export">Export</h2>
+
+<p>There’s also a built-in export interface which color-codes the pattern for different power levels from the laser. Creating this design isn’t entirely trivial; segments of the profile can’t be measured absolutely but instead must be measured relative to the total length of all segments. This is calculated during the design process to give the height percentage.</p>
+
+<p>The edge of each terrace is a doubled-back fold that just looks like a straight horizontal line on the net. But the folds at the top of each terrace, hidden under the previous one, need to have a V-shape at half the angle desired.</p>
+
+<p>Note that this only gives the desired profile when the folds are squished flat; The angles will increase causing the entire piece to curl the more it is stretched. I haven’t figured out how to account for this stretch as a parameter since it’s changing constantly as the piece is manipulated. Perhaps a circumference value could give the amount of stretch.</p>
+
+<p>I chose two parameters to be used during export, aspect ratio and number of pleats. These will determine what your piece ends up looking like. If you want a smaller piece with a lot of pleats, you can increase the aspect ratio.</p>
+
+<p>[design]</p>
+
+<p>If you want to make a larger shade out of multiple segments, you can reduce these parameters and get a longer design that fits sideways on the paper:</p>
+
+<p>[design]</p>
+
+<p>As a bonus, I added the ability to save these parameters as JSON files; each non-function key on the keyboard is assigned a different slot which you can call up by pressing it. Folders are automatically created, and exported SVG files are named with the pleat count and aspect ratio.</p>
+
+<p>The source code for this tool is on GitHub. If you make something with it please send a picture!</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Laser Origami]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/light-mirror/" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/light-mirror/"><![CDATA[<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
+  <video src="/assets/Light Mirror/mp4s/44.mp4" autoplay="" loop=""></video>
+</div>
+<figcaption>
+  Didn't want to make you wait.
+</figcaption>
+<p></p>
+
+<h2 id="the-concept">The Concept</h2>
+
+<p>My first software projects were webcam filters — interactive sketches that invite the viewer to interact with them. This was already a well-traveled path, with artists like Danny Rozin and Breakfast Studio using depth-sensing cameras to extract a simple silhouette of the user in all lighting conditions.</p>
+
+<p>These kinds of installations are quite popular, but I saw potential for one that brings the audience even closer by creating a 1-to-1 image — as in, you can hold your hand right up to the piece and see its silhouette right on the other side of the imaginary glass, as if it were a shadow cast by the setting sun.</p>
+
+<h2 id="the-tech">The Tech</h2>
+
+<p>The sensor of choice is an Xbox Kinect sensor. The Kinect v2 is massively over-engineered for its original purpose as an Xbox accessory. It’s equipped with a time-of-flight depth sensing camera, where the Kinect v1 and most other sensors such as Intel RealSense cameras use stereoscopic cameras or dot projectors to gather data.</p>
+
+<p>The working principle of this sensor is that the speed of light is used to measure distance. A blaster next to the camera sends out pulses of infared light, and the camera can measure, for each pixel, how long it took for the pulse to be reflected back. Thus each pixel creates a point in 3D space, and the camera’s entire view generates a point cloud.</p>
+
+<p>With this point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
+
+<div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
+  <video src="/assets/Light Mirror/mp4s/48.mp4" autoplay="" loop=""></video>
+</div>
+
+<h2 id="the-display">The Display</h2>
+
+<p>The projector was a necessity — I wanted to make a real display of course, but building one  large enough was out of my budget. The project was shelved until I transfered to UCLA and started hanging out at the Makerspace. I noticed that they had a lot of NeoPixel strips — about 100 meters, worth a few thousand dollars. I asked some version of “can I use basically all of these to make this project?”, and was asked some version of “what else do you need?”.</p>
+
+<p>I built a 45x60 pixel display, 1.5 meters wide with 2 meter strips running vertically. The LEDs came in 5-meter reels, so nine of the strips had to be spliced together from the remaining 1-meter sections. Data and power each required two leads per strip, for a total of 180 solder connections. I used the discontinued FadeCandy controllers, which each came with 8 pins. I wanted each 2-meter strip to have its own pin, so 6 boards in total were used. In hindsight, this was overkill — the display could be driven at well over 60 hertz using one board, if the strips were wired sequentially into 5 or more sections each driven by one pin. But driving them all in parallel was cleaner and made the system more reliable, at least.</p>
+
+<p>[Wiring]</p>
+
+<p>The first version of the display had a wood frame, with elastic holding the strips in place. It worked well enough, but the strips would constantly get pulled loose or start slipping out under their own weight and have to be tightened again. All of the electronics including the computer that drove this setup were mounted on a sandwich of laser-cut acrylic, with 3D printed standoffs holding the two pieces apart:</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/Light Mirror/1.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    The inside of the enclosure, containing all of the messy cords and Kinect adapters. When it's assembled the power supply and computer are mounted on top of this with another acrylic sheet.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup.</p>
+
+<p>[New display]</p>
+
+<h2 id="the-software">The Software</h2>
+
+<p>The ideal version of this piece would be a display where each pixel has a depth sensor looking straight out, so that each pixel can see and respond to objects within its “column”. You can picture it as an array of laser beams, and the ones that are broken create the silhouette of the subject.</p>
+
+<p>However, placing a suitable time-of-flight sensor on each pixel would increase the cost by an order of magnitude. So I stuck with the Kinect sensors and worked backwards from this ideal form to write the software. The final image displayed on the 45x60 panel is essentially a 2D histogram of the point cloud: each pixel has its own square tube projecting out from it, and all of the points that get caught in that tube are added to its bucket.</p>
+
+<p>[More Cloud]</p>
+
+<p>Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Didn't want to make you wait.]]></summary></entry><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+
+<h2 id="the-style">The Style</h2>
+
+<p>In January of 2018, I developed a new art style using gel pens, printer paper, and a lightbox for tracing. I printed out images in black and white, taped another piece of paper on top, shined a light through from underneath, and got to tracing. I made these:</p>
+
+<p align="center">
+  <img src="/assets/Marching Waves/portrait.png" width="full" />
+  <img src="/assets/Marching Waves/ellie.png" width="full/2" />
+</p>
+
+<p>I still look to these pieces all the time for inspiration, but they were exhausting to make. Each took several hours to draw, hunched over a desk and slowly laying down one line at a time. I would certainly not be making anything larger than a standard sheet of paper using this method.</p>
+
+<h2 id="going-digital">Going Digital</h2>
+
+<p>Later that year I started learning to code with <a href="https://processing.org">Processing</a>, a programming language made by and for artists. My work quickly focused on the art of image rendering, of filters and halftoning patterns, ways of reconstructing an image from a given set of geometric and chromatic constraints.</p>
+
+<p>It wasn’t long before I started thinking about how to replicate my drawing style in Processing. If I could do that, I could use a pen plotter to make pieces as large and intricate as I like without having to draw them by hand. The prospect was exciting of course, but I also had the feeling that it would be impossible.</p>
+
+<p>I started making attempts in late 2019, once I felt good enough at coding to give it a shot. I probably was, but my attempts went in the wrong direction. I tried to re-create the process too literally, making a virtual pen trace out each line. I’d been ignoring what was obvious to myself and many other people I had talked to — this style is a mathematical function.</p>
+
+<h2 id="the-math">The Math</h2>
+
+<p>Someone fresh out of multivariable calculus might look at these drawings and write something like this:</p>
+
+<p>$$ |\nabla u(x,y)| = f(x,y) $$</p>
+
+<p>If each drawing is a topographical map, $u(x,y)$ defines the terrain that’s being sliced to create it. The slices bunch up where the terrain is steepest, and spread out where it’s more shallow. This density is what creates the halftone effect, so the steepness of $u$’s surface must be controlled by the darkness of the desired image. We define the function $f(x,y)$ as that measured darkness, so in plain English our equation is:</p>
+
+<p>“The slope of $u(x,y)$ at any given point $(x,y)$ is defined by the value of $f(x,y)$ at that point”</p>
+
+<p>If you look back at the drawings, this equation can clearly be seen as the rule I was unknowingly following. The problem was solving it, and I had no ideas on how to even begin.</p>
+
+<p>I got unstuck by pure chance in the Summer of 2020: I finally found the name of the equation I was trying to solve. I’ll admit that given how long it took me to stumble upon this name, and how crucial it was, it feels weird to just give it away. Anyway, it’s the <a href="https://en.wikipedia.org/wiki/Eikonal_equation">Eikonal Equation</a>.</p>
+
+<h2 id="the-algorithm">The Algorithm</h2>
+
+<p>That Wikipedia article was the initial gateway to making my program, but there was a long road ahead — I was working right at the edge of my abilities as a mathematician and a programmer. Even writing out what the algorithm had to do, before any coding could begin, took the better part of a week. I’ll try to summarize it in a paragraph or two, but don’t get your hopes up.</p>
+
+<p>Computers need to interpret smooth, continuous functions as measured points on a discrete grid (in this case, the pixel grid of the canvas).  Rather than taking derivatives as we would on paper, they just directly measure the slope near a given point (which is just as well, because the Eikonal Equation has no closed-form solution anyway). We can sample the image at every pixel $(x,y)$ to get our $f(x,y)$ at each grid point, and assuming we know the (lowest) values $U_X ,U_Y$ of $u$ at the neighboring points in each direction, our equation can be written as:</p>
+
+<p>$$ \sqrt{\left(U_{ij} - U_X\right)^2 + \left(U_{ij} - U_Y\right)^2} = f_{ij} $$</p>
+
+<p>Where $U_{ij}$  is the value of $u$ at pixel $(i,j)$. We measure slope by subtracting the values of neighboring points, and then take the Euclidean norm to get $|\nabla u(x,y)|$. Feel free to grab a beer and spend an afternoon solving this; otherwise you’ll just have to trust me when I say that the solution is:</p>
+
+<p>$$ U_{ij} = \frac{U_X + U_Y}{2} + \frac{1}{2}\sqrt{\left(U_X+U_Y\right)^2 - 2 \left(U_X^2 + U_Y^2 - f_{ij}^2 \right)} $$</p>
+
+<p>Great! We have the closest thing to a closed-form solution. And it’s so pretty. Problem is, it relies on already knowing the value of $u$ for at least one neighboring point. This makes sense in a way — you can imagine the contour lines as waves rippling out across the canvas from one point or direction. Changes in their shape early on will affect the shape they take later. Since one part of the domain can have such an effect on the other, it becomes more clear why there is no closed-form solution. This long chain of cause-and effect is why there is no way to solve this equation everywhere all at once.</p>
+
+<p>This is where James Sethian’s <a href="https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html">Fast Marching Method</a> comes in. It’s an algorithm that takes a set of points with known values, which I call the origin, and builds the solution out from them one point at a time. If you’re familiar with Dijkstra’s Algorithm, you’ll be able to see the third interpretation of this equation’s solution: the path-distance of each point from the origin, where $f$ is affecting the speed of travel. You can see it in this old map:</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/Marching Waves/map.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    Here New York is the origin, and each line represents all the points with a given path-distance, accounting for terrain and modes of travel.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>Fast Marching is basically Dijkstra’s Algorithm, using the expression from before as its method of measuring path-distance. And once we’ve implemented it, we can solve the equation! This is the very heart of the program (I only operate on it when something has gone horribly wrong). To make it usable, we need an interface with which to make and export designs.</p>
+
+<h2 id="the-interface">The Interface</h2>
+
+<p>Making the interface I use to try out ideas and export designs has been a continous process. I tinker with it and add features whenever I need it to do something new, or when I’m not happy with the results. It’s changed a lot over the years, but here’s what it currently looks like:</p>
+
+<div class="video-mask" style="aspect-ratio: 0.96">
+  <video src="/assets/Marching Waves/demo.mp4" autoplay="" loop=""></video>
+</div>
+<figcaption>
+  It took a lot of time to make the contour lines render in real-time as the solution expands. 
+</figcaption>
+<p></p>
+
+<p>Pre-processing happens in Photoshop. The background is masked out in blue, which tells the program what regions to ignore. The subject is in grayscale, and red gives the origin set — the pixels with a known solution (zero) from which the solution for the rest of the domain can be grown. The red can be drawn in the program to try out ideas quickly, or added during pre-processing for more precision.</p>
+
+<p>Once the solution is complete, the contour lines can be exported as a vector file, ready for any cutting or drawing machine. I used <a href="https://en.wikipedia.org/wiki/Marching_squares">Marching Squares</a> to draw the contours, and a custom sorting algorithm to join all the tiny line segments into continous paths.</p>
+
+<p>That part alone took as long as getting the thing working in the first place. But once it was completed, all I had to do was send finished designs to a pen plotter and watch it draw designs as big and detailed as I wanted. Finally, I thought, now comes the easy part.</p>
+
+<h2 id="manufacturing">Manufacturing</h2>
+
+<p>Everything described thus far took about 5% as long as it took to actually develop the manufacturing process.</p>
+
+<p align="center">
+  <img src="/assets/Marching Waves/plotting.gif" width="full" />
+</p>
+
+<p>Once I had the program working, I tried and failed to get good results from my cheap desktop plotter. With no other resources at my disposal, I gave up on this project for the time being. When UCLA resumed in-person classes a year later, I started my favorite job again: working at the residential makerspace. Somewhere in the middle of Fall quarter, I realized that our huge vinyl cutter was the perfect machine to make the art pieces I had been dreaming of. And so, from October 2021 to May 2022, I spent every weekend and most weekdays hunched over our Roland GR-420 vinyl cutter.</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/Marching Waves/cutter.png" />
+    <!-- <img src="/assets/Marching Waves/cutter.png" style="max-width: 90%; padding-left: 5%"> -->
+  </figure>
+  <p></p>
+  <figcaption>
+    Here you can see one of the first problems I ran into: the middle roller was smearing ink up and down the piece. I spent several weeks trying to mitigate this problem physically before finding out you can just turn off the roller in settings.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>Normally this machine takes rolls of vinyl up to 42 inches wide and cuts them with a drag knife. Replace vinyl with paper and knife with pen, and you have a giant plotter. It was not only much larger, but much more precise than the one I had at home. On more detailed pieces, a line being off by even a tenth of a millimeter can cause visible banding. This machine would draw all across the paper for hours, laying down literal miles of lines, and never drift by even that much. For its intended purpose it had no reason to be capable of doing this, but it was.</p>
+
+<p>When I started working with the Roland, I would’ve been appalled at the idea of writing this article — I had long been afraid of other people stealing my source code and replicating my pieces. Seven months of work later, I was no longer worried. The additional knowledge required to get the results I want on paper exists only in my head, and I acquired it by going far past the point where any sane person would’ve given up.</p>
+
+<p>With no existing reference available, I had to push through very specific and unprecedented. problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing… the list goes on. At the moment, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.</p>
+
+<p>The technique has progressed only in small ways since then. In March 2023 I discovered a fundamental math error while writing the first draft of this article. I did some heart surgery on the program and saw a significant difference in the resulting patterns. I’m not sure if I like it more. We’ll have to see.</p>
+
+<h2 id="gallery">Gallery</h2>
+
+<p>Here are some of the pieces I made in 2021 and 2022:</p>
+
+<p align="center">
+  <img src="/assets/Marching Waves/shades1.png" width="full" />
+  <img src="/assets/Marching Waves/shades2.png" width="full" />
+  <img src="/assets/Marching Waves/shades3.png" width="full" />
+
+  <img src="/assets/Marching Waves/hand1.png" width="full" />
+  <img src="/assets/Marching Waves/hand2.png" width="full" />
+  <img src="/assets/Marching Waves/nipsey1.png" width="full" />
+  <img src="/assets/Marching Waves/nipsey2.png" width="full" />
+  <img src="/assets/Marching Waves/nipsey3.png" width="full" />
+</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[My signature art style and how it’s made.]]></summary></entry></feed>

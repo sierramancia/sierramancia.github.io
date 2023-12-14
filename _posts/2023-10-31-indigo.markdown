@@ -6,6 +6,113 @@ categories: projects
 permalink: /indigo/
 ---
 
-This past spring, I had the opportunity to attend a class on dyeing with indigo. For two weeks, I
+<p align="center">
+  <img src="/assets/indigo/2.png" width="full">
+</p>
 
-## The Style
+This past spring, I had the opportunity to take an intensive class on dyeing with indigo. For two weeks, I lived in the mountains of Japan with 9 other students, staying with our teacher Bryan in a 150-year-old farmhouse. I was quite an outsider in this group — all but one of my classmates were in the fashion industry. I was only there to take my aunt's place in the class, and came in with zero prior experience in dyeing. Because of this, I'm especially proud of what I was able to accomplish in my two weeks there.
+
+<p align="center">
+  <img src="/assets/indigo/3.png" width="full">
+</p>
+
+Indigo is fascinating to work with. It makes a mechanical bond with the fabric instead of a chemical bond like most dyes; this is what allows it to gradually fall off and create the fade patterns seen in denim. The mechanical bond is formed when oxygen joins loose dye molecules together into chains that affix themselves to the fibers.
+
+<p align="center">
+  <img src="/assets/indigo/1.png" width="full">
+</p>
+
+In its unoxidized state, indigo is green. We would dip fabric into vats of de-oxidized indigo. They came out green and we hung them out not to dry, but to oxidize. In the breeze they turned to that familiar blue, and we dipped them again.
+
+After five dips or so, we had to remove all the loose dye that had not attached to the fabric. You can wring and rinse a lot of it out, but only impact will get the last of it. Down the road from the farmhouse, a creek ran through the quiet village. We walked down to the creek, descented a set of rungs, and beat the fabric against the rocks until no more streaks of blue joined the gentle flow.
+
+<p align="center">
+  <img src="/assets/indigo/24.png" width="full">
+</p>
+
+After hanging the pieces out to dry, we went inside to drink plum moonshine and work on our sewing. Nothing is made quickly this way, and that was just fine.
+
+## Katazome
+
+In addition to better-known dye resist techniques such as *shibori*, we learned how to apply a rice paste onto the fabric to block the indigo, a method known as *katazome*. Stencils are made out of a durable paper with a thin mesh backing.
+
+<p align="center">
+  <img src="/assets/indigo/25.png" width="full">
+</p>
+<figcaption>
+    An antique katazome piece. The stencil was made with a hole punch and a lot of time.
+</figcaption>
+<p></p>
+
+It pained me to think of everything I could do with this method if I had access to a laser cutter or even just a desktop vinyl cutter. But my tools were on the other side of the Pacific, and the nearest public makerspace was hundreds of miles away. Everything I had access to in the farmhouse was analog — even the sewing was done by hand.
+
+## Digital Art
+Can you make digital art with only your hands? I've always thought so; to me "digital" doesn't refer to computers or machines of any kind, but to a discrete space as opposed to a continuous one. This space can be a tapestry with a woven design — the creative choices are made from a finite set of options: which thread passes over the others, which color appears on each square of the woven grid.
+
+<p align="center">
+  <img src="/assets/indigo/26.png" width="full">
+</p>
+<figcaption>
+    This woven basket is an example of digital art to me.
+</figcaption>
+<p></p>
+
+To me this is relevant because I've never excelled at analog art. Painting, illustration, fashion, music, etc. have stayed beyond my reach thus far; Of the many poorly-designed machines with terrible software I've had to master, none are more perplexing to me than a physical canvas and the things that mark it. One could attribute this to the direction my art has taken in the past five years, and perhaps I would benefit from picking up a pencil, even just for fun.
+
+But no great strides were going to be made in the two weeks I had here — I was not going to approach the beauty and intricacy of the *katazome* patterns we were shown as examples. Nor was I being asked to — we were here to learn the technique, not to become master designers. But in this completely unfamiliar environment, among fashion industry professionals and master seamstresses, I saw the opportunity to do something new.
+
+This is something I've grown proud of — my skillset does not limit me, but rather enhances the new skills I take on. All around me I see painters, fashion designers, and musicians whose talent feels untouchable. They can do so many things I can't. The past five years for me have been a process of finding out what I can do that others can't. That realm is not just defined by my skills, but 
+
+## The system
+
+Against the advice of our teacher, I wanted to make a design with 6 different shades of indigo. This would require the stenciling process to be repeated five times. And I wanted the design to be large, of course. Using up five large sheets of *katazome* paper was out of the question, so I made a system that used one modular stencil to transfer a digital design.
+
+<p align="center">
+  <img src="/assets/indigo/6.png" width="full">
+</p>
+
+With a ruler and a craft knife, I cut ten stripes and an alignment window into my piece of *katazome* paper. Then I found a grease pencil and used it to complete the 5mm grid.
+
+I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the custom stencil I would use to transfer the design.
+
+<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
+  <video src="/assets/indigo/5.mp4" autoplay loop></video>
+</div>
+
+## The Work
+
+<p align="center">
+  <img src="/assets/indigo/17.png" width="full">
+</p>
+
+Here's what one layer looks like:
+
+1. Iron the fabric
+
+2. Align the stencil with a pair of locating stitches on the fabric
+
+3. Apply paste to the squares shown by the program
+
+4. Do this 11 more times
+
+5. Hang up the fabric to let the paste dry
+
+6. Dip the fabric in the indigo vat and let it oxidize for 5 minutes
+
+7. Rinse off the excess indigo. Watch the paste you spent hours applying flake off and disintegrate
+
+8. Walk down to the river and beat the rest of the indigo out onto the rocks
+
+9. Hang up the fabric to dry. Try to eat something while you're waiting
+
+For three days, I started working when I woke up and stopped only to go to bed. If I worked diligently, I could repeat this cycle twice in such a 16-hour workday. I'm glad I didn't know what I was in for when I started. The first results were exciting enough to keep me going.
+
+Rather than finding a way to skip some hard work through automation, I had the computer give me more work than I could have imagined. And it was worth it.
+
+## Result
+
+<p align="center">
+  <img src="/assets/indigo/28.png" width="full">
+</p>
+
+I am happy to say that all I did to make this happen was worth it. I have one of the most unique pieces of art I've ever made: a piece that is plainly two things at once. You can immediately identify it as a digital design, and as a completely handmade piece. It is perhaps the most representative piece I've made; it shows how I wield my technical skills not as a replacement for labor, but as a challenge to do more with it. 

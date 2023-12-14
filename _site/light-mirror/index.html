@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Light Mirror | Alberto Mancia</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="Light Mirror">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Didn't want to make you wait.">
+<meta property="og:description" content="Didn't want to make you wait.">
+<link rel="canonical" href="http://localhost:4000/light-mirror/">
+<meta property="og:url" content="http://localhost:4000/light-mirror/">
+<meta property="og:site_name" content="Alberto Mancia">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-03-20T15:29:27-07:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Light Mirror">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-20T15:29:27-07:00","datePublished":"2023-03-20T15:29:27-07:00","description":"Didn&#39;t want to make you wait.","headline":"Light Mirror","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/light-mirror/"},"url":"http://localhost:4000/light-mirror/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alberto Mancia">
+</head>
+<!-- CSS for Tocbot -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+
+  <body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">Alberto Mancia</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Light Mirror</h1>
+    <p class="post-meta">
+      <!-- <time class="dt-published" datetime="2023-03-20T15:29:27-07:00" itemprop="datePublished">Mar 20, 2023
+      </time> --></p>
+    </header>
+    
+    <div class="content-wrapper">
+      <div class="post-content e-content" itemprop="articleBody">
+        <div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
+  <video src="/assets/Light%20Mirror/mp4s/44.mp4" autoplay="" loop=""></video>
+</div>
+<figcaption>
+  Didn't want to make you wait.
+</figcaption>
+<p></p>
+
+<h2 id="the-concept">The Concept</h2>
+
+<p>My first software projects were webcam filters — interactive sketches that invite the viewer to interact with them. This was already a well-traveled path, with artists like Danny Rozin and Breakfast Studio using depth-sensing cameras to extract a simple silhouette of the user in all lighting conditions.</p>
+
+<p>These kinds of installations are quite popular, but I saw potential for one that brings the audience even closer by creating a 1-to-1 image — as in, you can hold your hand right up to the piece and see its silhouette right on the other side of the imaginary glass, as if it were a shadow cast by the setting sun.</p>
+
+<h2 id="the-tech">The Tech</h2>
+
+<p>The sensor of choice is an Xbox Kinect sensor. The Kinect v2 is massively over-engineered for its original purpose as an Xbox accessory. It’s equipped with a time-of-flight depth sensing camera, where the Kinect v1 and most other sensors such as Intel RealSense cameras use stereoscopic cameras or dot projectors to gather data.</p>
+
+<p>The working principle of this sensor is that the speed of light is used to measure distance. A blaster next to the camera sends out pulses of infared light, and the camera can measure, for each pixel, how long it took for the pulse to be reflected back. Thus each pixel creates a point in 3D space, and the camera’s entire view generates a point cloud.</p>
+
+<p>With this point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
+
+<div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
+  <video src="/assets/Light%20Mirror/mp4s/48.mp4" autoplay="" loop=""></video>
+</div>
+
+<h2 id="the-display">The Display</h2>
+
+<p>The projector was a necessity — I wanted to make a real display of course, but building one  large enough was out of my budget. The project was shelved until I transfered to UCLA and started hanging out at the Makerspace. I noticed that they had a lot of NeoPixel strips — about 100 meters, worth a few thousand dollars. I asked some version of “can I use basically all of these to make this project?”, and was asked some version of “what else do you need?”.</p>
+
+<p>I built a 45x60 pixel display, 1.5 meters wide with 2 meter strips running vertically. The LEDs came in 5-meter reels, so nine of the strips had to be spliced together from the remaining 1-meter sections. Data and power each required two leads per strip, for a total of 180 solder connections. I used the discontinued FadeCandy controllers, which each came with 8 pins. I wanted each 2-meter strip to have its own pin, so 6 boards in total were used. In hindsight, this was overkill — the display could be driven at well over 60 hertz using one board, if the strips were wired sequentially into 5 or more sections each driven by one pin. But driving them all in parallel was cleaner and made the system more reliable, at least.</p>
+
+<p>[Wiring]</p>
+
+<p>The first version of the display had a wood frame, with elastic holding the strips in place. It worked well enough, but the strips would constantly get pulled loose or start slipping out under their own weight and have to be tightened again. All of the electronics including the computer that drove this setup were mounted on a sandwich of laser-cut acrylic, with 3D printed standoffs holding the two pieces apart:</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/Light%20Mirror/1.png">
+  </figure>
+  </p>
+<p></p>
+  <figcaption>
+    The inside of the enclosure, containing all of the messy cords and Kinect adapters. When it's assembled the power supply and computer are mounted on top of this with another acrylic sheet.
+  </figcaption>
+  <p></p>
+
+
+<p>I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup.</p>
+
+<p>[New display]</p>
+
+<h2 id="the-software">The Software</h2>
+
+<p>The ideal version of this piece would be a display where each pixel has a depth sensor looking straight out, so that each pixel can see and respond to objects within its “column”. You can picture it as an array of laser beams, and the ones that are broken create the silhouette of the subject.</p>
+
+<p>However, placing a suitable time-of-flight sensor on each pixel would increase the cost by an order of magnitude. So I stuck with the Kinect sensors and worked backwards from this ideal form to write the software. The final image displayed on the 45x60 panel is essentially a 2D histogram of the point cloud: each pixel has its own square tube projecting out from it, and all of the points that get caught in that tube are added to its bucket.</p>
+
+<p>[More Cloud]</p>
+
+<p>Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.</p>
+
+
+      </div>
+      <div id="sticky-toc"></div>
+    </div>
+<a class="u-url" href="/light-mirror/" hidden></a>
+  </article>
+
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="/assets/js/tocbot.js"></script>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Alberto Mancia</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Alberto Mancia</li>
+<li><a class="u-email" href="mailto:albertomancia@g.ucla.edu">albertomancia@g.ucla.edu</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li><a href="https://github.com/albertomancia"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">albertomancia</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Artist and other things</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<!-- JavaScript for Tocbot -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js"></script>
+  </body>
+
+</html><html>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#sticky-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: 'main',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For more options, visit the official documentation.
+      orderedList: false,
+    });
+  });
+</script>
+</html>
