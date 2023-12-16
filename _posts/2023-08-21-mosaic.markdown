@@ -6,4 +6,18 @@ categories: projects
 permalink: /mosaic/
 ---
 
-Shader code is conceptually a 
+This is one of my rare software-only projects. The published form is actually an [Instagram filter](https://www.instagram.com/ar/804390247877532) you can try for yourself!
+
+Most of my programs can't be experienced this way; to make a stable, fast live video effect that can run on any smartphone you need to use shader code. It's difficult but rewarding to learn — you have to "invert" your point of view from an omniscient CPU to an anonymous, lost GPU thread that can only poke at its own surroundings. The most basic shapes and patterns are made in a completely different way than you would make them with a tool like Processing.
+
+## The Challenge
+
+I wanted to challenge myself by creating an impressionistic, painterly style. This is very easy to do using traditional CPU code — I even did it in [MATLAB](/matlab-painting/)! It's a major challenge in shader code for the same reason it's so easy everywhere else — Impressionism lends itself to stochastic processes, procedural layering of brushstrokes to gradually build up an image. You can't do that with real-time graphics, so you have to fake it.
+
+As this project stands, it looks like a mosaic of colored tiles. I can't think of a painter that painted like this, and it still feels very "content-unaware". The one way in which it is content-aware is the interesting and difficult part of this project.
+
+## Awareness
+
+It's relatively easy to make a colored Voronoi diagram like this: you copy someone else's Voronoi code, have it sample the input image at each cell's origin point, and then paint the whole cell that color. This looks kind of cool, but I think we can do something cooler: I want to depopulate areas of low detail so they have bigger cells. This feels closer to something a painter would do.
+
+I did this using quadtrees. In hindsight, there might be a simpler way

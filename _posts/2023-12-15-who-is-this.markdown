@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Who is This?"
+title:  "Who is this?"
 date:   2023-12-15 15:29:27 -0700
 categories: articles
 permalink: /who-is-this/

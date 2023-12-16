@@ -57,11 +57,7 @@ Can you make digital art with only your hands? I've always thought so; to me "di
 </figcaption>
 <p></p>
 
-To me this is relevant because I've never excelled at analog art. Painting, illustration, fashion, music, etc. have stayed beyond my reach thus far; Of the many poorly-designed machines with terrible software I've had to master, none are more perplexing to me than a physical canvas and the things that mark it. One could attribute this to the direction my art has taken in the past five years, and perhaps I would benefit from picking up a pencil, even just for fun.
-
-But no great strides were going to be made in the two weeks I had here — I was not going to approach the beauty and intricacy of the *katazome* patterns we were shown as examples. Nor was I being asked to — we were here to learn the technique, not to become master designers. But in this completely unfamiliar environment, among fashion industry professionals and master seamstresses, I saw the opportunity to do something new.
-
-This is something I've grown proud of — my skillset does not limit me, but rather enhances the new skills I take on. All around me I see painters, fashion designers, and musicians whose talent feels untouchable. They can do so many things I can't. The past five years for me have been a process of finding out what I can do that others can't. That realm is not just defined by my skills, but 
+I'd like to think that I don't need any of my machines, or even my computer, to make the kind of digital art that I do. I got to take a step in that direction here.
 
 ## The system
 
@@ -76,7 +72,7 @@ With a ruler and a craft knife, I cut ten stripes and an alignment window into m
 I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the custom stencil I would use to transfer the design.
 
 <div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/indigo/5.mp4" autoplay loop></video>
+  <video src="/assets/indigo/5.mp4" autoplay loop muted></video>
 </div>
 
 ## The Work

@@ -6,7 +6,7 @@ categories: projects
 permalink: /group-classifier/
 ---
 
-You can view an interactive version of this iPython notebook on [Kaggle]()
+This project began as a way of solfing a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on [Kaggle]()
 
 ## Abelian Group Classifier
 
@@ -292,5 +292,5 @@ Latex(output)
 ```
 
 <div>
-$\\text{Groups of order }4860$:\n\n\\begin{array}{l|l|l}\n    \\text{Elementary Divisors} & \\text{Invariant Factors} & \\text{Isomorphic Group}\\\\\n    \\hline\n    2,2,3,3,3,3,3,5 & 3,3,3,6,30 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{6}\\times\\mathbb{Z}_{30}\\\\\n    2,2,3,3,3,3^2,5 & 3,3,6,90 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{6}\\times\\mathbb{Z}_{90}\\\\\n    2,2,3,3^2,3^2,5 & 3,18,90 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{18}\\times\\mathbb{Z}_{90}\\\\\n    2,2,3,3,3^3,5 & 3,6,270 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{6}\\times\\mathbb{Z}_{270}\\\\\n    2,2,3^2,3^3,5 & 18,270 & \\mathbb{Z}_{18}\\times\\mathbb{Z}_{270}\\\\\n    2,2,3,3^4,5 & 6,810 & \\mathbb{Z}_{6}\\times\\mathbb{Z}_{810}\\\\\n    2,2,3^5,5 & 2,2430 & \\mathbb{Z}_{2}\\times\\mathbb{Z}_{2430}\\\\\n    2^2,3,3,3,3,3,5 & 3,3,3,3,60 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{60}\\\\\n    2^2,3,3,3,3^2,5 & 3,3,3,180 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{180}\\\\\n    2^2,3,3^2,3^2,5 & 3,9,180 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{9}\\times\\mathbb{Z}_{180}\\\\\n    2^2,3,3,3^3,5 & 3,3,540 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{3}\\times\\mathbb{Z}_{540}\\\\\n    2^2,3^2,3^3,5 & 9,540 & \\mathbb{Z}_{9}\\times\\mathbb{Z}_{540}\\\\\n    2^2,3,3^4,5 & 3,1620 & \\mathbb{Z}_{3}\\times\\mathbb{Z}_{1620}\\\\\n    2^2,3^5,5 & 4860 & \\mathbb{Z}_{4860}\\\\\n\\end{array}
+    <img src="/assets/group-classifier/1.png">
 </div>
