@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-16T04:12:43-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-16T04:30:48-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
 
 <h2 id="the-style">The Style</h2>
 
@@ -793,7 +793,9 @@ which are quite easy to come up with, are actually</p>
 
 <p>I thought an pleated pattern like this could make for a cool lampshade, and I wanted to do some experimentation with laser-creased origami. I made a pendant lamp for my apartment using this method a while ago:</p>
 
-<p>[lamp]</p>
+<p align="center">
+    <img src="/assets/lampshades/2.png" />
+</p>
 
 <p>It’s made from 30 individual segments, each one pre-cut and creased by a laser. These 20-point stars are hard enough to assemble, so I was glad that I also didn’t have to do as much work on the folding. Vector engraving the creases also let me use heavy art paper, which is normally very unsuitable for origami and can’t be creased very well by hand.</p>
 

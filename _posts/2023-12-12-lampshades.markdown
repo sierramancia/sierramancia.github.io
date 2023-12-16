@@ -14,7 +14,9 @@ You can tell a roll of tape has been within my reach if you see these scattered 
 
 I thought an pleated pattern like this could make for a cool lampshade, and I wanted to do some experimentation with laser-creased origami. I made a pendant lamp for my apartment using this method a while ago:
 
-[lamp]
+<p align="center">
+    <img src="/assets/lampshades/2.png">
+</p>
 
 It's made from 30 individual segments, each one pre-cut and creased by a laser. These 20-point stars are hard enough to assemble, so I was glad that I also didn't have to do as much work on the folding. Vector engraving the creases also let me use heavy art paper, which is normally very unsuitable for origami and can't be creased very well by hand.
 
