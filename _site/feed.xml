@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-16T02:01:36-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-16T03:13:43-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
 
 <h2 id="the-style">The Style</h2>
 
@@ -106,7 +106,7 @@
 
 <p>When I started working with the Roland, I would’ve been appalled at the idea of writing this article — I had long been afraid of other people stealing my source code and replicating my pieces. Seven months of work later, I was no longer worried. The additional knowledge required to get the results I want on paper exists only in my head, and I acquired it by going far past the point where any sane person would’ve given up.</p>
 
-<p>With no existing reference available, I had to push through very specific and unprecedented. problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing… the list goes on. At the moment, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.</p>
+<p>With no existing reference available, I had to push through very specific and unprecedented problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing… the list goes on. At the moment, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.</p>
 
 <p>The technique has progressed only in small ways since then. In March 2023 I discovered a fundamental math error while writing the first draft of this article. I did some heart surgery on the program and saw a significant difference in the resulting patterns. I’m not sure if I like it more. We’ll have to see.</p>
 
@@ -136,8 +136,101 @@
     <img src="/assets/who-is-this/1.png" />
 </p>
 
-<p>If you’re in Barcelona and you want a tattoo, definitely hit her up.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/light-mirror/" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/light-mirror/"><![CDATA[<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/light-mirror/44.mp4" autoplay="" loop=""></video>
+<p>If you’re in Barcelona and you want a tattoo, definitely hit her up.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Halftoning</title><link href="http://localhost:4000/halftoning/" rel="alternate" type="text/html" title="Halftoning" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/halftoning</id><content type="html" xml:base="http://localhost:4000/halftoning/"><![CDATA[<p>I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.</p>
+
+<h2 id="halftoning">Halftoning</h2>
+
+<p>Creating the illusion of gray through these limiting black-and-white processes is known as halftoning, and it’s usually done on the microscopic level — you have to zoom way in on a newspaper to see the little dots of ink that all blur into one color from afar.</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/halftoning/eye.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    Only one color of ink is used to render Lincoln's eye on this five dollar bill — the pattern of the ink creates the illusion of different shades of gray.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>Once an image has been processed in this way, it can be printed in all sorts of ways. A laser cutter could make a stencil for it, or engrave linoleum to make a printing block. If the pattern is made up of uniform lines like in <a href="/marching-waves/">Marching Waves</a>, a pen plotter or embroidery machine could follow the paths. I see these processes as a way of being freed from the traditional printer, to explore new and interesting forms of computerized printing.</p>
+
+<h2 id="the-old-way">The Old Way</h2>
+
+<p>Even before I started working with machines, my first projects in Processing were halftoning effects like this one:</p>
+
+<p align="center">
+  <img src="/assets/halftoning/dots.png" />
+</p>
+
+<p>This one’s easy enough to program: make a grid of circles, where each circle expands and contracts depending on the brightness of the pixels beneath it. In addition to expanding circles, you can define all kinds of dynamic shapes that expand to fill a space:</p>
+
+<p align="center">
+  <img src="/assets/halftoning/demo.gif" />
+</p>
+
+<p>You can also define bars or concentric rings that expand and contract:</p>
+
+<p align="center">
+  <img src="/assets/halftoning/shadeshalftone2.png" />
+</p>
+
+<p>Defining these shapes becomes complicated very quickly, though. What if you wanted to make a Voronoi diagram where each cell is its own dynamic shape?</p>
+
+<p align="center">
+  <img src="/assets/halftoning/shadeshalftoneVoronoi.png" />
+</p>
+
+<p>I’m sure it’s possible to do this geometrically, but it would be an enormous pain. Thankfully I was introduced to a completely different method used by Photoshop artists. This is a raster method — it deals with pixels, not paths.</p>
+
+<h2 id="the-new-way">The New Way</h2>
+
+<p>It relies on a simple threshold operation. On its own, this will give you something workable:</p>
+
+<p align="center">
+  <img src="/assets/halftoning/threshold.png" />
+</p>
+
+<p>You’ll see this effect (also called “posterizing”) used to make stencils and such, but it’s boring and loses a lot of information. You don’t get the illusion of gray. This is why halftoning was invented, of course.</p>
+
+<p>But if you modulate the image with a certain pattern before running it through the threshold operation, like this:</p>
+
+<p align="center">
+  <img src="/assets/halftoning/modulated.png" />
+</p>
+
+<p>what you’ve essentially done is offset the threshold that is actually applied to each pixel. You can do this literally by sampling the pattern as a separate image — a map of what threshold to apply to each pixel — but this method is equivalent and works in Photoshop as well as in code. Now when you apply the threshold, you get this:</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/halftoning/wavy.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    I cannot begin to describe how difficult it would be to define these shapes geometrically.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>Now we’re cooking. The task has been shifted: instead of painstakingly defining how we want our shapes to behave, we just have to make a grayscale “threshold map” that will generate these shapes. Here are the ones I’ve used so far:</p>
+
+<p align="center">
+    <!-- <img src="/assets/halftoning/dotsMap.png" style="width: 49%; padding: 0px; padding-bottom: 5px;">
+    <img src="/assets/halftoning/stripesMap.png" style="width: 49%; padding: 0px; padding-bottom: 5px;">
+    <img src="/assets/halftoning/voronoiMap.png" style="width: 49%; padding: 0px; padding-bottom: 20px;">
+    <img src="/assets/halftoning/wavyMap.png" style="width: 49%; padding: 0px; padding-bottom: 20px"> -->
+  <figure>
+    <img src="/assets/halftoning/maps.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    The first two are patterns made in Illustrator with a blur applied, the last two were made by programs I wrote for this purpose. Note that in practice, these do not contain any black. They fade from white to transparent, masking the image beneath.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/light-mirror/" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/light-mirror/"><![CDATA[<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
+  <video src="/assets/light-mirror/44.mp4" autoplay="" loop="" muted=""></video>
 </div>
 <figcaption>
   This caption originally read "Didn't want to make you wait", but videos are taking forever to load and I don't know how to fix that so you are going to be waiting either way :(
@@ -167,10 +260,10 @@
   <p></p>
 </p>
 
-<p>With this point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
+<p>Each point is given as a vector, and has to be put through a series of transformations to get the point cloud aligned with the physical position of the display. The sensors are turned exactly 45 degrees inwards, so you need to multiply each vector with a rotation matrix. Then they have to be scaled in two directions because you’re not supposed to be doing this so why would they make the point cloud not distorted. Then you have to move in the x and y directions until you’re facing your own silhouette. With the point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
 
 <div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
-  <video src="/assets/light-mirror/48.mp4" autoplay="" loop=""></video>
+  <video src="/assets/light-mirror/48.mp4" autoplay="" loop="" muted=""></video>
 </div>
 
 <h2 id="the-display">The Display</h2>
@@ -401,7 +494,57 @@
   <img src="/assets/indigo/28.png" width="full" />
 </p>
 
-<p>I am happy to say that all I did to make this happen was worth it. I have one of the most unique pieces of art I’ve ever made: a piece that is plainly two things at once. You can immediately identify it as a digital design, and as a completely handmade piece. It is perhaps the most representative piece I’ve made; it shows how I wield my technical skills not as a replacement for labor, but as a challenge to do more with it.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<p>You can view an interactive version of this iPython notebook on <a href="">Kaggle</a></p>
+<p>I am happy to say that all I did to make this happen was worth it. I have one of the most unique pieces of art I’ve ever made: a piece that is plainly two things at once. You can immediately identify it as a digital design, and as a completely handmade piece. It is perhaps the most representative piece I’ve made; it shows how I wield my technical skills not as a replacement for labor, but as a challenge to do more with it.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/lampshades/" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/lampshades</id><content type="html" xml:base="http://localhost:4000/lampshades/"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
+
+<p>You can tell a roll of tape has been within my reach if you see these scattered around:</p>
+
+<p>[picture of accordioned tape]</p>
+
+<p>I thought an pleated pattern like this could make for a cool lampshade, and I wanted to do some experimentation with laser-creased origami. I made a pendant lamp for my apartment using this method a while ago:</p>
+
+<p>[lamp]</p>
+
+<p>It’s made from 30 individual segments, each one pre-cut and creased by a laser. These 20-point stars are hard enough to assemble, so I was glad that I also didn’t have to do as much work on the folding. Vector engraving the creases also let me use heavy art paper, which is normally very unsuitable for origami and can’t be creased very well by hand.</p>
+
+<h2 id="design">Design</h2>
+
+<p>I wanted my lampshades to have a series of cascading terraces like this:</p>
+
+<p align="center">
+    <img src="/assets/lampshades/1.png" />
+</p>
+
+<p>This design only has a few parameters: The number of terraces, the angle at which they separate from each other, and the distance between folds. Manually defining these values, however, would tell you very little about what the final profile will look like. So I made an editor that prioritizes this profile and lets the user tune it using bezier curves:</p>
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%; border-radius: 5px;">
+  <video src="/assets/lampshades/1.mp4" autoplay="" loop="" muted=""></video>
+</div>
+
+<p>The number of terraces can be changed, and you can slide folds along the curve and the underside of each terrace to achieve the final profile:</p>
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%; border-radius: 5px;">
+  <video src="/assets/lampshades/2.mp4" autoplay="" loop="" muted=""></video>
+</div>
+
+<p>On the right you can see a readout that gives the height of this final profile as a percentage of the paper height. Since the design will be made on a laser cutter with a limited working area, its final size is constrained by that working area. More terraces with longer underside segments means more paper, and since there’s a limit to how much paper you can fit, this really just means the final piece will be smaller.</p>
+
+<h2 id="export">Export</h2>
+
+<p>There’s also a built-in export interface which color-codes the pattern for different power levels from the laser. Creating this design isn’t entirely trivial; segments of the profile can’t be measured absolutely but instead must be measured relative to the total length of all segments. This is calculated during the design process to give the height percentage.</p>
+
+<p>The edge of each terrace is a doubled-back fold that just looks like a straight horizontal line on the net. But the folds at the top of each terrace, hidden under the previous one, need to have a V-shape at half the angle desired.</p>
+
+<p>Note that this only gives the desired profile when the folds are squished flat; The angles will increase causing the entire piece to curl the more it is stretched. I haven’t figured out how to account for this stretch as a parameter since it’s changing constantly as the piece is manipulated. Perhaps a circumference value could give the amount of stretch.</p>
+
+<p>I chose two parameters to be used during export, aspect ratio and number of pleats. These will determine what your piece ends up looking like. If you want a smaller piece with a lot of pleats, you can increase the aspect ratio. If you want to make a larger shade out of multiple segments, you can reduce these parameters and get a longer design that fits sideways on the paper:</p>
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%; border-radius: 5px;">
+  <video src="/assets/lampshades/3.mp4" autoplay="" loop="" muted=""></video>
+</div>
+
+<p>As a bonus, I added the ability to save these parameters as JSON files; each non-function key on the keyboard is assigned a different slot which you can call up by pressing it. Folders are automatically created, and exported SVG files are named with the pleat count and aspect ratio.</p>
+
+<p>The source code for this tool is on GitHub. If you make something with it please send a picture!</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Laser Origami]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<p>You can view an interactive version of this iPython notebook on <a href="">Kaggle</a></p>
 
 <h2 id="abelian-group-classifier">Abelian Group Classifier</h2>
 
@@ -682,143 +825,4 @@ which are quite easy to come up with, are actually</p>
 
 <div>
 \$\text{Groups of order }4860\$:\n\n\begin{array}{l|l|l}\n    \text{Elementary Divisors} &amp; \text{Invariant Factors} &amp; \text{Isomorphic Group}\\\n    \hline\n    2,2,3,3,3,3,3,5 &amp; 3,3,3,6,30 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{30}\\\n    2,2,3,3,3,3^2,5 &amp; 3,3,6,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{90}\\\n    2,2,3,3^2,3^2,5 &amp; 3,18,90 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{18}\times\mathbb{Z}\_{90}\\\n    2,2,3,3,3^3,5 &amp; 3,6,270 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{6}\times\mathbb{Z}\_{270}\\\n    2,2,3^2,3^3,5 &amp; 18,270 &amp; \mathbb{Z}\_{18}\times\mathbb{Z}\_{270}\\\n    2,2,3,3^4,5 &amp; 6,810 &amp; \mathbb{Z}\_{6}\times\mathbb{Z}\_{810}\\\n    2,2,3^5,5 &amp; 2,2430 &amp; \mathbb{Z}\_{2}\times\mathbb{Z}\_{2430}\\\n    2^2,3,3,3,3,3,5 &amp; 3,3,3,3,60 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{60}\\\n    2^2,3,3,3,3^2,5 &amp; 3,3,3,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{180}\\\n    2^2,3,3^2,3^2,5 &amp; 3,9,180 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{9}\times\mathbb{Z}\_{180}\\\n    2^2,3,3,3^3,5 &amp; 3,3,540 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{3}\times\mathbb{Z}\_{540}\\\n    2^2,3^2,3^3,5 &amp; 9,540 &amp; \mathbb{Z}\_{9}\times\mathbb{Z}\_{540}\\\n    2^2,3,3^4,5 &amp; 3,1620 &amp; \mathbb{Z}\_{3}\times\mathbb{Z}\_{1620}\\\n    2^2,3^5,5 &amp; 4860 &amp; \mathbb{Z}\_{4860}\\\n\end{array}
-</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Mosaic</title><link href="http://localhost:4000/mosaic/" rel="alternate" type="text/html" title="Mosaic" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/mosaic</id><content type="html" xml:base="http://localhost:4000/mosaic/"><![CDATA[<p>Shader code is conceptually a</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Shader code is conceptually a]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
-
-<p>You can tell a roll of tape has been within my reach if you see these scattered around:</p>
-
-<p>[picture of accordioned tape]</p>
-
-<p>I thought an pleated pattern like this could make for a cool lampshade, and I wanted to do some experimentation with laser-creased origami. I made a pendant lamp for my apartment using this method a while ago:</p>
-
-<p>[lamp]</p>
-
-<p>It’s made from 30 individual segments, each one pre-cut and creased by a laser. These 20-point stars are hard enough to assemble, so I was glad that I also didn’t have to do as much work on the folding. Vector engraving the creases also let me use heavy art paper, which is normally very unsuitable for origami and can’t be creased very well by hand.</p>
-
-<h2 id="design">Design</h2>
-
-<p>I wanted my lampshades to have a series of cascading terraces like this:</p>
-
-<p>[spoiler]</p>
-
-<p>This design only has a few parameters: The number of terraces, the angle at which they separate from each other, and the distance between folds. Manually defining these values, however, would tell you very little about what the final profile will look like. So I made an editor that prioritizes this profile and lets the user tune it using bezier curves:</p>
-
-<p>[video]</p>
-
-<p>The number of terraces can be changed, and you can slide folds along the curve and the underside of each terrace to achieve the final profile:</p>
-
-<p>[video]</p>
-
-<p>On the right you can see a readout that gives the height of this final profile as a percentage of the paper height. Since the design will be made on a laser cutter with a limited working area, its final size is constrained by that working area. More terraces with longer underside segments means more paper, and since there’s a limit to how much paper you can fit, this really just means the final piece will be smaller.</p>
-
-<h2 id="export">Export</h2>
-
-<p>There’s also a built-in export interface which color-codes the pattern for different power levels from the laser. Creating this design isn’t entirely trivial; segments of the profile can’t be measured absolutely but instead must be measured relative to the total length of all segments. This is calculated during the design process to give the height percentage.</p>
-
-<p>The edge of each terrace is a doubled-back fold that just looks like a straight horizontal line on the net. But the folds at the top of each terrace, hidden under the previous one, need to have a V-shape at half the angle desired.</p>
-
-<p>Note that this only gives the desired profile when the folds are squished flat; The angles will increase causing the entire piece to curl the more it is stretched. I haven’t figured out how to account for this stretch as a parameter since it’s changing constantly as the piece is manipulated. Perhaps a circumference value could give the amount of stretch.</p>
-
-<p>I chose two parameters to be used during export, aspect ratio and number of pleats. These will determine what your piece ends up looking like. If you want a smaller piece with a lot of pleats, you can increase the aspect ratio.</p>
-
-<p>[design]</p>
-
-<p>If you want to make a larger shade out of multiple segments, you can reduce these parameters and get a longer design that fits sideways on the paper:</p>
-
-<p>[design]</p>
-
-<p>As a bonus, I added the ability to save these parameters as JSON files; each non-function key on the keyboard is assigned a different slot which you can call up by pressing it. Folders are automatically created, and exported SVG files are named with the pleat count and aspect ratio.</p>
-
-<p>The source code for this tool is on GitHub. If you make something with it please send a picture!</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Laser Origami]]></summary></entry><entry><title type="html">Halftoning</title><link href="http://localhost:4000/halftoning/" rel="alternate" type="text/html" title="Halftoning" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/halftoning</id><content type="html" xml:base="http://localhost:4000/halftoning/"><![CDATA[<p>I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.</p>
-
-<h2 id="halftoning">Halftoning</h2>
-
-<p>Creating the illusion of gray through these limiting black-and-white processes is known as halftoning, and it’s usually done on the microscopic level — you have to zoom way in on a newspaper to see the little dots of ink that all blur into one color from afar.</p>
-
-<p align="center">
-  <figure>
-    <img src="/assets/halftoning/eye.png" />
-  </figure>
-  <p></p>
-  <figcaption>
-    Only one color of ink is used to render Lincoln's eye on this five dollar bill — the pattern of the ink creates the illusion of different shades of gray.
-  </figcaption>
-  <p></p>
-</p>
-
-<p>Once an image has been processed in this way, it can be printed in all sorts of ways. A laser cutter could make a stencil for it, or engrave linoleum to make a printing block. If the pattern is made up of uniform lines like in <a href="/marching-waves/">Marching Waves</a>, a pen plotter or embroidery machine could follow the paths. I see these processes as a way of being freed from the traditional printer, to explore new and interesting forms of computerized printing.</p>
-
-<h2 id="the-old-way">The Old Way</h2>
-
-<p>Even before I started working with machines, my first projects in Processing were halftoning effects like this one:</p>
-
-<p align="center">
-  <img src="/assets/halftoning/dots.png" />
-</p>
-
-<p>This one’s easy enough to program: make a grid of circles, where each circle expands and contracts depending on the brightness of the pixels beneath it. In addition to expanding circles, you can define all kinds of dynamic shapes that expand to fill a space:</p>
-
-<p align="center">
-  <img src="/assets/halftoning/demo.gif" />
-</p>
-
-<p>You can also define bars or concentric rings that expand and contract:</p>
-
-<p align="center">
-  <img src="/assets/halftoning/shadeshalftone2.png" />
-</p>
-
-<p>Defining these shapes becomes complicated very quickly, though. What if you wanted to make a Voronoi diagram where each cell is its own dynamic shape?</p>
-
-<p align="center">
-  <img src="/assets/halftoning/shadeshalftoneVoronoi.png" />
-</p>
-
-<p>I’m sure it’s possible to do this geometrically, but it would be an enormous pain. Thankfully I was introduced to a completely different method used by Photoshop artists. This is a raster method — it deals with pixels, not paths.</p>
-
-<h2 id="the-new-way">The New Way</h2>
-
-<p>It relies on a simple threshold operation. On its own, this will give you something workable:</p>
-
-<p align="center">
-  <img src="/assets/halftoning/threshold.png" />
-</p>
-
-<p>You’ll see this effect (also called “posterizing”) used to make stencils and such, but it’s boring and loses a lot of information. You don’t get the illusion of gray. This is why halftoning was invented, of course.</p>
-
-<p>But if you modulate the image with a certain pattern before running it through the threshold operation, like this:</p>
-
-<p align="center">
-  <img src="/assets/halftoning/modulated.png" />
-</p>
-
-<p>what you’ve essentially done is offset the threshold that is actually applied to each pixel. You can do this literally by sampling the pattern as a separate image — a map of what threshold to apply to each pixel — but this method is equivalent and works in Photoshop as well as in code. Now when you apply the threshold, you get this:</p>
-
-<p align="center">
-  <figure>
-    <img src="/assets/halftoning/wavy.png" />
-  </figure>
-  <p></p>
-  <figcaption>
-    I cannot begin to describe how difficult it would be to define these shapes geometrically.
-  </figcaption>
-  <p></p>
-</p>
-
-<p>Now we’re cooking. The task has been shifted: instead of painstakingly defining how we want our shapes to behave, we just have to make a grayscale “threshold map” that will generate these shapes. Here are the ones I’ve used so far:</p>
-
-<p align="center">
-    <!-- <img src="/assets/halftoning/dotsMap.png" style="width: 49%; padding: 0px; padding-bottom: 5px;">
-    <img src="/assets/halftoning/stripesMap.png" style="width: 49%; padding: 0px; padding-bottom: 5px;">
-    <img src="/assets/halftoning/voronoiMap.png" style="width: 49%; padding: 0px; padding-bottom: 20px;">
-    <img src="/assets/halftoning/wavyMap.png" style="width: 49%; padding: 0px; padding-bottom: 20px"> -->
-  <figure>
-    <img src="/assets/halftoning/maps.png" />
-  </figure>
-  <p></p>
-  <figcaption>
-    The first two are patterns made in Illustrator with a blur applied, the last two were made by programs I wrote for this purpose. Note that in practice, these do not contain any black. They fade from white to transparent, masking the image beneath.
-  </figcaption>
-  <p></p>
-</p>
-
-<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Mosaic</title><link href="http://localhost:4000/mosaic/" rel="alternate" type="text/html" title="Mosaic" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/mosaic</id><content type="html" xml:base="http://localhost:4000/mosaic/"><![CDATA[<p>Shader code is conceptually a</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Shader code is conceptually a]]></summary></entry></feed>

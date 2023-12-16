@@ -114,7 +114,7 @@ Normally this machine takes rolls of vinyl up to 42 inches wide and cuts them wi
 
 When I started working with the Roland, I would've been appalled at the idea of writing this article — I had long been afraid of other people stealing my source code and replicating my pieces. Seven months of work later, I was no longer worried. The additional knowledge required to get the results I want on paper exists only in my head, and I acquired it by going far past the point where any sane person would've given up. 
 
-With no existing reference available, I had to push through very specific and unprecedented. problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing... the list goes on. At the moment, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.
+With no existing reference available, I had to push through very specific and unprecedented problems with ink flow, smearing, paper movement, acceleration curves, anti-aliasing... the list goes on. At the moment, the only way to find the solutions to them is through months of trial-and-error. Those are the secrets I will keep for now.
 
 The technique has progressed only in small ways since then. In March 2023 I discovered a fundamental math error while writing the first draft of this article. I did some heart surgery on the program and saw a significant difference in the resulting patterns. I'm not sure if I like it more. We'll have to see.
 

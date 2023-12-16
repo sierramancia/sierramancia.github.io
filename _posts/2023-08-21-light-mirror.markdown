@@ -7,7 +7,7 @@ permalink: /light-mirror/
 ---
 
 <div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/light-mirror/44.mp4" autoplay loop></video>
+  <video src="/assets/light-mirror/44.mp4" autoplay loop muted></video>
 </div>
 <figcaption>
   This caption originally read "Didn't want to make you wait", but videos are taking forever to load and I don't know how to fix that so you are going to be waiting either way :(
@@ -37,10 +37,10 @@ The working principle of this sensor is that the speed of light is used to measu
   <p></p>
 </p>
 
-With this point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:
+Each point is given as a vector, and has to be put through a series of transformations to get the point cloud aligned with the physical position of the display. The sensors are turned exactly 45 degrees inwards, so you need to multiply each vector with a rotation matrix. Then they have to be scaled in two directions because you're not supposed to be doing this so why would they make the point cloud not distorted. Then you have to move in the x and y directions until you're facing your own silhouette. With the point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:
 
 <div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
-  <video src="/assets/light-mirror/48.mp4" autoplay loop></video>
+  <video src="/assets/light-mirror/48.mp4" autoplay loop muted></video>
 </div>
 
 ## The Display
