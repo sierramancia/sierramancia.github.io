@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-14T11:05:48-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Embroidery</title><link href="http://localhost:4000/articles/2023/12/13/embroidery.html" rel="alternate" type="text/html" title="Embroidery" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/articles/2023/12/13/embroidery</id><content type="html" xml:base="http://localhost:4000/articles/2023/12/13/embroidery.html"><![CDATA[<p>Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-15T21:09:38-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Embroidery</title><link href="http://localhost:4000/articles/2023/12/13/embroidery.html" rel="alternate" type="text/html" title="Embroidery" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/articles/2023/12/13/embroidery</id><content type="html" xml:base="http://localhost:4000/articles/2023/12/13/embroidery.html"><![CDATA[<p>Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.</p>
 
 <p>These constraints are soft; if you’re willing to dedicate the time, you can make colorful and discontinuous designs. But the challenge of working within them interested me — what’s the best way to render an image using a single continuous thread?</p>
 
@@ -10,25 +10,29 @@
 
 <p>If I’d been happier with the results, I might have fully automated the CMYK split, but the effect doesn’t come through unless you back up and really squint. The lines could be made smaller, but there’s another limit; you don’t want to be making a bunch of stitches right next to each other with sub-millimeter spacing.</p>
 
+<p>The other issue is pulling; too many back-and-forth stitches in the same direction will pull the fabric together along that axis. A design with thread going in all directions would solve this, and perhaps solve the issue of detail.</p>
+
 <h2 id="scribbling">Scribbling</h2>
 
 <p>Samer Dabra (<a href="https://www.instagram.com/spongenuity/">@spongenuity</a>) has a procedural, stochastic style originally made for pen plotters. He used it with machine embroidery a few times and it looks fantastic:</p>
 
 <p>[photo]</p>
 
-<p>It’s pretty easy to program; just make a line that wanders in the direction of darker areas on the image. To keep it from getting stuck, draw a corresponding white line on the image so it can avoid areas it’s already drawn over.</p>
+<p>It’s pretty easy to program a simple version of this; just make a <a href="https://en.wikipedia.org/wiki/Turtle_graphics">turtle</a> that wanders in the direction of darker areas on the image. To keep it from getting stuck, draw a corresponding white line on the image so it can avoid areas it’s already drawn over.</p>
 
-<p>In my program the randomness is inserted into the length of each step, which corresponds to a stitch. With a chosen step length, a number of sample points are taken at that distance from the head of the line. The one with the darkest value is where the line goes next.</p>
+<p>With a chosen step length, a number of sample points are taken at that distance from the head of the line. The one with the darkest value is where the line goes next.</p>
+
+<p>[screenshot]</p>
+
+<p>Here’s what this gives us:</p>
 
 <p>[photo]</p>
 
-<p>You can see that my design is a lot coarser than Samer’s. I wanted to optimize this program for the machine and require less stitches</p>
+<p>As you can see, this is not good. Let’s see what we can change about the turtle’s behavior to make it better.</p>
 
 <h2 id="choices">Choices</h2>
 
-<p>There are so many other ways to make this line wander, though. You could randomly choose the direction first and then select the optimal distance, which looks like this:</p>
-
-<p>[photo]</p>
+<p>The first problem I’m noticing is the uniformity; the turtle seems to be evenly shading every area under a certain threshold without scribbling more over the darkest parts of the image. I think this is because the white trail it leaves on the image is too opaque — it’s set to 50% opacity right now. After one or two passes, even the darkest areas get washed out before the turtle can properly cover them. Let’s try about 10%:</p>
 
 <p>Instead of an arc or a line of sample points, you can make a varied fan that biases towards the current direction of travel:</p>
 
@@ -529,7 +533,7 @@ which are quite easy to come up with, are actually</p>
   <p></p>
 </p>
 
-<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry><entry><title type="html">IG Effects</title><link href="http://localhost:4000/projects/2023/03/20/IG-effects.html" rel="alternate" type="text/html" title="IG Effects" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/IG-effects</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/IG-effects.html"><![CDATA[]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
+<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/projects/2023/03/20/lampshades.html" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/projects/2023/03/20/lampshades</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/20/lampshades.html"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
 
 <p>You can tell a roll of tape has been within my reach if you see these scattered around:</p>
 
@@ -576,7 +580,7 @@ which are quite easy to come up with, are actually</p>
 <p>As a bonus, I added the ability to save these parameters as JSON files; each non-function key on the keyboard is assigned a different slot which you can call up by pressing it. Folders are automatically created, and exported SVG files are named with the pleat count and aspect ratio.</p>
 
 <p>The source code for this tool is on GitHub. If you make something with it please send a picture!</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Laser Origami]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/light-mirror/" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/light-mirror/"><![CDATA[<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/Light Mirror/mp4s/44.mp4" autoplay="" loop=""></video>
+  <video src="/assets/light-mirror/44.mp4" autoplay="" loop=""></video>
 </div>
 <figcaption>
   Didn't want to make you wait.
@@ -595,10 +599,21 @@ which are quite easy to come up with, are actually</p>
 
 <p>The working principle of this sensor is that the speed of light is used to measure distance. A blaster next to the camera sends out pulses of infared light, and the camera can measure, for each pixel, how long it took for the pulse to be reflected back. Thus each pixel creates a point in 3D space, and the camera’s entire view generates a point cloud.</p>
 
+<p align="center">
+  <figure>
+    <img src="/assets/light-mirror/49.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    The point cloud being shown for calibration.
+  </figcaption>
+  <p></p>
+</p>
+
 <p>With this point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
 
 <div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
-  <video src="/assets/Light Mirror/mp4s/48.mp4" autoplay="" loop=""></video>
+  <video src="/assets/light-mirror/48.mp4" autoplay="" loop=""></video>
 </div>
 
 <h2 id="the-display">The Display</h2>
@@ -613,7 +628,7 @@ which are quite easy to come up with, are actually</p>
 
 <p align="center">
   <figure>
-    <img src="/assets/Light Mirror/1.png" />
+    <img src="/assets/light-mirror/1.png" />
   </figure>
   <p></p>
   <figcaption>
@@ -624,7 +639,9 @@ which are quite easy to come up with, are actually</p>
 
 <p>I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup.</p>
 
-<p>[New display]</p>
+<p align="center">
+  <img src="/assets/light-mirror/6.png" />
+</p>
 
 <h2 id="the-software">The Software</h2>
 
@@ -634,7 +651,15 @@ which are quite easy to come up with, are actually</p>
 
 <p>[More Cloud]</p>
 
-<p>Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Didn't want to make you wait.]]></summary></entry><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+<p>Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.</p>
+
+<h2 id="gallery">Gallery</h2>
+
+<p align="center">
+  <img src="/assets/light-mirror/35.png" />
+  <img src="/assets/light-mirror/46.png" />
+  <img src="/assets/light-mirror/45.png" />
+</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Didn't want to make you wait.]]></summary></entry><entry><title type="html">Mosaic</title><link href="http://localhost:4000/mosaic/" rel="alternate" type="text/html" title="Mosaic" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/mosaic</id><content type="html" xml:base="http://localhost:4000/mosaic/"><![CDATA[<p>Shader code is conceptually a</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Shader code is conceptually a]]></summary></entry><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
 
 <h2 id="the-style">The Style</h2>
 

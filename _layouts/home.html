@@ -18,7 +18,7 @@ layout: default
         <!-- <span class="post-meta">{{ post.date | date: date_format }}</span> -->
         <a class="post-link" href="{{ post.url | relative_url }}">
           <figure>
-            <img src="/assets/{{post.title}}/thumbnail.png">
+            <img src="/assets{{post.permalink}}thumbnail.png">
           </figure>
           <center>
             {{ post.title | escape }}

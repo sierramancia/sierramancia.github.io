@@ -17,25 +17,29 @@ The next thing to try was color; a basic CMYK printing technique wouldn't take t
 
 If I'd been happier with the results, I might have fully automated the CMYK split, but the effect doesn't come through unless you back up and really squint. The lines could be made smaller, but there's another limit; you don't want to be making a bunch of stitches right next to each other with sub-millimeter spacing.
 
+The other issue is pulling; too many back-and-forth stitches in the same direction will pull the fabric together along that axis. A design with thread going in all directions would solve this, and perhaps solve the issue of detail.
+
 ## Scribbling
 
 Samer Dabra ([@spongenuity](https://www.instagram.com/spongenuity/)) has a procedural, stochastic style originally made for pen plotters. He used it with machine embroidery a few times and it looks fantastic:
 
 [photo]
 
-It's pretty easy to program; just make a line that wanders in the direction of darker areas on the image. To keep it from getting stuck, draw a corresponding white line on the image so it can avoid areas it's already drawn over.
+It's pretty easy to program a simple version of this; just make a [turtle](https://en.wikipedia.org/wiki/Turtle_graphics) that wanders in the direction of darker areas on the image. To keep it from getting stuck, draw a corresponding white line on the image so it can avoid areas it's already drawn over.
 
-In my program the randomness is inserted into the length of each step, which corresponds to a stitch. With a chosen step length, a number of sample points are taken at that distance from the head of the line. The one with the darkest value is where the line goes next.
+With a chosen step length, a number of sample points are taken at that distance from the head of the line. The one with the darkest value is where the line goes next.
+
+[screenshot]
+
+Here's what this gives us:
 
 [photo]
 
-You can see that my design is a lot coarser than Samer's. I wanted to optimize this program for the machine and require less stitches
+As you can see, this is not good. Let's see what we can change about the turtle's behavior to make it better.
 
 ## Choices
 
-There are so many other ways to make this line wander, though. You could randomly choose the direction first and then select the optimal distance, which looks like this:
-
-[photo]
+The first problem I'm noticing is the uniformity; the turtle seems to be evenly shading every area under a certain threshold without scribbling more over the darkest parts of the image. I think this is because the white trail it leaves on the image is too opaque — it's set to 50% opacity right now. After one or two passes, even the darkest areas get washed out before the turtle can properly cover them. Let's try about 10%:
 
 Instead of an arc or a line of sample points, you can make a varied fan that biases towards the current direction of travel:
 

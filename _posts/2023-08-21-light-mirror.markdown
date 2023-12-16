@@ -7,7 +7,7 @@ permalink: /light-mirror/
 ---
 
 <div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/Light Mirror/mp4s/44.mp4" autoplay loop></video>
+  <video src="/assets/light-mirror/44.mp4" autoplay loop></video>
 </div>
 <figcaption>
   Didn't want to make you wait.
@@ -26,10 +26,21 @@ The sensor of choice is an Xbox Kinect sensor. The Kinect v2 is massively over-e
 
 The working principle of this sensor is that the speed of light is used to measure distance. A blaster next to the camera sends out pulses of infared light, and the camera can measure, for each pixel, how long it took for the pulse to be reflected back. Thus each pixel creates a point in 3D space, and the camera's entire view generates a point cloud.
 
+<p align="center">
+  <figure>
+    <img src="/assets/light-mirror/49.png">
+  </figure>
+  <p></p>
+  <figcaption>
+    The point cloud being shown for calibration.
+  </figcaption>
+  <p></p>
+</p>
+
 With this point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:
 
 <div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
-  <video src="/assets/Light Mirror/mp4s/48.mp4" autoplay loop></video>
+  <video src="/assets/light-mirror/48.mp4" autoplay loop></video>
 </div>
 
 ## The Display
@@ -44,7 +55,7 @@ The first version of the display had a wood frame, with elastic holding the stri
 
 <p align="center">
   <figure>
-    <img src="/assets/Light Mirror/1.png">
+    <img src="/assets/light-mirror/1.png">
   </figure>
   <p></p>
   <figcaption>
@@ -55,7 +66,9 @@ The first version of the display had a wood frame, with elastic holding the stri
 
 I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup.
 
-[New display]
+<p align="center">
+  <img src="/assets/light-mirror/6.png">
+</p>
 
 ## The Software
 
@@ -67,3 +80,10 @@ However, placing a suitable time-of-flight sensor on each pixel would increase t
 
 Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.
 
+## Gallery
+
+<p align="center">
+  <img src="/assets/light-mirror/35.png">
+  <img src="/assets/light-mirror/46.png">
+  <img src="/assets/light-mirror/45.png">
+</p>
