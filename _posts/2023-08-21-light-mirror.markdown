@@ -10,7 +10,7 @@ permalink: /light-mirror/
   <video src="/assets/light-mirror/44.mp4" autoplay loop></video>
 </div>
 <figcaption>
-  Didn't want to make you wait.
+  This caption originally read "Didn't want to make you wait", but videos are taking forever to load and I don't know how to fix that so you are going to be waiting either way :(
 </figcaption>
 <p></p>
 

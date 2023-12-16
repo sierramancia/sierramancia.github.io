@@ -535,7 +535,6 @@ table td {
 .post-content .video-mask {
   max-width: 80%;
   margin-left: 10%;
-  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 15px;
 }
