@@ -10,6 +10,8 @@ Getting to work with an embroidery machine is a deep lesson in working within a 
 
 These constraints are soft; if you're willing to dedicate the time, you can make colorful and discontinuous designs. But the challenge of working within them interested me — what's the best way to render an image using a single continuous thread?
 
+## Scan Lines
+
 The first approach was pretty simple — a classic scan-line halftone pattern, which creates vertical peaks of varying height and separation. In practice it's cool to see them squish up against each other:
 
 <p align="center">
