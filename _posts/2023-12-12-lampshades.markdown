@@ -22,7 +22,7 @@ It's made from 30 individual segments, each one pre-cut and creased by a laser. 
 
 ## Design
 
-I wanted my lampshades to have a series of cascading terraces like this:
+I wanted to make curcular lampshades with the same pleated pattern, and a series of cascading terraces like this:
 
 <p align="center">
     <img src="/assets/lampshades/1.png">

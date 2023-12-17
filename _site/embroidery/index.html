@@ -24,6 +24,7 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alberto Mancia">
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <!-- CSS for Tocbot -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.css">
@@ -111,21 +112,65 @@
   <img src="/assets/embroidery/1.png" width="full">
 </p>
 
-<p>Here’s what this gives us:</p>
+<p>With this simple rule, you can set the turtle loose and watch it go!</p>
 
-<p>[photo]</p>
+<div class="video-mask" style="max-width: 90%; margin-left: 5%;">
+  <video src="/assets/embroidery/1.mp4" autoplay="" loop="" muted=""></video>
+</div>
 
-<p>As you can see, this is not good. Let’s see what we can change about the turtle’s behavior to make it better.</p>
+<p>After about 20,000 steps you get this:</p>
 
-<h2 id="choices">Choices</h2>
+<p align="center">
+  <img src="/assets/embroidery/7.png" width="full">
+</p>
 
-<p>The first problem I’m noticing is the uniformity; the turtle seems to be evenly shading every area under a certain threshold without scribbling more over the darkest parts of the image. I think this is because the white trail it leaves on the image is too opaque — it’s set to 50% opacity right now. After one or two passes, even the darkest areas get washed out before the turtle can properly cover them. Let’s try about 10%:</p>
+<p>This is really fun to watch, but I think the turtle could be made smarter.</p>
 
-<p>Instead of an arc or a line of sample points, you can make a varied fan that biases towards the current direction of travel:</p>
+<h2 id="behavior">Behavior</h2>
 
-<p>[photo]</p>
+<p>I’m first noticing that the turtle will get stuck going over the same area over and over; even as that part of the image gets painted lighter and lighter, it can’t find its way out of the region it’s painting. To keep it moving around the canvas, I added a slight bias in the forward direction. I tried just narrowing the range of possible directions, but found that it would just wander off the page if I did this — sometimes it really needs to turn.</p>
 
-<p>The sampling can also be biased, keeping the line along the same curve of</p>
+<p>The bias is a value added to the sampled brightness value, causing some samples to be less appealing to the turtle. I used a simple cosine function to have this bias peak when facing backwards and drop to zero at the middle sample facing forward.</p>
+
+<p>Rather than being a constant value, it actually represents a proportion of the difference between the sampled brightness and absolute white.</p>
+
+<p>First we need a normalized cosine wave that peaks at 1 on the first and last sample:</p>
+
+<p>$$ b = \frac{1}{2}\cdot\left(\cos\left(2\pi\cdot\frac{\text{current sample}}{\text{total samples}}\right)+1\right) $$</p>
+
+<p>This is then multiplied by the difference and a bias parameter $k$ between 0 and 1.</p>
+
+<p>$$ \text{new reading} = \text{reading} + \left(b\cdot(255 - \text{reading})\cdot k\right) $$</p>
+
+<p>$k$ doesnt have to be that high, as it turns out; $k=0.1$ will cross at most 10% of the gap between the reading and full white, but a strong behavior change can already be seen:</p>
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%;">
+  <video src="/assets/embroidery/2.mp4" autoplay="" loop="" muted=""></video>
+</div>
+
+<p>20,000 steps later, we have much better dynamic range and accurate shading:</p>
+
+<p align="center">
+  <img src="/assets/embroidery/8.png" width="full">
+</p>
+
+<p>My next idea was to change the step size depending on direction. This simulates deceleration; the turtle has to slow down to make a turn. Hopefully this lets it scribble in detailed areas more finely without slowing it down elsewhere.</p>
+
+<p align="center">
+  <img src="/assets/embroidery/2.png" width="full">
+</p>
+
+<p>This seems to have worked! Now we have good details to go along with our color accuracy. Shorter stitches cover less area though, so it took about 25,000 stitches to get a similar result to before.</p>
+
+<p align="center">
+  <img src="/assets/embroidery/9.png" width="full">
+</p>
+
+<h2 id="contours">Contours</h2>
+
+<p>Now I’m wondering if we can make it look not so…tangled. Adding slight biases to the otherwise unpredictable behavior seemed to get results without compromising the stochastic magic that makes this work. So let’s try nudging the turtle to follow contour lines.</p>
+
+<p>The simplest way to do this is to find the direction of the gradient of the image — this would be like making a normal map with the image as a height map. I discovered a few years ago that <a href="/matlab-painting/">MATLAB</a> is by far the simplest tool for these kinds of mathematical imaging operations, and it looks like they forgot to turn off my access when I graduated. Let’s go pre-bake this and just load it into Processing.</p>
 
       </div>
       <div id="sticky-toc"></div>

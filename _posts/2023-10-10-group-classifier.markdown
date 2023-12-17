@@ -6,7 +6,7 @@ categories: projects
 permalink: /group-classifier/
 ---
 
-This project began as a way of solfing a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on [Kaggle]()
+This project began as a way of solving a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on [Kaggle]()
 
 ## Abelian Group Classifier
 
