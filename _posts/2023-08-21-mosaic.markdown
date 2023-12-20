@@ -7,6 +7,7 @@ permalink: /mosaic/
 ---
 
 <p align="center">
+    <img src="/assets/mosaic/2.png">
     <img src="/assets/mosaic/1.png">
 </p>
 
@@ -30,12 +31,10 @@ What it's evaluating are the points that each square generates. While this patte
     <video src="/assets/mosaic/1.mp4" autoplay loop muted></video>
 </div>
 
-Coloring this is 
-
 It's relatively easy to make a colored Voronoi diagram from here: just sample the camera input at each point, then paint its cell that color. This looks kind of cool, but I think we can do something cooler. I want to depopulate areas of low detail so they have bigger cells. This feels closer to something a painter would do.
 
 ## Awareness
 
-A detail map is easy enough to make with edge detection kernels. I might use difference of Gaussians later, but a blurred edge map works just as well. 
+A detail map is easy enough to make with edge detection kernels. I might use Difference of Gaussians later, but a simple blurred edge map works just fine. 
 
 ## 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-18T19:04:08-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-19T20:50:12-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
 
 <h2 id="the-style">The Style</h2>
 
@@ -417,7 +417,7 @@
 
 <p>Now I’m wondering if we can make it look not so…tangled. Adding slight biases to the otherwise unpredictable behavior seemed to get results without compromising the stochastic magic that makes this work. So let’s try nudging the turtle to follow contour lines.</p>
 
-<p>The simplest way to do this is to find the direction of the gradient of the image — this would be like making a normal map with the image as a height map. I discovered a few years ago that <a href="/matlab-painting/">MATLAB</a> is by far the simplest tool for these kinds of mathematical imaging operations, and it looks like they forgot to turn off my access when I graduated. Let’s go pre-bake this and just load it into Processing.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.]]></summary></entry><entry><title type="html">Digital Impressionism</title><link href="http://localhost:4000/digital-impressionism/" rel="alternate" type="text/html" title="Digital Impressionism" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/digital-impressionism</id><content type="html" xml:base="http://localhost:4000/digital-impressionism/"><![CDATA[]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Indigo</title><link href="http://localhost:4000/indigo/" rel="alternate" type="text/html" title="Indigo" /><published>2023-10-31T15:29:27-07:00</published><updated>2023-10-31T15:29:27-07:00</updated><id>http://localhost:4000/indigo</id><content type="html" xml:base="http://localhost:4000/indigo/"><![CDATA[<p align="center">
+<p>We need to make a flow field from the image, and allow it to exert some amount of pull on the turtle.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.]]></summary></entry><entry><title type="html">Digital Impressionism</title><link href="http://localhost:4000/digital-impressionism/" rel="alternate" type="text/html" title="Digital Impressionism" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/digital-impressionism</id><content type="html" xml:base="http://localhost:4000/digital-impressionism/"><![CDATA[]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Indigo</title><link href="http://localhost:4000/indigo/" rel="alternate" type="text/html" title="Indigo" /><published>2023-10-31T15:29:27-07:00</published><updated>2023-10-31T15:29:27-07:00</updated><id>http://localhost:4000/indigo</id><content type="html" xml:base="http://localhost:4000/indigo/"><![CDATA[<p align="center">
   <img src="/assets/indigo/2.png" width="full" />
 </p>
 
@@ -470,7 +470,7 @@
 
 <p>I’d like to think that I don’t need any of my machines, or even my computer, to make the kind of digital art that I do. I got to take a step in that direction here.</p>
 
-<h2 id="the-system">The system</h2>
+<h2 id="the-system">The System</h2>
 
 <p>Against the advice of our teacher, I wanted to make a design with 6 different shades of indigo. This would require the stenciling process to be repeated five times. And I wanted the design to be large, of course. Using up five large sheets of <em>katazome</em> paper was out of the question, so I made a system that used one modular stencil to transfer a digital design.</p>
 
@@ -478,12 +478,16 @@
   <img src="/assets/indigo/6.png" width="full" />
 </p>
 
-<p>With a ruler and a craft knife, I cut ten stripes and an alignment window into my piece of <em>katazome</em> paper. Then I found a grease pencil and used it to complete the 5mm grid.</p>
+<p>With a ruler and a craft knife, I cut ten stripes and an alignment window into my piece of <em>katazome</em> paper. Then I found a grease pencil and used it to complete the 5mm grid. The eleventh stripe is a window for alignment — It lines up with these little corners I sewed into the fabric with polyester thread that won’t take on the indigo.</p>
 
-<p>I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the custom stencil I would use to transfer the design.</p>
+<p align="center">
+  <img src="/assets/indigo/29.png" width="full" />
+</p>
 
-<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/indigo/5.mp4" autoplay="" loop="" muted=""></video>
+<p>I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the stencil. This way I could precisely transfer the design by hand.</p>
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%">
+  <video src="/assets/indigo/1.mp4" autoplay="" loop="" muted=""></video>
 </div>
 
 <h2 id="the-work">The Work</h2>
@@ -816,6 +820,7 @@ which are quite easy to come up with, are actually</p>
 <div>
     <img src="/assets/group-classifier/1.png" />
 </div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[This project began as a way of solving a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Mosaic</title><link href="http://localhost:4000/mosaic/" rel="alternate" type="text/html" title="Mosaic" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/mosaic</id><content type="html" xml:base="http://localhost:4000/mosaic/"><![CDATA[<p align="center">
+    <img src="/assets/mosaic/2.png" />
     <img src="/assets/mosaic/1.png" />
 </p>
 
@@ -839,13 +844,11 @@ which are quite easy to come up with, are actually</p>
     <video src="/assets/mosaic/1.mp4" autoplay="" loop="" muted=""></video>
 </div>
 
-<p>Coloring this is</p>
-
 <p>It’s relatively easy to make a colored Voronoi diagram from here: just sample the camera input at each point, then paint its cell that color. This looks kind of cool, but I think we can do something cooler. I want to depopulate areas of low detail so they have bigger cells. This feels closer to something a painter would do.</p>
 
 <h2 id="awareness">Awareness</h2>
 
-<p>A detail map is easy enough to make with edge detection kernels. I might use difference of Gaussians later, but a blurred edge map works just as well.</p>
+<p>A detail map is easy enough to make with edge detection kernels. I might use Difference of Gaussians later, but a simple blurred edge map works just fine.</p>
 
 <p>##</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/lampshades/" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/lampshades</id><content type="html" xml:base="http://localhost:4000/lampshades/"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
 

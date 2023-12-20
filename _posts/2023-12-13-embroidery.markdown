@@ -114,4 +114,4 @@ This seems to have worked! Now we have good details to go along with our color a
 
 Now I'm wondering if we can make it look not so...tangled. Adding slight biases to the otherwise unpredictable behavior seemed to get results without compromising the stochastic magic that makes this work. So let's try nudging the turtle to follow contour lines.
 
-The simplest way to do this is to find the direction of the gradient of the image — this would be like making a normal map with the image as a height map. I discovered a few years ago that [MATLAB](/matlab-painting/) is by far the simplest tool for these kinds of mathematical imaging operations, and it looks like they forgot to turn off my access when I graduated. Let's go pre-bake this and just load it into Processing.
+We need to make a flow field from the image, and allow it to exert some amount of pull on the turtle.

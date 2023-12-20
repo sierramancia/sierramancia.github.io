@@ -59,7 +59,7 @@ Can you make digital art with only your hands? I've always thought so; to me "di
 
 I'd like to think that I don't need any of my machines, or even my computer, to make the kind of digital art that I do. I got to take a step in that direction here.
 
-## The system
+## The System
 
 Against the advice of our teacher, I wanted to make a design with 6 different shades of indigo. This would require the stenciling process to be repeated five times. And I wanted the design to be large, of course. Using up five large sheets of *katazome* paper was out of the question, so I made a system that used one modular stencil to transfer a digital design.
 
@@ -67,12 +67,16 @@ Against the advice of our teacher, I wanted to make a design with 6 different sh
   <img src="/assets/indigo/6.png" width="full">
 </p>
 
-With a ruler and a craft knife, I cut ten stripes and an alignment window into my piece of *katazome* paper. Then I found a grease pencil and used it to complete the 5mm grid.
+With a ruler and a craft knife, I cut ten stripes and an alignment window into my piece of *katazome* paper. Then I found a grease pencil and used it to complete the 5mm grid. The eleventh stripe is a window for alignment — It lines up with these little corners I sewed into the fabric with polyester thread that won't take on the indigo.
 
-I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the custom stencil I would use to transfer the design.
+<p align="center">
+  <img src="/assets/indigo/29.png" width="full">
+</p>
 
-<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/indigo/5.mp4" autoplay loop muted></video>
+I wrote a Processing sketch that digitized the image in two ways: First it was posterized into 6 shades of blue, then each layer was pixelated into a striped grid. Each of the 12 sections of this grid, outlined in yellow, corresponded to the stencil. This way I could precisely transfer the design by hand.
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%">
+  <video src="/assets/indigo/1.mp4" autoplay loop muted></video>
 </div>
 
 ## The Work
