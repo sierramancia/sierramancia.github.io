@@ -47,7 +47,7 @@ You can also define bars or concentric rings that expand and contract:
 Defining these shapes becomes complicated very quickly, though. What if you wanted to make a Voronoi diagram where each cell is its own dynamic shape?
 
 <p align="center">
-  <img src="/assets/halftoning/shadeshalftoneVoronoi.png">
+  <img src="/assets/halftoning/shadesHalftoneVoronoi.png">
 </p>
 
 I'm sure it's possible to do this geometrically, but it would be an enormous pain. Thankfully I was introduced to a completely different method used by Photoshop artists. This is a raster method — it deals with pixels, not paths.
