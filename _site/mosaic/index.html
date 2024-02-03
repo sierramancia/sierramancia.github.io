@@ -108,7 +108,7 @@
 
 <h2 id="dithering">Dithering</h2>
 
-<p>I tried applying an approach based on dithering, with each square randomly picking a threshold and activating its point if the detail map passes that threshold at the point. This turned out not to produce the uniformity I needed; in low-detail areas the dots would clump up rather than being scattered evenly. Random dithering dates back to at least 1951, and I can see why it wasn’t widely adopted.</p>
+<p>I tried applying an approach based on dithering, with each square randomly picking a threshold and activating its point if the detail map passes the threshold at that point. This turned out not to produce the uniformity I needed; in low-detail areas the dots would clump up rather than being scattered evenly. Random dithering dates back to at least 1951, and I can see why it wasn’t widely adopted.</p>
 
 <p>Ordered dithering with a matrix looks better, but it does just make a grid pattern again. I tried adding a twist: rotating the matrices to break up repetition. Keeping the even distribution requires the matrices and their rotations to be designed with intention.</p>
 

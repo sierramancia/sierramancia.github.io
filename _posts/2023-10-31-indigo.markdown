@@ -109,10 +109,14 @@ For three days, I started working when I woke up and stopped only to go to bed. 
 
 Rather than finding a way to skip some hard work through automation, I had the computer give me more work than I could have imagined. And it was worth it.
 
-## Result
+## Gallery
+
+I am happy to say that all I did to make this happen was worth it. I have one of the most unique pieces of art I've ever made: a piece that is plainly two things at once. You can immediately identify it as a digital design, and as a completely handmade piece. It is perhaps the most representative piece I've made; it shows how I wield my technical skills not as a replacement for labor, but as a challenge to do more with it. 
 
 <p align="center">
   <img src="/assets/indigo/28.png" width="full">
+  <img src="/assets/indigo/30.png" width="full">
+  <img src="/assets/indigo/31.png" width="full">
+  <img src="/assets/indigo/32.png" width="full">
 </p>
 
-I am happy to say that all I did to make this happen was worth it. I have one of the most unique pieces of art I've ever made: a piece that is plainly two things at once. You can immediately identify it as a digital design, and as a completely handmade piece. It is perhaps the most representative piece I've made; it shows how I wield my technical skills not as a replacement for labor, but as a challenge to do more with it. 

@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+Contact: albertomancia@g.ucla.edu
+
 I'm an artist, a well-rounded maker, a self-taught programmer, and a Mathematics graduate from UCLA. My work often combines abstract, high-level thinking with practical hands-on work, and I'm as comfortable building furniture as I am writing code. My favorite projects are those that allow me to do both — designing with the aid of computers and mathematical principles, and then working with my hands to make a tangible finished product. That said, I've done plenty of software-only projects as well as practical builds.
 
 In my downtime I like to learn about science, engineering, psychology, history, and philosophy. I love sci-fi, live music, rock climbing, playing pool, and exploring the natural beauty of the Earth.
