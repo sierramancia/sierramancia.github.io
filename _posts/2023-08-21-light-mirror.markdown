@@ -10,7 +10,7 @@ permalink: /light-mirror/
   <video src="/assets/light-mirror/44.mp4" autoplay loop muted></video>
 </div>
 <figcaption>
-  This caption originally read "Didn't want to make you wait", but videos are taking forever to load and I don't know how to fix that so you are going to be waiting either way :(
+  Didn't want to make you wait.
 </figcaption>
 <p></p>
 
@@ -37,7 +37,7 @@ The working principle of this sensor is that the speed of light is used to measu
   <p></p>
 </p>
 
-Each point is given as a vector, and has to be put through a series of transformations to get the point cloud aligned with the physical position of the display. The sensors are turned exactly 45 degrees inwards, so you need to multiply each vector with a rotation matrix. Then they have to be scaled in two directions because you're not supposed to be doing this so why would they make the point cloud not distorted. Then you have to move in the x and y directions until you're facing your own silhouette. With the point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:
+Each point is given as a vector, and has to be put through a series of transformations to get the point cloud aligned with the physical position of the display. The sensors are turned exactly 45 degrees inwards, so you need to multiply each vector with a rotation matrix. Then they have to be scaled in two directions because you're not supposed to be doing this, so why would they make the point cloud not distorted? Then you have to move in the x and y directions until you're facing your own silhouette. With the point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:
 
 <div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
   <video src="/assets/light-mirror/48.mp4" autoplay loop muted></video>
@@ -64,7 +64,7 @@ The first version of the display had a wood frame, with elastic holding the stri
   <p></p>
 </p>
 
-I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup.
+I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup, and every time some idiot would bump into them.
 
 <p align="center">
   <img src="/assets/light-mirror/6.png">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-02T19:57:12-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-31T14:57:43-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alberto Mancia</title><subtitle>Artist and other things</subtitle><entry><title type="html">Marching Waves</title><link href="http://localhost:4000/marching-waves/" rel="alternate" type="text/html" title="Marching Waves" /><published>2023-12-15T14:29:27-08:00</published><updated>2023-12-15T14:29:27-08:00</updated><id>http://localhost:4000/marching-waves</id><content type="html" xml:base="http://localhost:4000/marching-waves/"><![CDATA[<p>My signature art style and how it’s made.</p>
 
 <h2 id="the-style">The Style</h2>
 
@@ -136,7 +136,87 @@
     <img src="/assets/who-is-this/1.png" />
 </p>
 
-<p>If you’re in Barcelona and you want a tattoo, definitely hit her up.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Halftoning</title><link href="http://localhost:4000/halftoning/" rel="alternate" type="text/html" title="Halftoning" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/halftoning</id><content type="html" xml:base="http://localhost:4000/halftoning/"><![CDATA[<p>I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.</p>
+<p>If you’re in Barcelona and you want a tattoo, definitely hit her up.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/light-mirror/" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/light-mirror/"><![CDATA[<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
+  <video src="/assets/light-mirror/44.mp4" autoplay="" loop="" muted=""></video>
+</div>
+<figcaption>
+  Didn't want to make you wait.
+</figcaption>
+<p></p>
+
+<h2 id="the-concept">The Concept</h2>
+
+<p>My first software projects were webcam filters — interactive sketches that invite the viewer to interact with them. This was already a well-traveled path, with artists like Danny Rozin and Breakfast Studio using depth-sensing cameras to extract a simple silhouette of the user in all lighting conditions.</p>
+
+<p>These kinds of installations are quite popular, but I saw potential for one that brings the audience even closer by creating a 1-to-1 image — as in, you can hold your hand right up to the piece and see its silhouette right on the other side of the imaginary glass, as if it were a shadow cast by the setting sun.</p>
+
+<h2 id="the-tech">The Tech</h2>
+
+<p>The sensor of choice is an Xbox Kinect sensor. The Kinect v2 is massively over-engineered for its original purpose as an Xbox accessory. It’s equipped with a time-of-flight depth sensing camera, where the Kinect v1 and most other sensors such as Intel RealSense cameras use stereoscopic cameras or dot projectors to gather data.</p>
+
+<p>The working principle of this sensor is that the speed of light is used to measure distance. A blaster next to the camera sends out pulses of infared light, and the camera can measure, for each pixel, how long it took for the pulse to be reflected back. Thus each pixel creates a point in 3D space, and the camera’s entire view generates a point cloud.</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/light-mirror/49.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    The point cloud being shown for calibration.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>Each point is given as a vector, and has to be put through a series of transformations to get the point cloud aligned with the physical position of the display. The sensors are turned exactly 45 degrees inwards, so you need to multiply each vector with a rotation matrix. Then they have to be scaled in two directions because you’re not supposed to be doing this, so why would they make the point cloud not distorted? Then you have to move in the x and y directions until you’re facing your own silhouette. With the point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
+
+<div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
+  <video src="/assets/light-mirror/48.mp4" autoplay="" loop="" muted=""></video>
+</div>
+
+<h2 id="the-display">The Display</h2>
+
+<p>The projector was a necessity — I wanted to make a real display of course, but building one  large enough was out of my budget. The project was shelved until I transfered to UCLA and started hanging out at the Makerspace. I noticed that they had a lot of NeoPixel strips — about 100 meters, worth a few thousand dollars. I asked some version of “can I use basically all of these to make this project?”, and was asked some version of “what else do you need?”.</p>
+
+<p>I built a 45x60 pixel display, 1.5 meters wide with 2 meter strips running vertically. The LEDs came in 5-meter reels, so nine of the strips had to be spliced together from the remaining 1-meter sections. Data and power each required two leads per strip, for a total of 180 solder connections. I used the discontinued FadeCandy controllers, which each came with 8 pins. I wanted each 2-meter strip to have its own pin, so 6 boards in total were used. In hindsight, this was overkill — the display could be driven at well over 60 hertz using one board, if the strips were wired sequentially into 5 or more sections each driven by one pin. But driving them all in parallel was cleaner and made the system more reliable, at least.</p>
+
+<p>[Wiring]</p>
+
+<p>The first version of the display had a wood frame, with elastic holding the strips in place. It worked well enough, but the strips would constantly get pulled loose or start slipping out under their own weight and have to be tightened again. All of the electronics including the computer that drove this setup were mounted on a sandwich of laser-cut acrylic, with 3D printed standoffs holding the two pieces apart:</p>
+
+<p align="center">
+  <figure>
+    <img src="/assets/light-mirror/1.png" />
+  </figure>
+  <p></p>
+  <figcaption>
+    The inside of the enclosure, containing all of the messy cords and Kinect adapters. When it's assembled the power supply and computer are mounted on top of this with another acrylic sheet.
+  </figcaption>
+  <p></p>
+</p>
+
+<p>I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup, and every time some idiot would bump into them.</p>
+
+<p align="center">
+  <img src="/assets/light-mirror/6.png" />
+</p>
+
+<h2 id="the-software">The Software</h2>
+
+<p>The ideal version of this piece would be a display where each pixel has a depth sensor looking straight out, so that each pixel can see and respond to objects within its “column”. You can picture it as an array of laser beams, and the ones that are broken create the silhouette of the subject.</p>
+
+<p>However, placing a suitable time-of-flight sensor on each pixel would increase the cost by an order of magnitude. So I stuck with the Kinect sensors and worked backwards from this ideal form to write the software. The final image displayed on the 45x60 panel is essentially a 2D histogram of the point cloud: each pixel has its own square tube projecting out from it, and all of the points that get caught in that tube are added to its bucket.</p>
+
+<p>[More Cloud]</p>
+
+<p>Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.</p>
+
+<h2 id="gallery">Gallery</h2>
+
+<p align="center">
+  <img src="/assets/light-mirror/35.png" />
+  <img src="/assets/light-mirror/46.png" />
+  <img src="/assets/light-mirror/45.png" />
+</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Didn't want to make you wait.]]></summary></entry><entry><title type="html">Halftoning</title><link href="http://localhost:4000/halftoning/" rel="alternate" type="text/html" title="Halftoning" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/halftoning</id><content type="html" xml:base="http://localhost:4000/halftoning/"><![CDATA[<p>I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.</p>
 
 <h2 id="halftoning">Halftoning</h2>
 
@@ -229,87 +309,7 @@
   <p></p>
 </p>
 
-<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry><entry><title type="html">Light Mirror</title><link href="http://localhost:4000/light-mirror/" rel="alternate" type="text/html" title="Light Mirror" /><published>2023-12-14T14:29:27-08:00</published><updated>2023-12-14T14:29:27-08:00</updated><id>http://localhost:4000/light-mirror</id><content type="html" xml:base="http://localhost:4000/light-mirror/"><![CDATA[<div class="video-mask" style="max-width: 70%; margin-left: 15%; aspect-ratio: 0.6">
-  <video src="/assets/light-mirror/44.mp4" autoplay="" loop="" muted=""></video>
-</div>
-<figcaption>
-  This caption originally read "Didn't want to make you wait", but videos are taking forever to load and I don't know how to fix that so you are going to be waiting either way :(
-</figcaption>
-<p></p>
-
-<h2 id="the-concept">The Concept</h2>
-
-<p>My first software projects were webcam filters — interactive sketches that invite the viewer to interact with them. This was already a well-traveled path, with artists like Danny Rozin and Breakfast Studio using depth-sensing cameras to extract a simple silhouette of the user in all lighting conditions.</p>
-
-<p>These kinds of installations are quite popular, but I saw potential for one that brings the audience even closer by creating a 1-to-1 image — as in, you can hold your hand right up to the piece and see its silhouette right on the other side of the imaginary glass, as if it were a shadow cast by the setting sun.</p>
-
-<h2 id="the-tech">The Tech</h2>
-
-<p>The sensor of choice is an Xbox Kinect sensor. The Kinect v2 is massively over-engineered for its original purpose as an Xbox accessory. It’s equipped with a time-of-flight depth sensing camera, where the Kinect v1 and most other sensors such as Intel RealSense cameras use stereoscopic cameras or dot projectors to gather data.</p>
-
-<p>The working principle of this sensor is that the speed of light is used to measure distance. A blaster next to the camera sends out pulses of infared light, and the camera can measure, for each pixel, how long it took for the pulse to be reflected back. Thus each pixel creates a point in 3D space, and the camera’s entire view generates a point cloud.</p>
-
-<p align="center">
-  <figure>
-    <img src="/assets/light-mirror/49.png" />
-  </figure>
-  <p></p>
-  <figcaption>
-    The point cloud being shown for calibration.
-  </figcaption>
-  <p></p>
-</p>
-
-<p>Each point is given as a vector, and has to be put through a series of transformations to get the point cloud aligned with the physical position of the display. The sensors are turned exactly 45 degrees inwards, so you need to multiply each vector with a rotation matrix. Then they have to be scaled in two directions because you’re not supposed to be doing this so why would they make the point cloud not distorted. Then you have to move in the x and y directions until you’re facing your own silhouette. With the point cloud aligned to the physical position of the display, I removed the z-component to orthographically project it onto a 2D surface. Add some styling and you have this:</p>
-
-<div class="video-mask" style="max-width: 50%; margin-left: 25%; aspect-ratio: 0.6">
-  <video src="/assets/light-mirror/48.mp4" autoplay="" loop="" muted=""></video>
-</div>
-
-<h2 id="the-display">The Display</h2>
-
-<p>The projector was a necessity — I wanted to make a real display of course, but building one  large enough was out of my budget. The project was shelved until I transfered to UCLA and started hanging out at the Makerspace. I noticed that they had a lot of NeoPixel strips — about 100 meters, worth a few thousand dollars. I asked some version of “can I use basically all of these to make this project?”, and was asked some version of “what else do you need?”.</p>
-
-<p>I built a 45x60 pixel display, 1.5 meters wide with 2 meter strips running vertically. The LEDs came in 5-meter reels, so nine of the strips had to be spliced together from the remaining 1-meter sections. Data and power each required two leads per strip, for a total of 180 solder connections. I used the discontinued FadeCandy controllers, which each came with 8 pins. I wanted each 2-meter strip to have its own pin, so 6 boards in total were used. In hindsight, this was overkill — the display could be driven at well over 60 hertz using one board, if the strips were wired sequentially into 5 or more sections each driven by one pin. But driving them all in parallel was cleaner and made the system more reliable, at least.</p>
-
-<p>[Wiring]</p>
-
-<p>The first version of the display had a wood frame, with elastic holding the strips in place. It worked well enough, but the strips would constantly get pulled loose or start slipping out under their own weight and have to be tightened again. All of the electronics including the computer that drove this setup were mounted on a sandwich of laser-cut acrylic, with 3D printed standoffs holding the two pieces apart:</p>
-
-<p align="center">
-  <figure>
-    <img src="/assets/light-mirror/1.png" />
-  </figure>
-  <p></p>
-  <figcaption>
-    The inside of the enclosure, containing all of the messy cords and Kinect adapters. When it's assembled the power supply and computer are mounted on top of this with another acrylic sheet.
-  </figcaption>
-  <p></p>
-</p>
-
-<p>I recently built a new display out of aluminum extrusion, assembled with M5 screws in blind joints. This one has wheels and, more importantly, fixed arms that hold the sensors out to each side. The sensors were on tripods before, and I had to calibrate for their positions every single setup.</p>
-
-<p align="center">
-  <img src="/assets/light-mirror/6.png" />
-</p>
-
-<h2 id="the-software">The Software</h2>
-
-<p>The ideal version of this piece would be a display where each pixel has a depth sensor looking straight out, so that each pixel can see and respond to objects within its “column”. You can picture it as an array of laser beams, and the ones that are broken create the silhouette of the subject.</p>
-
-<p>However, placing a suitable time-of-flight sensor on each pixel would increase the cost by an order of magnitude. So I stuck with the Kinect sensors and worked backwards from this ideal form to write the software. The final image displayed on the 45x60 panel is essentially a 2D histogram of the point cloud: each pixel has its own square tube projecting out from it, and all of the points that get caught in that tube are added to its bucket.</p>
-
-<p>[More Cloud]</p>
-
-<p>Note that in this configuration, the histogram is represented by the brightness of each pixel, not the hue. The hue is mapped to the minimum distance of points in the tube, thus simulating the distance measurement that an individual time-of-flight sensor would gather.</p>
-
-<h2 id="gallery">Gallery</h2>
-
-<p align="center">
-  <img src="/assets/light-mirror/35.png" />
-  <img src="/assets/light-mirror/46.png" />
-  <img src="/assets/light-mirror/45.png" />
-</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[This caption originally read "Didn't want to make you wait", but videos are taking forever to load and I don't know how to fix that so you are going to be waiting either way :(]]></summary></entry><entry><title type="html">Embroidery</title><link href="http://localhost:4000/embroidery/" rel="alternate" type="text/html" title="Embroidery" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/embroidery</id><content type="html" xml:base="http://localhost:4000/embroidery/"><![CDATA[<p>Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.</p>
+<p>As a bonus, we have a method perfectly suited for real-time processing with GLSL. Once a threshold map is made, it can be used to make a live camera effect for Instagram or TikTok. This means I can actually compose a piece in-camera if I want to.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[I don’t work with color a lot. I’m not a painter or a photographer. My pieces don’t express through paint, toner, or anything that can be blended to produce different shades. The machines I work with — pen plotters, embroidery machines, laser cutters, etc. — can visually express only through the presence or absence of their touch on the workpiece. Every point on the piece is marked by the pen, needle, or laser or it’s not. There’s no in between, it’s black or white, 1 or 0.]]></summary></entry><entry><title type="html">Digital Impressionism</title><link href="http://localhost:4000/digital-impressionism/" rel="alternate" type="text/html" title="Digital Impressionism" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/digital-impressionism</id><content type="html" xml:base="http://localhost:4000/digital-impressionism/"><![CDATA[]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Embroidery</title><link href="http://localhost:4000/embroidery/" rel="alternate" type="text/html" title="Embroidery" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/embroidery</id><content type="html" xml:base="http://localhost:4000/embroidery/"><![CDATA[<p>Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.</p>
 
 <p>These constraints are soft; if you’re willing to dedicate the time, you can make colorful and discontinuous designs. But the challenge of working within them interested me — what’s the best way to render an image using a single continuous thread?</p>
 
@@ -417,7 +417,7 @@
 
 <p>Now I’m wondering if we can make it look not so…tangled. Adding slight biases to the otherwise unpredictable behavior seemed to get results without compromising the stochastic magic that makes this work. So let’s try nudging the turtle to follow contour lines.</p>
 
-<p>We need to make a flow field from the image, and allow it to exert some amount of pull on the turtle.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.]]></summary></entry><entry><title type="html">Digital Impressionism</title><link href="http://localhost:4000/digital-impressionism/" rel="alternate" type="text/html" title="Digital Impressionism" /><published>2023-12-13T14:29:27-08:00</published><updated>2023-12-13T14:29:27-08:00</updated><id>http://localhost:4000/digital-impressionism</id><content type="html" xml:base="http://localhost:4000/digital-impressionism/"><![CDATA[]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Indigo</title><link href="http://localhost:4000/indigo/" rel="alternate" type="text/html" title="Indigo" /><published>2023-10-31T15:29:27-07:00</published><updated>2023-10-31T15:29:27-07:00</updated><id>http://localhost:4000/indigo</id><content type="html" xml:base="http://localhost:4000/indigo/"><![CDATA[<p align="center">
+<p>We need to make a flow field from the image, and allow it to exert some amount of pull on the turtle.</p>]]></content><author><name></name></author><category term="articles" /><summary type="html"><![CDATA[Getting to work with an embroidery machine is a deep lesson in working within a limited creative space. Its main constraints are color and continuity; changing threads is a pain and not something you want to do often. It can cut threads on its own, but this takes time and leaves loose ends than all need to be trimmed.]]></summary></entry><entry><title type="html">Indigo</title><link href="http://localhost:4000/indigo/" rel="alternate" type="text/html" title="Indigo" /><published>2023-10-31T15:29:27-07:00</published><updated>2023-10-31T15:29:27-07:00</updated><id>http://localhost:4000/indigo</id><content type="html" xml:base="http://localhost:4000/indigo/"><![CDATA[<p align="center">
   <img src="/assets/indigo/2.png" width="full" />
 </p>
 
@@ -541,7 +541,56 @@
   <img src="/assets/indigo/30.png" width="full" />
   <img src="/assets/indigo/31.png" width="full" />
   <img src="/assets/indigo/32.png" width="full" />
-</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<p>This project began as a way of solving a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on <a href="">Kaggle</a></p>
+</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Mosaic</title><link href="http://localhost:4000/mosaic/" rel="alternate" type="text/html" title="Mosaic" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/mosaic</id><content type="html" xml:base="http://localhost:4000/mosaic/"><![CDATA[<p align="center">
+    <img src="/assets/mosaic/2.png" />
+    <img src="/assets/mosaic/1.png" />
+</p>
+
+<p>This is one of my rare software-only projects. The published form is actually an <a href="https://www.instagram.com/ar/804390247877532">Instagram filter</a> you can try for yourself!</p>
+
+<p>Most of my programs can’t be experienced this way; to make a stable, fast live video effect that can run on any smartphone you need to use shader code. It’s difficult but rewarding to learn — you have to “invert” your point of view from an omniscient CPU to an anonymous, lost GPU thread that can only poke at its own surroundings. The most basic shapes and patterns are made in a completely different way than you would make them with a tool like Processing.</p>
+
+<h2 id="the-challenge">The Challenge</h2>
+
+<p>I wanted to challenge myself by creating an impressionistic, painterly style. This is very easy to do using traditional CPU code — I even did it in <a href="/matlab-painting/">MATLAB</a>! It’s a major challenge in shader code for the same reason it’s so easy everywhere else — Impressionism lends itself to stochastic processes, procedural layering of brushstrokes to gradually build up an image. You can’t do that with real-time graphics, so you have to fake it.</p>
+
+<p>As this project stands, it looks like a mosaic of colored tiles. I can’t think of a painter that painted like this, and it still feels very “content-unaware”. The one way in which it is content-aware is the interesting and difficult part of this project.</p>
+
+<h2 id="voronoi">Voronoi</h2>
+
+<p><a href="thebookofshaders.com">The Book of Shaders</a> has a great page on cellular noise, and drawing large Voronoi diagrams in GLSL. Instead of evaluating all the points, which becomes computationally expensive very quickly, their code subdivides the domain into a grid and only evaluates within the nine grid squares surrounding each texture coordinate.</p>
+
+<p>What it’s evaluating are the points that each square generates. While this pattern looks fairly random, if you look closely you can see that each grid square has exactly one point making an elliptical orbit around its center:</p>
+
+<div class="video-mask" style="max-width: 90%; margin-left: 5%;">
+    <video src="/assets/mosaic/1.mp4" autoplay="" loop="" muted=""></video>
+</div>
+
+<p>It’s relatively easy to make a colored Voronoi diagram from here: just sample the camera input at each point, then paint its cell that color. This looks kind of cool, but I think we can do something cooler. I want to depopulate areas of low detail so they have bigger cells. This feels closer to something a painter would do.</p>
+
+<h2 id="awareness">Awareness</h2>
+
+<p>A detail map is easy enough to make with edge detection kernels. I might use Difference of Gaussians later, but a simple blurred edge map works just fine. From there I started with quadtree compression:</p>
+
+<p align="center">
+    <img src="/assets/mosaic/4.png" />
+</p>
+<figcaption>
+    This turned out to be the only image I have from this stage of development, so enjoy my gray forehead.
+</figcaption>
+<p></p>
+
+<p>This program starts with the smallest tile size and builds up. Depending on what level of detail is under each tile, it can either color itself uniquely or join the larger tile it is a part of. I like this backwards approach over the more typical subdividing, because it allows for a cleaner separation of high- and low-detail areas instead of splitting up regions unnecessarily.</p>
+
+<p>To make the Voronoi diagram, I have each uniquely colored tile generate a point. But correctly finding the closest point to each pixel isn’t that easy; if the pixel is in a larger tile, its closest point can be in a smaller non-adjacent tile that is difficult to find without a broad search. I thought it would suffice to look at the eight surrounding small tiles like in the regular Voronoi algorithm, find what larger tile each one belongs to, if any, and then check the point generated by that one.</p>
+
+<p>It turned out that I had to check 80 tiles in a 9x9 square, a little over the size of the largest tiles, in order to completely avoid errors. This was a bit disappointing; I hoped the quadtree would be an efficient solution but it seems that bruteforcing is still necessary, and the quadtree only serves to allocate the points. With that in mind, I started thinking of simpler ways to allocate them. I also wanted something that looked more organic — the square grid is distorted but you can still kind of tell it’s there, especially when compared to a Voronoi diagram that’s been relaxed via <a href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">Lloyd’s Algorithm</a>.</p>
+
+<h2 id="dithering">Dithering</h2>
+
+<p>I tried applying an approach based on dithering, with each square randomly picking a threshold and activating its point if the detail map passes the threshold at that point. This turned out not to produce the uniformity I needed; in low-detail areas the dots would clump up rather than being scattered evenly. Random dithering dates back to at least 1951, and I can see why it wasn’t widely adopted.</p>
+
+<p>Ordered dithering with a matrix looks better, but it does just make a grid pattern again. I tried adding a twist: rotating the matrices to break up repetition. Keeping the even distribution requires the matrices and their rotations to be designed with intention.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Group Classifier</title><link href="http://localhost:4000/group-classifier/" rel="alternate" type="text/html" title="Group Classifier" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/group-classifier</id><content type="html" xml:base="http://localhost:4000/group-classifier/"><![CDATA[<p>This project began as a way of solving a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on <a href="">Kaggle</a></p>
 
 <h2 id="abelian-group-classifier">Abelian Group Classifier</h2>
 
@@ -822,56 +871,7 @@ which are quite easy to come up with, are actually</p>
 
 <div>
     <img src="/assets/group-classifier/1.png" />
-</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[This project began as a way of solving a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Mosaic</title><link href="http://localhost:4000/mosaic/" rel="alternate" type="text/html" title="Mosaic" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/mosaic</id><content type="html" xml:base="http://localhost:4000/mosaic/"><![CDATA[<p align="center">
-    <img src="/assets/mosaic/2.png" />
-    <img src="/assets/mosaic/1.png" />
-</p>
-
-<p>This is one of my rare software-only projects. The published form is actually an <a href="https://www.instagram.com/ar/804390247877532">Instagram filter</a> you can try for yourself!</p>
-
-<p>Most of my programs can’t be experienced this way; to make a stable, fast live video effect that can run on any smartphone you need to use shader code. It’s difficult but rewarding to learn — you have to “invert” your point of view from an omniscient CPU to an anonymous, lost GPU thread that can only poke at its own surroundings. The most basic shapes and patterns are made in a completely different way than you would make them with a tool like Processing.</p>
-
-<h2 id="the-challenge">The Challenge</h2>
-
-<p>I wanted to challenge myself by creating an impressionistic, painterly style. This is very easy to do using traditional CPU code — I even did it in <a href="/matlab-painting/">MATLAB</a>! It’s a major challenge in shader code for the same reason it’s so easy everywhere else — Impressionism lends itself to stochastic processes, procedural layering of brushstrokes to gradually build up an image. You can’t do that with real-time graphics, so you have to fake it.</p>
-
-<p>As this project stands, it looks like a mosaic of colored tiles. I can’t think of a painter that painted like this, and it still feels very “content-unaware”. The one way in which it is content-aware is the interesting and difficult part of this project.</p>
-
-<h2 id="voronoi">Voronoi</h2>
-
-<p><a href="thebookofshaders.com">The Book of Shaders</a> has a great page on cellular noise, and drawing large Voronoi diagrams in GLSL. Instead of evaluating all the points, which becomes computationally expensive very quickly, their code subdivides the domain into a grid and only evaluates within the nine grid squares surrounding each texture coordinate.</p>
-
-<p>What it’s evaluating are the points that each square generates. While this pattern looks fairly random, if you look closely you can see that each grid square has exactly one point making an elliptical orbit around its center:</p>
-
-<div class="video-mask" style="max-width: 90%; margin-left: 5%;">
-    <video src="/assets/mosaic/1.mp4" autoplay="" loop="" muted=""></video>
-</div>
-
-<p>It’s relatively easy to make a colored Voronoi diagram from here: just sample the camera input at each point, then paint its cell that color. This looks kind of cool, but I think we can do something cooler. I want to depopulate areas of low detail so they have bigger cells. This feels closer to something a painter would do.</p>
-
-<h2 id="awareness">Awareness</h2>
-
-<p>A detail map is easy enough to make with edge detection kernels. I might use Difference of Gaussians later, but a simple blurred edge map works just fine. From there I started with quadtree compression:</p>
-
-<p align="center">
-    <img src="/assets/mosaic/4.png" />
-</p>
-<figcaption>
-    This turned out to be the only image I have from this stage of development, so enjoy my gray forehead.
-</figcaption>
-<p></p>
-
-<p>This program starts with the smallest tile size and builds up. Depending on what level of detail is under each tile, it can either color itself uniquely or join the larger tile it is a part of. I like this backwards approach over the more typical subdividing, because it allows for a cleaner separation of high- and low-detail areas instead of splitting up regions unnecessarily.</p>
-
-<p>To make the Voronoi diagram, I have each uniquely colored tile generate a point. But correctly finding the closest point to each pixel isn’t that easy; if the pixel is in a larger tile, its closest point can be in a smaller non-adjacent tile that is difficult to find without a broad search. I thought it would suffice to look at the eight surrounding small tiles like in the regular Voronoi algorithm, find what larger tile each one belongs to, if any, and then check the point generated by that one.</p>
-
-<p>It turned out that I had to check 80 tiles in a 9x9 square, a little over the size of the largest tiles, in order to completely avoid errors. This was a bit disappointing; I hoped the quadtree would be an efficient solution but it seems that bruteforcing is still necessary, and the quadtree only serves to allocate the points. With that in mind, I started thinking of simpler ways to allocate them. I also wanted something that looked more organic — the square grid is distorted but you can still kind of tell it’s there, especially when compared to a Voronoi diagram that’s been relaxed via <a href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">Lloyd’s Algorithm</a>.</p>
-
-<h2 id="dithering">Dithering</h2>
-
-<p>I tried applying an approach based on dithering, with each square randomly picking a threshold and activating its point if the detail map passes the threshold at that point. This turned out not to produce the uniformity I needed; in low-detail areas the dots would clump up rather than being scattered evenly. Random dithering dates back to at least 1951, and I can see why it wasn’t widely adopted.</p>
-
-<p>Ordered dithering with a matrix looks better, but it does just make a grid pattern again. I tried adding a twist: rotating the matrices to break up repetition. Keeping the even distribution requires the matrices and their rotations to be designed with intention.</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/lampshades/" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/lampshades</id><content type="html" xml:base="http://localhost:4000/lampshades/"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
+</div>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[This project began as a way of solving a very tedious problem on my abstract algebra final. You can view an interactive version of this iPython notebook on Kaggle]]></summary></entry><entry><title type="html">Lampshades</title><link href="http://localhost:4000/lampshades/" rel="alternate" type="text/html" title="Lampshades" /><published>2023-03-20T15:29:27-07:00</published><updated>2023-03-20T15:29:27-07:00</updated><id>http://localhost:4000/lampshades</id><content type="html" xml:base="http://localhost:4000/lampshades/"><![CDATA[<h2 id="laser-origami">Laser Origami</h2>
 
 <p>You can tell a roll of tape has been within my reach if you see these scattered around:</p>
 
